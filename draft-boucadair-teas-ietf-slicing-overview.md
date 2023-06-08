@@ -144,7 +144,7 @@ This document describes a Segment Routing based solution for two-
 ### Attachment Circuit as a Service Data Model
 
 {{?I-D.boro-opsawg-teas-attachment-circuit}}: YANG Data Models for 'Attachment Circuits'-as-a-Service (ACaaS)
- 
+
 
 ### Network Slice Service Data Model
 
@@ -216,7 +216,7 @@ This document describes a Segment Routing based solution for two-
 
 {{?I-D.ietf-idr-flowspec-network-slice-ts}}: BGP Flowspec for IETF Network Slice Traffic Steering
 
-### BGP-LS Filters 
+### BGP-LS Filters
 
 {{?I-D.drake-teas-bgp-ls-filter-nrp}}: Using BGP-LS Filters to Instanted Network Resource Partitions
 
@@ -235,7 +235,7 @@ This document describes a Segment Routing based solution for two-
 
 
 ### PCEP Extensions
- 
+
 {{?I-D.dong-pce-pcep-nrp}}: Path Computation Element Communication Protocol (PCEP) Extensions for Network Resource Partition (NRP)
 
 ### LSP Ping/Traceroute Extensions
@@ -266,7 +266,7 @@ xx
 xx
 
 
-## Slice Identifier in IPv6 Flow Label 
+## Slice Identifier in IPv6 Flow Label
 
 The Slice Identifier (SLID) is a value encoded within the IPv6 packet
    that allows transit routers to process the packet according to
