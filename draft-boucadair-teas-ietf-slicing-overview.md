@@ -36,7 +36,7 @@ This document lists a set of slicing-related specifications that are being devel
 
 # Introduction
 
-Slicing efforts are being conducted within the IETF in various WGs (e.g., teas, idr, spring, ccamp, opsawg). 
+Slicing efforts are being conducted within the IETF in various WGs (e.g., teas, idr, spring, ccamp, opsawg).
 
 Some proposals argue in favor of specifyting extensions to convey specific identifiers in packets. However,
 distinct identifiers are being proposed: slice identifier, NRP identifier, VTN identifier, VTN resource identifier, etc.
@@ -78,7 +78,7 @@ In other deployments, IETF Network Slices can be hosted directly on the underlay
 * Coarse resource control at the transit, and
 * Capacity planning/management for efficient usage of provider network resources.
 
-## New XXXX
+## Network Resource Partitions and Slice-Flow Aggregates
 
 {{?I-D.ietf-teas-ns-ip-mpls}}: Realizing Network Slices in IP/MPLS Networks
 
