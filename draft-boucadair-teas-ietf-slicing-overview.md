@@ -37,17 +37,34 @@ catalog slice-related specification within the IETF and ease coordinating the ef
 
 # Introduction
 
+TBC.
 
 Some proposals argue in favor of specifyting extensions to convey specific identifiers in packets. However,
 distinct identifiers are being proposed: slice identifier, NRP identifier, VTN identifier, VTN resource identifier, etc.
 
-
-
+TBC.
 
 
 # Reference Framework and Architecture
 
-{{?I-D.ietf-teas-ietf-network-slices}}: A Framework for IETF Network Slices
+{{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. This document provides definitions for a set of core terms and specifies a framework for the provision
+of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.
+
+{{?I-D.ietf-teas-ietf-network-slices}} provides a clear distinction between:
+
+* the "IETF Network Slice service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
+   used by the service provider, and
+* the "IETF Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.
+
+The IETF Network Slice service is specified in terms of:
+
+* a set of Service Demarcation Point (SDP),
+* a set of one or more connectivity constructs between subsets of these SDPs, and
+*  a set of service objectives for each SDP sending to each connectivity construct.
+
+Optionally, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs). Note that IETF Network Slices could be hosted directly on the underlay network (i.e., without requiring any NRP).
+
+{{?I-D.ietf-teas-ietf-network-slices}} does not provide any recommendation about the technological means to realize an IETF Network Slice service. These considerations are deployment specific.
 
 # Models for Realizing Network Slices
 
