@@ -47,7 +47,7 @@ distinct identifiers are being proposed: slice identifier, NRP identifier, VTN i
 
 # Reference Framework and Architecture
 
-{{?ietf-teas-ietf-network-slices}}: A Framework for IETF Network Slices
+{{?I-D.ietf-teas-ietf-network-slices}}: A Framework for IETF Network Slices
 
 # Models for Realizing Network Slices
 
