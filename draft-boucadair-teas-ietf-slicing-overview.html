@@ -7,8 +7,7 @@
 <title>An Overview of IETF Network Slicing Efforts</title>
 <meta content="Mohamed Boucadair" name="author">
 <meta content="
-       This document provides an overview of documents that are being XXX. This document is meant to
-catalog slice-related specification within the IETF and ease coordinating the efforts and XXX. 
+       This document lists a set of slicing-related specifications that are being development within the IETF. This document is meant to provide an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent. 
     " name="description">
 <meta content="xml2rfc 3.17.3" name="generator">
 <meta content="slice specifications" name="keyword">
@@ -1084,8 +1083,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">An Overview of IETF Network Slicing Efforts</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document provides an overview of documents that are being XXX. This document is meant to
-catalog slice-related specification within the IETF and ease coordinating the efforts and XXX.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document lists a set of slicing-related specifications that are being development within the IETF. This document is meant to provide an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1159,7 +1157,7 @@ catalog slice-related specification within the IETF and ease coordinating the ef
                 <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-using-current-ip-mpls-techn" class="internal xref">Using Current IP/MPLS Technologies</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
-                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-new-xxxx" class="internal xref">New XXXX</a></p>
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-network-resource-partitions" class="internal xref">Network Resource Partitions and Slice-Flow Aggregates</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-otn-slicing" class="internal xref">OTN Slicing</a></p>
@@ -1339,7 +1337,7 @@ catalog slice-related specification within the IETF and ease coordinating the ef
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">TBC.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Slicing efforts are being conducted within the IETF in various WGs (e.g., teas, idr, spring, ccamp, opsawg).<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">Some proposals argue in favor of specifyting extensions to convey specific identifiers in packets. However,
 distinct identifiers are being proposed: slice identifier, NRP identifier, VTN identifier, VTN resource identifier, etc.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">TBC.<a href="#section-1-3" class="pilcrow">¶</a></p>
@@ -1350,8 +1348,8 @@ distinct identifiers are being proposed: slice identifier, NRP identifier, VTN i
       <h2 id="name-reference-framework-and-arc">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-reference-framework-and-arc" class="section-name selfRef">Reference Framework and Architecture</a>
       </h2>
-<p id="section-2-1"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> is the authoritative IETF framework for Network Slices. This document provides definitions for a set of core terms and specifies a framework for the provision
-of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
+of Network Slice services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> provides a clear distinction between:<a href="#section-2-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-3.1">the "IETF Network Slice service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
@@ -1369,8 +1367,9 @@ of Network Slice Services over networks that are deployed using technologies tha
         <li class="normal" id="section-2-5.3">a set of service objectives for each SDP sending to each connectivity construct.<a href="#section-2-5.3" class="pilcrow">¶</a>
 </li>
       </ul>
-<p id="section-2-6">Optionally, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs). Note that IETF Network Slices could be hosted directly on the underlay network (i.e., without requiring any NRP).<a href="#section-2-6" class="pilcrow">¶</a></p>
-<p id="section-2-7"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> does not provide any recommendation about the technological means to realize an IETF Network Slice service. These considerations are deployment specific.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-6">In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">In other deployments, IETF Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> does not provide any recommendation about the technological means to realize an IETF Network Slice service. These considerations are deployment specific.<a href="#section-2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="models-for-realizing-network-slices">
@@ -1383,14 +1382,23 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-using-current-ip-mpls-techn">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-using-current-ip-mpls-techn" class="section-name selfRef">Using Current IP/MPLS Technologies</a>
         </h3>
-<p id="section-3.1-1"><span>[<a href="#I-D.srld-teas-5g-slicing" class="cite xref">I-D.srld-teas-5g-slicing</a>]</span>:
-A Realization of IETF Network Slices for 5G Networks Using Current IP/ MPLS Technologies<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1"><span>[<a href="#I-D.srld-teas-5g-slicing" class="cite xref">I-D.srld-teas-5g-slicing</a>]</span> describes a model for the realization of IETF Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.1-2.1">L2VPN/L3VPN service instances for logical separation,<a href="#section-3.1-2.1" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-3.1-2.2">Fine-grained resource control at the PE,<a href="#section-3.1-2.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-3.1-2.3">Coarse resource control at the transit, and<a href="#section-3.1-2.3" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-3.1-2.4">Capacity planning/management for efficient usage of provider network resources.<a href="#section-3.1-2.4" class="pilcrow">¶</a>
+</li>
+        </ul>
 </section>
 </div>
-<div id="new-xxxx">
+<div id="network-resource-partitions-and-slice-flow-aggregates">
 <section id="section-3.2">
-        <h3 id="name-new-xxxx">
-<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-new-xxxx" class="section-name selfRef">New XXXX</a>
+        <h3 id="name-network-resource-partitions">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-network-resource-partitions" class="section-name selfRef">Network Resource Partitions and Slice-Flow Aggregates</a>
         </h3>
 <p id="section-3.2-1"><span>[<a href="#I-D.ietf-teas-ns-ip-mpls" class="cite xref">I-D.ietf-teas-ns-ip-mpls</a>]</span>: Realizing Network Slices in IP/MPLS Networks<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 </section>
