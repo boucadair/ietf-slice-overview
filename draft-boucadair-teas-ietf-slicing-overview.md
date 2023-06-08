@@ -30,14 +30,13 @@ informative:
 
 --- abstract
 
-This document provides an overview of documents that are being XXX. This document is meant to
-catalog slice-related specification within the IETF and ease coordinating the efforts and XXX.
+This document lists a set of slicing-related specifications that are being development within the IETF. This document is meant to provide an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent.
 
 --- middle
 
 # Introduction
 
-TBC.
+Slicing efforts are being conducted within the IETF in various WGs (e.g., teas, idr, spring, ccamp, opsawg). 
 
 Some proposals argue in favor of specifyting extensions to convey specific identifiers in packets. However,
 distinct identifiers are being proposed: slice identifier, NRP identifier, VTN identifier, VTN resource identifier, etc.
@@ -47,8 +46,8 @@ TBC.
 
 # Reference Framework and Architecture
 
-{{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. This document provides definitions for a set of core terms and specifies a framework for the provision
-of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.
+{{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
+of Network Slice services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.
 
 {{?I-D.ietf-teas-ietf-network-slices}} provides a clear distinction between:
 
@@ -62,7 +61,9 @@ The IETF Network Slice service is specified in terms of:
 * a set of one or more connectivity constructs between subsets of these SDPs, and
 *  a set of service objectives for each SDP sending to each connectivity construct.
 
-Optionally, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs). Note that IETF Network Slices could be hosted directly on the underlay network (i.e., without requiring any NRP).
+In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).
+
+In other deployments, IETF Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).
 
 {{?I-D.ietf-teas-ietf-network-slices}} does not provide any recommendation about the technological means to realize an IETF Network Slice service. These considerations are deployment specific.
 
@@ -70,8 +71,12 @@ Optionally, the underlying network can be customized to select a subset of resou
 
 ## Using Current IP/MPLS Technologies
 
-{{?I-D.srld-teas-5g-slicing}}:
-A Realization of IETF Network Slices for 5G Networks Using Current IP/ MPLS Technologies
+{{?I-D.srld-teas-5g-slicing}} describes a model for the realization of IETF Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
+
+* L2VPN/L3VPN service instances for logical separation,
+* Fine-grained resource control at the PE,
+* Coarse resource control at the transit, and
+* Capacity planning/management for efficient usage of provider network resources.
 
 ## New XXXX
 
