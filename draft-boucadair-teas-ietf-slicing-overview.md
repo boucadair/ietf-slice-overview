@@ -78,9 +78,11 @@ In other deployments, IETF Network Slices can be hosted directly on the underlay
 * Coarse resource control at the transit, and
 * Capacity planning/management for efficient usage of provider network resources.
 
-## Network Resource Partitions and Slice-Flow Aggregates
+## Using Network Resource Partitions and Slice-Flow Aggregates
 
-{{?I-D.ietf-teas-ns-ip-mpls}}: Realizing Network Slices in IP/MPLS Networks
+{{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networls. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more IETF Network Slice services.
+
+{{?I-D.ietf-teas-ns-ip-mpls}} also introduces the notion of NRP Policy that is used to trigger the creation of NRPs that will support a given Slice-Flow Aggregate. In some deployment schemes, packets that belong to a Slice-Flow Aggregate are forwarded by intermediate node along the appropriate NRP by processing an NRP Selector that is carried by these packets.
 
 ## OTN Slicing
 
