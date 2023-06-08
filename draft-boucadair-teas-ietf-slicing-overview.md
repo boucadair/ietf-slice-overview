@@ -9,7 +9,7 @@ number:
 date:
 consensus: true
 v: 3
-workgroup: "teas"
+workgroup: "Traffic Engineering Architecture and Signaling"
 keyword:
  - slice specifications
  - slice coordination
