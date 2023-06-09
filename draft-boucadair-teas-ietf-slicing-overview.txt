@@ -95,10 +95,9 @@ Table of Contents
    6.  Control Plane Extensions
      6.1.  NRP
        6.1.1.  BGP Flowspec
-       6.1.2.  BGP-LS Filters
+       6.1.2.  BGP-LS Filters in SR
        6.1.3.  SR Policies Extensions
        6.1.4.  PCEP Extensions
-       6.1.5.  LSP Ping/Traceroute Extensions
      6.2.  Virtual Transport Networks (VTNs)
        6.2.1.  IS-IS MT
        6.2.2.  BGP-LS
@@ -112,7 +111,8 @@ Table of Contents
        7.5.2.  NRP ID in SRv6
        7.5.3.  NRP Selector in MPLS Network Actions
    8.  OAM
-     8.1.  Precision Availability Metrics for SLO-Governed End-to-End
+     8.1.  LSP Ping/Traceroute Extensions
+     8.2.  Precision Availability Metrics for SLO-Governed End-to-End
            Services
    9.  Misc
      9.1.  Scalability Considerations for NRP
@@ -144,7 +144,22 @@ Table of Contents
 
    This document provides an overview of slicing activities in the IETF
    to hopefully ease coordination and ensure that specifications that
-   are developed in many WGs are consistent.
+   are developed in many WGs are consistent, e.g.:
+
+   *  Position the various concepts: network slice, network resource
+      partition, virtual transport network, etc.
+
+   *  Clarify the need of the various identifiers introduced so far and
+      soften redundant/duplicate uses.
+
+   *  Harmonize the definition of relevant identifiers (length,
+      encoding, usage, etc.) rather than having the specification of the
+      same identifier repeated in many places.
+
+   *  Clarify the relationship and co-existence of identifiers if more
+      than one is needed.
+
+   Future versions of this document many include recommendations.
 
 2.  Reference Framework and Architecture
 
@@ -363,9 +378,11 @@ Table of Contents
 5.3.3.  Network Slice Topology
 
    [I-D.liu-teas-transport-network-slice-yang] specifies a YANG model
-   for IETF Network Slice Topology.  The need for such a model is yet to
-   be justified as the current scope is redundant with what can be
-   already achieved using the SAP model (Section 5.3.1).
+   for IETF Network Slice Topology.
+
+   The need for such a model is yet to be justified as the current scope
+   is redundant with what can be already achieved using the SAP model
+   (Section 5.3.1).
 
 5.3.4.  NRP
 
@@ -395,32 +412,33 @@ Table of Contents
    [I-D.ietf-idr-flowspec-network-slice-ts] specifies a BGP Flowspec
    extension for NRP traffic steering.
 
-6.1.2.  BGP-LS Filters
+6.1.2.  BGP-LS Filters in SR
 
-   [I-D.drake-teas-bgp-ls-filter-nrp] specifies BGP-LS filters for NRPs.
+   [I-D.drake-teas-bgp-ls-filter-nrp] specifies new BGP-LS attributes,
+   called BGP-LS Filters, for NRPs in SR networks.  A BGP-LS Filter
+   provides a description of a subset of the links and nodes in an
+   underlay network.  Ingress PE selects a path to an egress PE from the
+   topology defined by the BGP-LS Filters it has imported for a given
+   VPN.
 
 6.1.3.  SR Policies Extensions
 
 6.1.3.1.  BGP
 
    [I-D.dong-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
-   define extensions to BGP in order to advertise NRP-ID in an SR
-   Policy.
+   define extensions to BGP in order to advertise NRP ID in an SR
+   Policy.  The NRP ID is encoded in 4 octets.
 
 6.1.3.2.  BGP-LS
 
    [I-D.chen-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
-   for NRP in BGP-LS.
+   for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
 
 6.1.4.  PCEP Extensions
 
    [I-D.dong-pce-pcep-nrp] specifie Path Computation Element
-   Communication Protocol (PCEP) extensions for NRP.
-
-6.1.5.  LSP Ping/Traceroute Extensions
-
-   [I-D.liu-mpls-lsp-ping-nrp] specifies extenstions to the LSP Ping/
-   Traceroute to convey NRP-ID in SR domains.
+   Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
+   encoded in 4 octets.
 
 6.2.  Virtual Transport Networks (VTNs)
 
@@ -469,6 +487,9 @@ Table of Contents
    NRP-ID, but does motivate why another yet ID is thus needed rather
    than using "NRP-ID".
 
+   The length of the VTN ID depends on the context type.  When CT=0, the
+   VTN ID is a 4-octet ID.
+
 7.5.  NRP
 
 7.5.1.  Resource-aware Segments
@@ -481,7 +502,9 @@ Table of Contents
 
    [I-D.liu-spring-nrp-id-in-srv6-segment] specifies an approach to
    encode the NRP ID in the SRH.  This ID is used by intermediate IPv6
-   routers to identify the NRP to be used for forwarding.
+   routers to identify the NRP to be used for forwarding.  The encoding
+   of the NRP ID in an IPv6 address is variable; an instruction is thus
+   needed to help identifyint the NRP-ID position (e.g., low 16 bits).
 
 7.5.3.  NRP Selector in MPLS Network Actions
 
@@ -500,7 +523,14 @@ Table of Contents
 
 8.  OAM
 
-8.1.  Precision Availability Metrics for SLO-Governed End-to-End
+8.1.  LSP Ping/Traceroute Extensions
+
+   [I-D.liu-mpls-lsp-ping-nrp] specifies extenstions to the LSP Ping/
+   Traceroute to convey NRP-ID in SR domains.
+
+   The NRP-ID is a encoded as a 4-octet field.
+
+8.2.  Precision Availability Metrics for SLO-Governed End-to-End
       Services
 
    [I-D.ietf-ippm-pam] introduces a new set of metrics, called Precision

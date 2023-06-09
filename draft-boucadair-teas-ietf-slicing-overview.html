@@ -1245,16 +1245,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
                     <p id="section-toc.1-1.6.2.1.2.1.1"><a href="#section-6.1.1" class="auto internal xref">6.1.1</a>.  <a href="#name-bgp-flowspec" class="internal xref">BGP Flowspec</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.2">
-                    <p id="section-toc.1-1.6.2.1.2.2.1"><a href="#section-6.1.2" class="auto internal xref">6.1.2</a>.  <a href="#name-bgp-ls-filters" class="internal xref">BGP-LS Filters</a></p>
+                    <p id="section-toc.1-1.6.2.1.2.2.1"><a href="#section-6.1.2" class="auto internal xref">6.1.2</a>.  <a href="#name-bgp-ls-filters-in-sr" class="internal xref">BGP-LS Filters in SR</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.3">
                     <p id="section-toc.1-1.6.2.1.2.3.1"><a href="#section-6.1.3" class="auto internal xref">6.1.3</a>.  <a href="#name-sr-policies-extensions" class="internal xref">SR Policies Extensions</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.4">
                     <p id="section-toc.1-1.6.2.1.2.4.1"><a href="#section-6.1.4" class="auto internal xref">6.1.4</a>.  <a href="#name-pcep-extensions" class="internal xref">PCEP Extensions</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.5">
-                    <p id="section-toc.1-1.6.2.1.2.5.1"><a href="#section-6.1.5" class="auto internal xref">6.1.5</a>.  <a href="#name-lsp-ping-traceroute-extensi" class="internal xref">LSP Ping/Traceroute Extensions</a></p>
 </li>
                 </ul>
 </li>
@@ -1306,7 +1303,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-oam" class="internal xref">OAM</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1">
-                <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="auto internal xref">8.1</a>.  <a href="#name-precision-availability-metr" class="internal xref">Precision Availability Metrics for SLO-Governed End-to-End Services</a></p>
+                <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="auto internal xref">8.1</a>.  <a href="#name-lsp-ping-traceroute-extensi" class="internal xref">LSP Ping/Traceroute Extensions</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
+                <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="auto internal xref">8.2</a>.  <a href="#name-precision-availability-metr" class="internal xref">Precision Availability Metrics for SLO-Governed End-to-End Services</a></p>
 </li>
             </ul>
 </li>
@@ -1344,7 +1344,18 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-1-1">Various slicing efforts are being conduced within various IETF WGs (e.g., teas, idr, spring, ccamp, mpls, opsawg, 6man, and ippm) and areas (e.g., rtg, int, tsv, and ops). All these efforts are referring to the IETF framework that is developed by the teas WG (<a href="#slice-fr" class="auto internal xref">Section 2</a>), however there is a lack of a global visibility about these efforts and their interdependency.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">Also, there is a lack of cross-WG communications in some cases when a slicing-related specification is candidate for adoption or adopted by a WG. This lack of global view at the IETF level and lack of early cross-WG communications may induce some inconsistency. For example, some proposals argue in favor of specifying extensions to convey specific identifiers in packets. However, distinct identifiers are being proposed: slice identifier, NRP Selector, NRP identifier, VTN identifier, VTN resource identifier, etc. The need and relationship between these identifiers are worth to be discussed independent of the channels that are used to convey these identifiers.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-3">This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent, e.g.:<a href="#section-1-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1-4.1">Position the various concepts: network slice, network resource partition, virtual transport network, etc.<a href="#section-1-4.1" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-1-4.2">Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.<a href="#section-1-4.2" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-1-4.3">Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places.<a href="#section-1-4.3" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-1-4.4">Clarify the relationship and co-existence of identifiers if more than one is needed.<a href="#section-1-4.4" class="pilcrow">¶</a>
+</li>
+      </ul>
+<p id="section-1-5">Future versions of this document many include recommendations.<a href="#section-1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="slice-fr">
@@ -1573,7 +1584,8 @@ of Network Slice services over networks that are deployed using technologies tha
           <h4 id="name-network-slice-topology">
 <a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-network-slice-topology" class="section-name selfRef">Network Slice Topology</a>
           </h4>
-<p id="section-5.3.3-1"><span>[<a href="#I-D.liu-teas-transport-network-slice-yang" class="cite xref">I-D.liu-teas-transport-network-slice-yang</a>]</span> specifies a YANG model for IETF Network Slice Topology. The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model (<a href="#sap" class="auto internal xref">Section 5.3.1</a>).<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.3-1"><span>[<a href="#I-D.liu-teas-transport-network-slice-yang" class="cite xref">I-D.liu-teas-transport-network-slice-yang</a>]</span> specifies a YANG model for IETF Network Slice Topology.<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.3-2">The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model (<a href="#sap" class="auto internal xref">Section 5.3.1</a>).<a href="#section-5.3.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="nrp">
@@ -1624,12 +1636,12 @@ of Network Slice services over networks that are deployed using technologies tha
 <p id="section-6.1.1-1"><span>[<a href="#I-D.ietf-idr-flowspec-network-slice-ts" class="cite xref">I-D.ietf-idr-flowspec-network-slice-ts</a>]</span> specifies a BGP Flowspec extension for NRP traffic steering.<a href="#section-6.1.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="bgp-ls-filters">
+<div id="bgp-ls-filters-in-sr">
 <section id="section-6.1.2">
-          <h4 id="name-bgp-ls-filters">
-<a href="#section-6.1.2" class="section-number selfRef">6.1.2. </a><a href="#name-bgp-ls-filters" class="section-name selfRef">BGP-LS Filters</a>
+          <h4 id="name-bgp-ls-filters-in-sr">
+<a href="#section-6.1.2" class="section-number selfRef">6.1.2. </a><a href="#name-bgp-ls-filters-in-sr" class="section-name selfRef">BGP-LS Filters in SR</a>
           </h4>
-<p id="section-6.1.2-1"><span>[<a href="#I-D.drake-teas-bgp-ls-filter-nrp" class="cite xref">I-D.drake-teas-bgp-ls-filter-nrp</a>]</span> specifies BGP-LS filters for NRPs.<a href="#section-6.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.2-1"><span>[<a href="#I-D.drake-teas-bgp-ls-filter-nrp" class="cite xref">I-D.drake-teas-bgp-ls-filter-nrp</a>]</span> specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.<a href="#section-6.1.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sr-policies-extensions">
@@ -1642,7 +1654,7 @@ of Network Slice services over networks that are deployed using technologies tha
             <h5 id="name-bgp">
 <a href="#section-6.1.3.1" class="section-number selfRef">6.1.3.1. </a><a href="#name-bgp" class="section-name selfRef">BGP</a>
             </h5>
-<p id="section-6.1.3.1-1"><span>[<a href="#I-D.dong-idr-sr-policy-nrp" class="cite xref">I-D.dong-idr-sr-policy-nrp</a>]</span> and <span>[<a href="#I-D.liu-idr-bgp-network-slicing" class="cite xref">I-D.liu-idr-bgp-network-slicing</a>]</span> define extensions to BGP in order to advertise NRP-ID in an SR Policy.<a href="#section-6.1.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.3.1-1"><span>[<a href="#I-D.dong-idr-sr-policy-nrp" class="cite xref">I-D.dong-idr-sr-policy-nrp</a>]</span> and <span>[<a href="#I-D.liu-idr-bgp-network-slicing" class="cite xref">I-D.liu-idr-bgp-network-slicing</a>]</span> define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.<a href="#section-6.1.3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="bgp-ls">
@@ -1650,7 +1662,7 @@ of Network Slice services over networks that are deployed using technologies tha
             <h5 id="name-bgp-ls">
 <a href="#section-6.1.3.2" class="section-number selfRef">6.1.3.2. </a><a href="#name-bgp-ls" class="section-name selfRef">BGP-LS</a>
             </h5>
-<p id="section-6.1.3.2-1"><span>[<a href="#I-D.chen-idr-bgp-ls-sr-policy-nrp" class="cite xref">I-D.chen-idr-bgp-ls-sr-policy-nrp</a>]</span> specifies SR Policy extensions for NRP in BGP-LS.<a href="#section-6.1.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.3.2-1"><span>[<a href="#I-D.chen-idr-bgp-ls-sr-policy-nrp" class="cite xref">I-D.chen-idr-bgp-ls-sr-policy-nrp</a>]</span> specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.<a href="#section-6.1.3.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1660,15 +1672,7 @@ of Network Slice services over networks that are deployed using technologies tha
           <h4 id="name-pcep-extensions">
 <a href="#section-6.1.4" class="section-number selfRef">6.1.4. </a><a href="#name-pcep-extensions" class="section-name selfRef">PCEP Extensions</a>
           </h4>
-<p id="section-6.1.4-1"><span>[<a href="#I-D.dong-pce-pcep-nrp" class="cite xref">I-D.dong-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP.<a href="#section-6.1.4-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="lsp-pingtraceroute-extensions">
-<section id="section-6.1.5">
-          <h4 id="name-lsp-ping-traceroute-extensi">
-<a href="#section-6.1.5" class="section-number selfRef">6.1.5. </a><a href="#name-lsp-ping-traceroute-extensi" class="section-name selfRef">LSP Ping/Traceroute Extensions</a>
-          </h4>
-<p id="section-6.1.5-1"><span>[<a href="#I-D.liu-mpls-lsp-ping-nrp" class="cite xref">I-D.liu-mpls-lsp-ping-nrp</a>]</span> specifies extenstions to the LSP Ping/Traceroute to convey NRP-ID in SR domains.<a href="#section-6.1.5-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.4-1"><span>[<a href="#I-D.dong-pce-pcep-nrp" class="cite xref">I-D.dong-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.<a href="#section-6.1.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1734,6 +1738,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-vtn-resource-id-in-an-ipv6-" class="section-name selfRef">VTN Resource ID in an IPv6 Extension Header</a>
         </h3>
 <p id="section-7.4-1"><span>[<a href="#I-D.ietf-6man-enhanced-vpn-vtn-id" class="cite xref">I-D.ietf-6man-enhanced-vpn-vtn-id</a>]</span> describes a mechanism to carry an identifier, called VTN resource ID, in the IPv6 Hop-by-Hop extension header. The document claims that "VTN resource ID" is equivalent to NRP-ID, but does motivate why another yet ID is thus needed rather than using "NRP-ID".<a href="#section-7.4-1" class="pilcrow">¶</a></p>
+<p id="section-7.4-2">The length of the VTN ID depends on the context type. When CT=0, the VTN ID is a 4-octet ID.<a href="#section-7.4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="nrp-2">
@@ -1755,7 +1760,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
           <h4 id="name-nrp-id-in-srv6">
 <a href="#section-7.5.2" class="section-number selfRef">7.5.2. </a><a href="#name-nrp-id-in-srv6" class="section-name selfRef">NRP ID in SRv6</a>
           </h4>
-<p id="section-7.5.2-1"><span>[<a href="#I-D.liu-spring-nrp-id-in-srv6-segment" class="cite xref">I-D.liu-spring-nrp-id-in-srv6-segment</a>]</span> specifies an approach to encode the NRP ID in the SRH. This ID is used by intermediate IPv6 routers to identify the NRP to be used for forwarding.<a href="#section-7.5.2-1" class="pilcrow">¶</a></p>
+<p id="section-7.5.2-1"><span>[<a href="#I-D.liu-spring-nrp-id-in-srv6-segment" class="cite xref">I-D.liu-spring-nrp-id-in-srv6-segment</a>]</span> specifies an approach to encode the NRP ID in the SRH. This ID is used by intermediate IPv6 routers to identify the NRP to be used for forwarding. The encoding of the NRP ID in an IPv6 address is variable; an instruction is thus needed to help identifyint the NRP-ID position (e.g., low 16 bits).<a href="#section-7.5.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="nrp-selector-in-mpls-network-actions">
@@ -1783,13 +1788,22 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
       <h2 id="name-oam">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-oam" class="section-name selfRef">OAM</a>
       </h2>
-<div id="precision-availability-metrics-for-slo-governed-end-to-end-services">
+<div id="lsp-pingtraceroute-extensions">
 <section id="section-8.1">
-        <h3 id="name-precision-availability-metr">
-<a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-precision-availability-metr" class="section-name selfRef">Precision Availability Metrics for SLO-Governed End-to-End Services</a>
+        <h3 id="name-lsp-ping-traceroute-extensi">
+<a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-lsp-ping-traceroute-extensi" class="section-name selfRef">LSP Ping/Traceroute Extensions</a>
         </h3>
-<p id="section-8.1-1"><span>[<a href="#I-D.ietf-ippm-pam" class="cite xref">I-D.ietf-ippm-pam</a>]</span> introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice service) is provided in compliance with its
-specified SLOs.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.1-1"><span>[<a href="#I-D.liu-mpls-lsp-ping-nrp" class="cite xref">I-D.liu-mpls-lsp-ping-nrp</a>]</span> specifies extenstions to the LSP Ping/Traceroute to convey NRP-ID in SR domains.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.1-2">The NRP-ID is a encoded as a 4-octet field.<a href="#section-8.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="precision-availability-metrics-for-slo-governed-end-to-end-services">
+<section id="section-8.2">
+        <h3 id="name-precision-availability-metr">
+<a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-precision-availability-metr" class="section-name selfRef">Precision Availability Metrics for SLO-Governed End-to-End Services</a>
+        </h3>
+<p id="section-8.2-1"><span>[<a href="#I-D.ietf-ippm-pam" class="cite xref">I-D.ietf-ippm-pam</a>]</span> introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice service) is provided in compliance with its
+specified SLOs.<a href="#section-8.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
