@@ -154,7 +154,9 @@ Table of Contents
 
    *  Harmonize the definition of relevant identifiers (length,
       encoding, usage, etc.) rather than having the specification of the
-      same identifier repeated in many places.
+      same identifier repeated in many places.  For example, current
+      specifications use distinct encoding length of the same attribute
+      (variable, 16-bit, 32-bit).
 
    *  Clarify the relationship and co-existence of identifiers if more
       than one is needed.
@@ -334,10 +336,58 @@ Table of Contents
 
 5.  Orchestration and Data Models
 
+   Figure 1 provides an example of the various data models that can be
+   invoked in the context of Network Slicing.
+
+                                 +---------------+
+                                  |   Customer    |
+                                  +-------+-------+
+                  Customer Service Model  |
+                  e.g., slice-svc, ac-svc,| and bearer-svc
+                                  +-------+-------+
+                                  |    Service    |
+                                  | Orchestration |
+                                  +-------+-------+
+                   Network Model          |
+     e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
+                                  +-------+-------+
+                                  |   Network     |
+                                  | Orchestration |
+                                  +-------+-------+
+            Network Configuration Model   |
+                              +-----------+-----------+
+                              |                       |
+                     +--------+------+       +--------+------+
+                     |    Domain     |       |     Domain    |
+                     | Orchestration |       | Orchestration |
+                     +---+-----------+       +--------+------+
+          Device         |        |                   |
+          Configuration  |        |                   |
+          Model          |        |                   |
+                    +----+----+   |                   |
+                    | Config  |   |                   |
+                    | Manager |   |                   |
+                    +----+----+   |                   |
+                         |        |                   |
+                         | NETCONF/CLI..................
+                         |        |                   |
+                       +--------------------------------+
+         +----+ Bearer |                                | Bearer +----+
+         |CE#1+--------+            Network             +--------+CE#2|
+         +----+   AC   |                                |   AC   +----+
+                       +--------------------------------+
+          Site A                                                  Site B
+
+         Figure 1: Overview of Data Models used for Network Slicing
+
 5.1.  Common Models
 
-   [I-D.boro-opsawg-teas-common-ac] specifes a set of reusable types and
-   grouping to manage Attachment Circuits (ACs).
+   [RFC9181] specifies a set of reusable types and groupings to manage
+   VPN services.  Note that VPNs are used for the realization of Network
+   Slices.
+
+   [I-D.boro-opsawg-teas-common-ac] specifies a set of reusable types
+   and groupings to manage Attachment Circuits (ACs).
 
 5.2.  Service Models
 
@@ -888,6 +938,11 @@ Table of Contents
               teas-nrp-yang-00, 7 April 2023,
               <https://datatracker.ietf.org/doc/html/draft-wdbsp-teas-
               nrp-yang-00>.
+
+   [RFC9181]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
+              Ed., and Q. Wu, "A Common YANG Data Model for Layer 2 and
+              Layer 3 VPNs", RFC 9181, DOI 10.17487/RFC9181, February
+              2022, <https://www.rfc-editor.org/rfc/rfc9181>.
 
    [RFC9182]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
               Ed., Munoz, L., and A. Aguado, "A YANG Network Data Model

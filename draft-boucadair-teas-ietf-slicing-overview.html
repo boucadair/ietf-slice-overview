@@ -1350,7 +1350,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
         <li class="normal" id="section-1-4.2">Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.<a href="#section-1-4.2" class="pilcrow">¶</a>
 </li>
-        <li class="normal" id="section-1-4.3">Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places.<a href="#section-1-4.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-1-4.3">Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places. For example, current specifications  use distinct encoding length of the same attribute (variable, 16-bit, 32-bit).<a href="#section-1-4.3" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-1-4.4">Clarify the relationship and co-existence of identifiers if more than one is needed.<a href="#section-1-4.4" class="pilcrow">¶</a>
 </li>
@@ -1521,12 +1521,62 @@ of Network Slice services over networks that are deployed using technologies tha
       <h2 id="name-orchestration-and-data-mode">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-orchestration-and-data-mode" class="section-name selfRef">Orchestration and Data Models</a>
       </h2>
+<p id="section-5-1"><a href="#model-overview" class="auto internal xref">Figure 1</a> provides an example of the various data models that can be invoked in the context of Network Slicing.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<span id="name-overview-of-data-models-use"></span><div id="model-overview">
+<figure id="figure-1">
+        <div class="alignCenter art-text artwork" id="section-5-2.1">
+<pre>
+                              +---------------+
+                               |   Customer    |
+                               +-------+-------+
+               Customer Service Model  |
+               e.g., slice-svc, ac-svc,| and bearer-svc
+                               +-------+-------+
+                               |    Service    |
+                               | Orchestration |
+                               +-------+-------+
+                Network Model          |
+  e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
+                               +-------+-------+
+                               |   Network     |
+                               | Orchestration |
+                               +-------+-------+
+         Network Configuration Model   |
+                           +-----------+-----------+
+                           |                       |
+                  +--------+------+       +--------+------+
+                  |    Domain     |       |     Domain    |
+                  | Orchestration |       | Orchestration |
+                  +---+-----------+       +--------+------+
+       Device         |        |                   |
+       Configuration  |        |                   |
+       Model          |        |                   |
+                 +----+----+   |                   |
+                 | Config  |   |                   |
+                 | Manager |   |                   |
+                 +----+----+   |                   |
+                      |        |                   |
+                      | NETCONF/CLI..................
+                      |        |                   |
+                    +--------------------------------+
+      +----+ Bearer |                                | Bearer +----+
+      |CE#1+--------+            Network             +--------+CE#2|
+      +----+   AC   |                                |   AC   +----+
+                    +--------------------------------+
+       Site A                                                  Site B
+</pre>
+</div>
+<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<a href="#name-overview-of-data-models-use" class="selfRef">Overview of Data Models used for Network Slicing</a>
+        </figcaption></figure>
+</div>
 <div id="common-models">
 <section id="section-5.1">
         <h3 id="name-common-models">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-common-models" class="section-name selfRef">Common Models</a>
         </h3>
-<p id="section-5.1-1"><span>[<a href="#I-D.boro-opsawg-teas-common-ac" class="cite xref">I-D.boro-opsawg-teas-common-ac</a>]</span> specifes a set of reusable types and grouping to manage Attachment Circuits (ACs).<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-1"><span>[<a href="#RFC9181" class="cite xref">RFC9181</a>]</span> specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-2"><span>[<a href="#I-D.boro-opsawg-teas-common-ac" class="cite xref">I-D.boro-opsawg-teas-common-ac</a>]</span> specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="service-models">
@@ -2007,6 +2057,10 @@ specified SLOs.<a href="#section-8.2-1" class="pilcrow">¶</a></p>
 <dt id="I-D.wdbsp-teas-nrp-yang">[I-D.wdbsp-teas-nrp-yang]</dt>
       <dd>
 <span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">S. Peng</span>, <span class="refTitle">"A YANG Data Model for Network Resource Partitions (NRPs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-wdbsp-teas-nrp-yang-00</span>, <time datetime="2023-04-07" class="refDate">7 April 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-wdbsp-teas-nrp-yang-00">https://datatracker.ietf.org/doc/html/draft-wdbsp-teas-nrp-yang-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9181">[RFC9181]</dt>
+      <dd>
+<span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Gonzalez de Dios, O., Ed.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, and <span class="refAuthor">Q. Wu</span>, <span class="refTitle">"A Common YANG Data Model for Layer 2 and Layer 3 VPNs"</span>, <span class="seriesInfo">RFC 9181</span>, <span class="seriesInfo">DOI 10.17487/RFC9181</span>, <time datetime="2022-02" class="refDate">February 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9181">https://www.rfc-editor.org/rfc/rfc9181</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9182">[RFC9182]</dt>
       <dd>
