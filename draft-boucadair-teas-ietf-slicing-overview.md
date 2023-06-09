@@ -44,7 +44,7 @@ This document provides an overview of slicing activities in the IETF to hopefull
 
 * Position the various concepts: network slice, network resource partition, virtual transport network, etc.
 * Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.
-* Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places.
+* Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places. For example, current specifications  use distinct encoding length of the same attribute (variable, 16-bit, 32-bit).
 * Clarify the relationship and co-existence of identifiers if more than one is needed.
 
 Future versions of this document many include recommendations.
@@ -141,9 +141,55 @@ IETF Network Slices can be realized using existing tools ({{no-extension}}). The
 
 # Orchestration and Data Models
 
+{{model-overview}} provides an example of the various data models that can be invoked in the context of Network Slicing.
+
+~~~
+                              +---------------+
+                               |   Customer    |
+                               +-------+-------+
+               Customer Service Model  |
+               e.g., slice-svc, ac-svc,| and bearer-svc
+                               +-------+-------+
+                               |    Service    |
+                               | Orchestration |
+                               +-------+-------+
+                Network Model          |
+  e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
+                               +-------+-------+
+                               |   Network     |
+                               | Orchestration |
+                               +-------+-------+
+         Network Configuration Model   |
+                           +-----------+-----------+
+                           |                       |
+                  +--------+------+       +--------+------+
+                  |    Domain     |       |     Domain    |
+                  | Orchestration |       | Orchestration |
+                  +---+-----------+       +--------+------+
+       Device         |        |                   |
+       Configuration  |        |                   |
+       Model          |        |                   |
+                 +----+----+   |                   |
+                 | Config  |   |                   |
+                 | Manager |   |                   |
+                 +----+----+   |                   |
+                      |        |                   |
+                      | NETCONF/CLI..................
+                      |        |                   |
+                    +--------------------------------+
+      +----+ Bearer |                                | Bearer +----+
+      |CE#1+--------+            Network             +--------+CE#2|
+      +----+   AC   |                                |   AC   +----+
+                    +--------------------------------+
+       Site A                                                  Site B
+~~~
+{: #model-overview title="Overview of Data Models used for Network Slicing" artwork-align="center"}
+
 ## Common Models
 
-{{?I-D.boro-opsawg-teas-common-ac}} specifes a set of reusable types and grouping to manage Attachment Circuits (ACs).
+{{?RFC9181}} specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.
+
+{{?I-D.boro-opsawg-teas-common-ac}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
 
 ## Service Models
 
