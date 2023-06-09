@@ -36,15 +36,13 @@ This document lists a set of slicing-related specifications that are being devel
 
 # Introduction
 
-Slicing efforts are being conducted within the IETF in various WGs (e.g., teas, idr, spring, ccamp, opsawg).
+Various slicing efforts are being conduced within various IETF WGs (e.g., teas, idr, spring, ccamp, mpls, opsawg, 6man, and ippm) and areas (e.g., rtg, int, tsv, and ops). All these efforts are referring to the IETF framework that is developed by the teas WG ({{slice-fr}}), however there is a lack of a global visibility about these efforts and their interdependency.
 
-Some proposals argue in favor of specifyting extensions to convey specific identifiers in packets. However,
-distinct identifiers are being proposed: slice identifier, NRP identifier, VTN identifier, VTN resource identifier, etc.
+Also, there is a lack of cross-WG communications in some cases when a slicing-related specification is candidate for adoption or adopted by a WG. This lack of global view at the IETF level and lack of early cross-WG communications may induce some inconsistency. For example, some proposals argue in favor of specifying extensions to convey specific identifiers in packets. However, distinct identifiers are being proposed: slice identifier, NRP Selector, NRP identifier, VTN identifier, VTN resource identifier, etc. The need and relationship between these identifiers are worth to be discussed independent of the channels that are used to convey these identifiers.
 
-TBC.
+This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent.
 
-
-# Reference Framework and Architecture
+# Reference Framework and Architecture {#slice-fr}
 
 {{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
 of Network Slice services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice.
@@ -61,15 +59,19 @@ The IETF Network Slice service is specified in terms of:
 * a set of one or more connectivity constructs between subsets of these SDPs, and
 *  a set of service objectives for each SDP sending to each connectivity construct.
 
+The service objectives can be expressed as Service Level Objectives (SLOs) or Service Level Expectations (SLEs).
+
 In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an IETF Network Slice service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).
 
 In other deployments, IETF Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).
+
+IETF Network Slices can be realized using existing tools ({{no-extension}}). The extensions listed in {{cp-ext}} or {{dp-ext}} are not required in such a case.
 
 {{?I-D.ietf-teas-ietf-network-slices}} does not provide any recommendation about the technological means to realize an IETF Network Slice service. These considerations are deployment specific.
 
 # Models for Realizing Network Slices
 
-## Using Current IP/MPLS Technologies
+## Using Current IP/MPLS Technologies {#no-extension}
 
 {{?I-D.srld-teas-5g-slicing}} describes a model for the realization of IETF Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
 
@@ -78,289 +80,202 @@ In other deployments, IETF Network Slices can be hosted directly on the underlay
 * Coarse resource control at the transit, and
 * Capacity planning/management for efficient usage of provider network resources.
 
-## Using Network Resource Partitions and Slice-Flow Aggregates
+## Using Network Resource Partitions and Slice-Flow Aggregates {#flow-agg}
 
-{{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networls. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more IETF Network Slice services.
+{{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more IETF Network Slice services.
 
 {{?I-D.ietf-teas-ns-ip-mpls}} also introduces the notion of NRP Policy that is used to trigger the creation of NRPs that will support a given Slice-Flow Aggregate. In some deployment schemes, packets that belong to a Slice-Flow Aggregate are forwarded by intermediate node along the appropriate NRP by processing an NRP Selector that is carried by these packets.
 
-## OTN Slicing
+## Optical Transport Networks (OTN) Slicing
 
-{{?I-D.ietf-ccamp-yang-otn-slicing}}: Framework and Data Model for OTN Network Slicing (note that this doc also specif data models)
+{{?I-D.ietf-ccamp-yang-otn-slicing}} defines Optical Transport Networks (OTN) slice as an OTN virtual network topology connecting a number of OTN endpoints using a set of shared or dedicated OTN network resources to satisfy specific SLOs. OTN slices are considered as a technology-specific realization of an IETF Network Slice in the OTN domain.
 
 ## VPN+
 
-   {{?I-D.ietf-teas-enhanced-vpn}} describes the framework and the
-   candidate component technologies for providing enhanced VPN (VPN+)
-   services based on VPN and Traffic Engineering (TE) technologies.
-   Enhanced VPN (VPN+) can be used for the realization of IETF network
-   slices.
+{{?I-D.ietf-teas-enhanced-vpn}} describes a framework for providing enhanced VPN services based upon VPN and Traffic Engineering (TE) technologies. Enhanced VPN (VPN+) can be used for the realization of IETF network slices. This document introduces the concept of Virtual Transport Network (VTN), which is a virtual underlay network consisting of a subset of network resources allocated from the physical underlay network, and is associated with a customized network topology.
 
 ## Instantiation in Service Providers Networks
 
-{{?I-D.barguil-teas-network-slices-instantation}}: Instantiation of IETF Network Slices in Service Providers Network
+{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the IETF Network Slice services in service provider networks using available data models. In particular, this document describes the relationship between service models for managing the IETF Network Slice services and Network Models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
 
-## Network Slice Controllers
+## Structuring Network Slice Controllers
 
-{{?I-D.contreras-teas-slice-controller-models}}: IETF Network Slice Controller and its associated data models
+{{?I-D.contreras-teas-slice-controller-models}} proposes an approach for structuring the IETF Network Slice Controller as well as how to use different data models being defined for IETF Network Slice Service provision.
 
-## SR-based 2-Level Hierarchical Network Slices
+## SR-based Hierarchical Network Slices
 
-{{?I-D.gong-teas-hierarchical-slice-solution}}: Segment Routing based Solution for Hierarchical IETF Network Slices
+{{?I-D.gong-teas-hierarchical-slice-solution}} proposes a hierarchical approach for realizing IETF Network Slices in Segment Routing domain. The approach involves two levels:
 
-This document describes a Segment Routing based solution for two-
-   level hierarchical IETF network slices. Level-1 network slice is
-   realized by associating Flex-Algo with dedicated sub-interfaces, and
-   level-2 network slice is realized by using SR Policy with additional
-   NRP-ID on data plane.
+* Level 1 Network Slices are realized using Flex-Algo.
+* Level 2 forwarding paths are restricted in the Level 1 topology by using SR Policy and NRP-ID in the data plane.
 
 ## Realization of Composite Network Slices
 
-{{?I-D.li-teas-composite-network-slices}}: Realization of Composite IETF Network Slices
-
-   This document first describes the possible use cases of composite
-   IETF network slices, then it provides considerations about the
-   realization of composite IETF network slices.  For the interaction
-   between IETF network slices with 5G network slices, the identifiers
-   of the 5G network slice may be introduced into IETF networks.  For
-   the multi-domain IETF network slices, the Inter-Domain Network
-   Resource Partition Identifier (Inter-domain NRP ID) is defined.  For
-   the hierarchical IETF network slices, the structure of the NRP ID is
-   discussed.  These network slice-related identifiers may be used in
-   the data plane, control plane and management plane of the network for
-   the instantiation and management of composite IETF network slices.
-   This document also describes the management considerations of
-   composite network slices.
+{{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite IETF Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-Domain Network Resource Partition Identifier (Inter-domain NRP ID).
 
 # Applicability and Mapping Scenarios
 
 ## 3GPP 5G End-to-End Network Slices
 
-{{?I-D.ietf-teas-5g-network-slice-application}}: IETF Network Slice Application in 3GPP 5G End-to-End Network Slice
+{{?I-D.ietf-teas-5g-network-slice-application}} focuses on the application of IETF Network Slices in the context of the 3GPP 5G slices.
 
+## Abstraction and Control of Traffic Engineered Networks (ACTN)
 
-## ACTN
-
-{{?I-D.ietf-teas-applicability-actn-slicing}}: Applicability of Abstraction and Control of Traffic Engineered Networks (ACTN) to Network Slicing
+{{?I-D.ietf-teas-applicability-actn-slicing}} describes the applicability of ACTN to Network Slicing.
 
 ## Mobility-Aware Transport Network Slicing
 
-{{?I-D.ietf-dmm-tn-aware-mobility}}: This document describes mapping of 5G slices to IP or Layer 2
-   transport network slices when the IP transport network (slice
-   provider) is separated from the networks in which the 5G network
-   functions are deployed (for example, 5G functions distributed across
-   data centers).
+{{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to IETF Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding IETF Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
 
-## DETNET
+## DetNet
 
-{{?I-D.sw-detnet-network-slice-mapping-yang}}: YANG Data Model for DetNet Mapping with Network Slice
+{{?I-D.sw-detnet-network-slice-mapping-yang}} describes the applicability of DetNet to IETF Network Slice, particularly to provide deterministic services. The document describes how to use DetNet flow aggregation as the Slice-Flow Aggregates over an underlying NRP following the approach in {{flow-agg}}.
 
 
 # Orchestration and Data Models
 
 ## Common Models
 
-{{?I-D.boro-opsawg-teas-common-ac}}: A Common YANG Data Model for Attachment Circuits
-
+{{?I-D.boro-opsawg-teas-common-ac}} specifes a set of reusable types and grouping to manage Attachment Circuits (ACs).
 
 ## Service Models
 
-### Attachment Circuit as a Service Data Model
+### Attachment Circuit as a Service (ACaaS) Data Model
 
-{{?I-D.boro-opsawg-teas-attachment-circuit}}: YANG Data Models for 'Attachment Circuits'-as-a-Service (ACaaS)
-
+{{?I-D.boro-opsawg-teas-attachment-circuit}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
 
 ### Network Slice Service Data Model
 
-{{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}: A YANG Data Model for the IETF Network Slice Service
-
+{{?I-D.ietf-teas-ietf-network-slice-nbi-yang}} defines a YANG data model for manaing IETF Network Slice Services.
 
 ## Network Models
 
-### Service Attachment Points (SAPs)
+### Service Attachment Points (SAPs) {#sap}
+
+{{?I-D.ietf-opsawg-sap}} defines a YANG data model for representing an abstract
+   view of the provider network topology that contains the points from
+   which its services can be attached (e.g., basic connectivity, VPN,
+   network slices).  Also, the model can be used to retrieve the points
+   where the services are actually being delivered to customers
+   (including peer networks).
+
+A SAP network topology can be used for one or multiple service types ('service-type'). Setting this data node to 'network-slice' allows a controller to expose where IETF Network Slices services are being delivered. It can also be used to check where IETF Network Slice services can be delivered.
 
 ### AC-augmented SAPs
 
-{{?I-D.boro-opsawg-ntw-attachment-circuit}}: A Network YANG Data Model for Attachment Circuits
+{{?I-D.boro-opsawg-ntw-attachment-circuit}} augments the SAP model with more details for managing ACs at the network level.
 
 ### Network Slice Topology
 
-{{?I-D.liu-teas-transport-network-slice-yang}}: IETF Network Slice Topology YANG Data Model
+{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for IETF Network Slice Topology. The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model ({{sap}}).
 
 ### NRP
 
-{{?I-D.wdbsp-teas-nrp-yang}}: A YANG Data Model for Network Resource Partitions (NRPs)
+{{?I-D.wdbsp-teas-nrp-yang}} specifies a YANG data model for managing NRPs.
 
 ### Network Slice Mapping
 
-{{?I-D.dhody-teas-ietf-network-slice-mapping}}: IETF Network Slice Service Mapping YANG Model
+{{?I-D.dhody-teas-ietf-network-slice-mapping}} specifies an IETF Network Slice Service mapping YANG model. The model supports the following mappings:
 
+   *  L3NM {{?RFC9182}}
+   *  L2NM {{?RFC9291}}
+   *  TE {{?I-D.ietf-teas-te-service-mapping-yang}}
+   *  NRP
 
-   Currently following mapping are supported:
-
-   *  L3NM: The L3 network model (L3NM) describes a L3VPN Service in the
-      Service Provider Network.  It contains information of the Service
-      Provider network and might include allocated resources.  It can be
-      used by network controllers to manage and control the L3VPN
-      Service configuration in the Service Provider network.  This model
-      maps an IETF network slice to a L3VPN ID.
-
-   *  L2NM: The L2 network model (L2NM) describes a L2VPN Service in the
-      Service Provider Network.  It contains information of the Service
-      Provider network and might include allocated resources.  It can be
-      used by network controllers to manage and control the L2VPN
-      Service configuration in the Service Provider network.  This model
-      maps an IETF network slice to a L2VPN ID.
-
-   *  TE: The TE mapping is specified in
-      [I-D.ietf-teas-te-service-mapping-yang].  The mapping can be done
-      to the following TE resouces:
-
-      -  Virtual Networks (VN) [RFC8453]
-
-      -  TE-Tunnels
-
-      -  TE-Topology
-
-   *  NRP: [I-D.ietf-teas-ietf-network-slices] defines IETF network
-      slice services that provide connectivity coupled with network
-      resources commitment between a number of endpoints over a shared
-      network infrastructure and, for scalability concerns, defines NRP
-      to host one or a group of network slice services according to
-      characteristics including SLOs and SLEs.  Along with mapping to
-      VPN, this model maps an IETF network slice to a NRP ID.
-
-
-
-# Control Plane Extensions
+# Control Plane Extensions {#cp-ext}
 
 ## NRP
 
 ### BGP Flowspec
 
-{{?I-D.ietf-idr-flowspec-network-slice-ts}}: BGP Flowspec for IETF Network Slice Traffic Steering
+{{?I-D.ietf-idr-flowspec-network-slice-ts}} specifies a BGP Flowspec extension for NRP traffic steering.
 
 ### BGP-LS Filters
 
-{{?I-D.drake-teas-bgp-ls-filter-nrp}}: Using BGP-LS Filters to Instanted Network Resource Partitions
+{{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies BGP-LS filters for NRPs.
 
 ### SR Policies Extensions
 
 #### BGP
 
-{{?I-D.dong-idr-sr-policy-nrp}}: BGP SR Policy Extensions for Network Resource Partition
-
-{{?I-D.liu-idr-bgp-network-slicing}}: This document defines extensions to BGP in order to advertise NRP-ID
-   in SR policy.
+{{?I-D.dong-idr-sr-policy-nrp}} and {{?I-D.liu-idr-bgp-network-slicing}} define extensions to BGP in order to advertise NRP-ID in an SR Policy.
 
 #### BGP-LS
 
-{{?I-D.chen-idr-bgp-ls-sr-policy-nrp}}: SR Policies Extensions for NRP in BGP-LS
-
+{{?I-D.chen-idr-bgp-ls-sr-policy-nrp}} specifies SR Policy extensions for NRP in BGP-LS.
 
 ### PCEP Extensions
 
-{{?I-D.dong-pce-pcep-nrp}}: Path Computation Element Communication Protocol (PCEP) Extensions for Network Resource Partition (NRP)
+{{?I-D.dong-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP.
 
 ### LSP Ping/Traceroute Extensions
 
-{{?I-D.liu-mpls-lsp-ping-nrp}}: LSP Ping/Traceroute for SR-MPLS NRP SIDs
+{{?I-D.liu-mpls-lsp-ping-nrp}} specifies extenstions to the LSP Ping/Traceroute to convey NRP-ID in SR domains.
 
-# Data Plane Extensions
+## Virtual Transport Networks (VTNs)
 
-## Slice Identifier in the Source Address
+### IS-IS MT
 
-{{?I-D.cheng-spring-srv6-encoding-network-sliceid}}: Encoding Network Slice Identification for SRv6
+{{?I-D.ietf-lsr-isis-sr-vtn-mt}} specifies how to use IS-IS Multi-Topology (MT) for SR-based VTNs.
 
-xx
-   When an SR domain enables network slicing, the ingress PE should
-   reserve least significant bits in a local IPv6 address for slicing
-   use. The number of bits used to encode SLID is governed by local
-   policy and uniform within the SR domain.
+### BGP-LS
 
-   When a packet enters the SR domain from an ingress PE, the ingress
-   PE encapsulates the packet in an outer IPv6 header and optional SRH
-   as defined in [RFC8754]. The ingress PE MAY also classify the packet
-   into a slice and set the slice identifier as follows:
+{{?I-D.ietf-idr-bgpls-sr-vtn-mt}} describes a mechanism to distribute the information of SR-based VTNs to the  network controller using BGP-LS with Multi-Topology.
 
-   o Write this SLID in the least significant bits of source address
-      of the outer IPv6 header.
-
-   o Set the SLID Presence Indicator (SPI) in the outer IPv6 header.
-xx
-
-
-## Slice Identifier in IPv6 Flow Label
-
-The Slice Identifier (SLID) is a value encoded within the IPv6 packet
-   that allows transit routers to process the packet according to
-   network slice-based policy.
-
-{{?I-D.filsfils-spring-srv6-stateless-slice-id}} proposes to encode the SLID in a portion of the IPv6
-Flow Label.
-
-## VTN Resource ID in an IPv6 Extension Header
-
-   {{?I-D.ietf-6man-enhanced-vpn-vtn-id}} describes the mechanism of
-   carrying the VTN resource ID (which is equivalent to NRP-ID) of a
-   network domain in the IPv6 Hop-by-Hop (HBH) extension header.
+# Data Plane Extensions {#dp-ext}
 
 ## Slice Identifier in the MPLS Entropy Label
 
-{{?I-D.decraene-mpls-slid-encoded-entropy-label-id}}: Using Entropy Label for Network Slice Identification in MPLS networks.
+{{?I-D.decraene-mpls-slid-encoded-entropy-label-id}} proposes an approach to encode slice identifiers in a portion of the MPLS Entropy Label (EL). The number of bits to be used for encoding the slice identifier in the EL is policy-based. Transit LSRs uses the slice identifier in the EL to apply per-slice policies.
 
+## Slice Identifier in IPv6 Flow Label
 
-This document encodes the slice identifier in a portion of the MPLS
-   Entropy Label (EL) defined in [RFC6790].
+{{?I-D.filsfils-spring-srv6-stateless-slice-id}} proposes to encode slice identifers in a portion of the IPv6 Flow Label. Slice identifiers are used by intermediate IPv6 routers to process the packet according to
+a network slice policy.
 
+## Slice Identifier in the Source Address of Encapsulated SRH
 
+When an ingress SR router encapsulates a packet in an IPv6 packet with an SRH, {{?I-D.cheng-spring-srv6-encoding-network-sliceid}} suggests to use the least significant bits of the outer IPv6 source address to encode a slide identifier. SLID Presence Indicator (SPI) is used to indicate the presence of a slice identifier. The number of bits used to encode slice identifiers is local to an SR domain.
 
+## VTN Resource ID in an IPv6 Extension Header
+
+{{?I-D.ietf-6man-enhanced-vpn-vtn-id}} describes a mechanism to carry an identifier, called VTN resource ID, in the IPv6 Hop-by-Hop extension header. The document claims that "VTN resource ID" is equivalent to NRP-ID, but does motivate why another yet ID is thus needed rather than using "NRP-ID".
 
 ## NRP
 
 ### Resource-aware Segments
 
-In SR networks, an NRP can be established and represented using either
-a set of NRP-specific resource-aware segments {{?I-D.ietf-spring-resource-aware-segments}}
+An NRP can be represented in SR networks using a set of NRP-specific resource-aware segments {{?I-D.ietf-spring-resource-aware-segments}}
 {{?I-D.ietf-spring-sr-for-enhanced-vpn}}.
 
 ### NRP ID in SRv6
 
-{{?I-D.liu-spring-nrp-id-in-srv6-segment}}: NRP ID in SRv6 segment
+{{?I-D.liu-spring-nrp-id-in-srv6-segment}} specifies an approach to encode the NRP ID in the SRH. This ID is used by intermediate IPv6 routers to identify the NRP to be used for forwarding.
 
-### MPLS Network Actions
+### NRP Selector in MPLS Network Actions
 
-{{?I-D.li-mpls-mna-nrp-selector}}: MPLS Network Actions for Network Resource Partition Selector
+As mentioned in {{flow-agg}}, packets that are associated with a Slice-Flow Aggregate may carry an NRP Selector (NRPS). This selector is intended to be conveyed in the packet's network layer header to identify the flow aggregate to which a packet belongs. {{?I-D.li-mpls-mna-nrp-selector}} investigates a set of options to use MPLS Network Actions (MNA) to carry the NRPS:
 
-# spec/target WG
+* 13-bit NRP Selector (NRPS13) Action
+* 20-bit NRP Selector (NRPS20) Action
+* 20-bit Entropy and NRP Selector (ENRPS20) Action
+
+# OAM
+
+## Precision Availability Metrics for SLO-Governed End-to-End Services
+
+{{?I-D.ietf-ippm-pam}} introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice service) is provided in compliance with its
+specified SLOs.
 
 # Misc
 
 ## Scalability Considerations for NRP
 
-{{?I-D.ietf-teas-nrp-scalability}}
-
-## Virtual Transport Networks
-
-### IS-IS MT
-
-Using IS-IS Multi-Topology (MT) for Segment Routing based Virtual Transport Network
-{{?I-D.ietf-lsr-isis-sr-vtn-mt}}
-
-### BGP-LS
-
-BGP-LS with Multi-topology for Segment Routing based Virtual Transport Networks
-{{?I-D.ietf-idr-bgpls-sr-vtn-mt}}
-
-This document describes a
-   mechanism to distribute the information of SR based VTNs to the
-   network controller using BGP-LS with Multi-
-   Topology.
-
+{{?I-D.ietf-teas-nrp-scalability}} discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested IETF Network Slice services that would require NRPs. Such an increase of slices is speculative at this stage.
 
 # Security Considerations
 
-TBC.
+Security considerations of the mechanisms listed in the document are discussed in the relevant documents that specify these mechanisms.
 
 # IANA Considerations {#IANA}
 
