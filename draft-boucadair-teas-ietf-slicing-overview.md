@@ -40,7 +40,14 @@ Various slicing efforts are being conduced within various IETF WGs (e.g., teas, 
 
 Also, there is a lack of cross-WG communications in some cases when a slicing-related specification is candidate for adoption or adopted by a WG. This lack of global view at the IETF level and lack of early cross-WG communications may induce some inconsistency. For example, some proposals argue in favor of specifying extensions to convey specific identifiers in packets. However, distinct identifiers are being proposed: slice identifier, NRP Selector, NRP identifier, VTN identifier, VTN resource identifier, etc. The need and relationship between these identifiers are worth to be discussed independent of the channels that are used to convey these identifiers.
 
-This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent.
+This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent, e.g.:
+
+* Position the various concepts: network slice, network resource partition, virtual transport network, etc.
+* Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.
+* Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places.
+* Clarify the relationship and co-existence of identifiers if more than one is needed.
+
+Future versions of this document many include recommendations.
 
 # Reference Framework and Architecture {#slice-fr}
 
@@ -167,7 +174,9 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### Network Slice Topology
 
-{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for IETF Network Slice Topology. The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model ({{sap}}).
+{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for IETF Network Slice Topology.
+
+The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model ({{sap}}).
 
 ### NRP
 
@@ -190,27 +199,23 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 {{?I-D.ietf-idr-flowspec-network-slice-ts}} specifies a BGP Flowspec extension for NRP traffic steering.
 
-### BGP-LS Filters
+### BGP-LS Filters in SR
 
-{{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies BGP-LS filters for NRPs.
+{{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.
 
 ### SR Policies Extensions
 
 #### BGP
 
-{{?I-D.dong-idr-sr-policy-nrp}} and {{?I-D.liu-idr-bgp-network-slicing}} define extensions to BGP in order to advertise NRP-ID in an SR Policy.
+{{?I-D.dong-idr-sr-policy-nrp}} and {{?I-D.liu-idr-bgp-network-slicing}} define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.
 
 #### BGP-LS
 
-{{?I-D.chen-idr-bgp-ls-sr-policy-nrp}} specifies SR Policy extensions for NRP in BGP-LS.
+{{?I-D.chen-idr-bgp-ls-sr-policy-nrp}} specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.
 
 ### PCEP Extensions
 
-{{?I-D.dong-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP.
-
-### LSP Ping/Traceroute Extensions
-
-{{?I-D.liu-mpls-lsp-ping-nrp}} specifies extenstions to the LSP Ping/Traceroute to convey NRP-ID in SR domains.
+{{?I-D.dong-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.
 
 ## Virtual Transport Networks (VTNs)
 
@@ -241,6 +246,8 @@ When an ingress SR router encapsulates a packet in an IPv6 packet with an SRH, {
 
 {{?I-D.ietf-6man-enhanced-vpn-vtn-id}} describes a mechanism to carry an identifier, called VTN resource ID, in the IPv6 Hop-by-Hop extension header. The document claims that "VTN resource ID" is equivalent to NRP-ID, but does motivate why another yet ID is thus needed rather than using "NRP-ID".
 
+The length of the VTN ID depends on the context type. When CT=0, the VTN ID is a 4-octet ID.
+
 ## NRP
 
 ### Resource-aware Segments
@@ -250,7 +257,7 @@ An NRP can be represented in SR networks using a set of NRP-specific resource-aw
 
 ### NRP ID in SRv6
 
-{{?I-D.liu-spring-nrp-id-in-srv6-segment}} specifies an approach to encode the NRP ID in the SRH. This ID is used by intermediate IPv6 routers to identify the NRP to be used for forwarding.
+{{?I-D.liu-spring-nrp-id-in-srv6-segment}} specifies an approach to encode the NRP ID in the SRH. This ID is used by intermediate IPv6 routers to identify the NRP to be used for forwarding. The encoding of the NRP ID in an IPv6 address is variable; an instruction is thus needed to help identifyint the NRP-ID position (e.g., low 16 bits).
 
 ### NRP Selector in MPLS Network Actions
 
@@ -261,6 +268,12 @@ As mentioned in {{flow-agg}}, packets that are associated with a Slice-Flow Aggr
 * 20-bit Entropy and NRP Selector (ENRPS20) Action
 
 # OAM
+
+## LSP Ping/Traceroute Extensions
+
+{{?I-D.liu-mpls-lsp-ping-nrp}} specifies extenstions to the LSP Ping/Traceroute to convey NRP-ID in SR domains.
+
+The NRP-ID is a encoded as a 4-octet field.
 
 ## Precision Availability Metrics for SLO-Governed End-to-End Services
 
