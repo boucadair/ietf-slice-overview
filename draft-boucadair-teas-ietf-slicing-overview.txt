@@ -4,8 +4,8 @@
 
 Traffic Engineering Architecture and Signaling              M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                               9 June 2023
-Expires: 11 December 2023
+Intended status: Informational                              12 June 2023
+Expires: 14 December 2023
 
 
               An Overview of IETF Network Slicing Efforts
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 December 2023.
+   This Internet-Draft will expire on 14 December 2023.
 
 Copyright Notice
 
@@ -93,14 +93,15 @@ Table of Contents
        5.3.4.  NRP
        5.3.5.  Network Slice Mapping
    6.  Control Plane Extensions
-     6.1.  NRP
-       6.1.1.  BGP Flowspec
-       6.1.2.  BGP-LS Filters in SR
-       6.1.3.  SR Policies Extensions
-       6.1.4.  PCEP Extensions
-     6.2.  Virtual Transport Networks (VTNs)
-       6.2.1.  IS-IS MT
-       6.2.2.  BGP-LS
+     6.1.  BGP Classful Transport Planes
+     6.2.  NRP
+       6.2.1.  BGP Flowspec
+       6.2.2.  BGP-LS Filters in SR
+       6.2.3.  SR Policies Extensions
+       6.2.4.  PCEP Extensions
+     6.3.  Virtual Transport Networks (VTNs)
+       6.3.1.  IS-IS MT
+       6.3.2.  BGP-LS
    7.  Data Plane Extensions
      7.1.  Slice Identifier in the MPLS Entropy Label
      7.2.  Slice Identifier in IPv6 Flow Label
@@ -455,14 +456,26 @@ Table of Contents
 
 6.  Control Plane Extensions
 
-6.1.  NRP
+6.1.  BGP Classful Transport Planes
 
-6.1.1.  BGP Flowspec
+   [I-D.ietf-idr-bgp-ct] specifies mechanisms for classifying underlay
+   routes into a set of classes, called transport classes, and mapping
+   service-specific routes to a specific transport class.  For example,
+   [I-D.ietf-idr-bgp-ct] can be used to create a customized topology for
+   Network Slices.  These topologies (transport classes) will be
+   typically created to satisfy certain TE characteristics.  A new
+   Transport Class Route Target extended community is defined for this
+   purpose.  A transport class is identified by a 4-octet identifier:
+   Transport Class ID.
+
+6.2.  NRP
+
+6.2.1.  BGP Flowspec
 
    [I-D.ietf-idr-flowspec-network-slice-ts] specifies a BGP Flowspec
    extension for NRP traffic steering.
 
-6.1.2.  BGP-LS Filters in SR
+6.2.2.  BGP-LS Filters in SR
 
    [I-D.drake-teas-bgp-ls-filter-nrp] specifies new BGP-LS attributes,
    called BGP-LS Filters, for NRPs in SR networks.  A BGP-LS Filter
@@ -471,33 +484,33 @@ Table of Contents
    topology defined by the BGP-LS Filters it has imported for a given
    VPN.
 
-6.1.3.  SR Policies Extensions
+6.2.3.  SR Policies Extensions
 
-6.1.3.1.  BGP
+6.2.3.1.  BGP
 
    [I-D.dong-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
    define extensions to BGP in order to advertise NRP ID in an SR
    Policy.  The NRP ID is encoded in 4 octets.
 
-6.1.3.2.  BGP-LS
+6.2.3.2.  BGP-LS
 
    [I-D.chen-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
    for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
 
-6.1.4.  PCEP Extensions
+6.2.4.  PCEP Extensions
 
    [I-D.dong-pce-pcep-nrp] specifie Path Computation Element
    Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
    encoded in 4 octets.
 
-6.2.  Virtual Transport Networks (VTNs)
+6.3.  Virtual Transport Networks (VTNs)
 
-6.2.1.  IS-IS MT
+6.3.1.  IS-IS MT
 
    [I-D.ietf-lsr-isis-sr-vtn-mt] specifies how to use IS-IS Multi-
    Topology (MT) for SR-based VTNs.
 
-6.2.2.  BGP-LS
+6.3.2.  BGP-LS
 
    [I-D.ietf-idr-bgpls-sr-vtn-mt] describes a mechanism to distribute
    the information of SR-based VTNs to the network controller using BGP-
@@ -747,6 +760,13 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-
               aware-mobility-06>.
 
+   [I-D.ietf-idr-bgp-ct]
+              Vairavakkalai, K. and N. Venkataraman, "BGP Classful
+              Transport Planes", Work in Progress, Internet-Draft,
+              draft-ietf-idr-bgp-ct-04, 9 June 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
+              ct-04>.
+
    [I-D.ietf-idr-bgpls-sr-vtn-mt]
               Xie, C., Li, C., Dong, J., and Z. Li, "BGP-LS with Multi-
               topology for Segment Routing based Virtual Transport
@@ -956,7 +976,7 @@ Table of Contents
 
 Acknowledgments
 
-   Thanks to TBC.
+   Thanks to Kaliraj Vairavakkalai for the comments.
 
 Author's Address
 
