@@ -239,6 +239,10 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 # Control Plane Extensions {#cp-ext}
 
+## BGP Classful Transport Planes
+
+{{?I-D.ietf-idr-bgp-ct}} specifies mechanisms for classifying underlay routes into a set of classes, called transport classes, and mapping service-specific routes to a specific transport class. For example, {{?I-D.ietf-idr-bgp-ct}} can be used to create a customized topology for Network Slices. These topologies (transport classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target extended community is defined for this purpose. A transport class is identified by a 4-octet identifier: Transport Class ID.
+
 ## NRP
 
 ### BGP Flowspec
@@ -345,4 +349,4 @@ This document does not make any request to IANA.
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to TBC.
+Thanks to Kaliraj Vairavakkalai for the comments.
