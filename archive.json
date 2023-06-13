@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-06-11T01:21:34.825550+00:00",
+  "timestamp": "2023-06-13T01:12:56.206593+00:00",
   "repo": "boucadair/ietf-slice-overview",
   "labels": [
     {
@@ -50,5 +50,34 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJs7aqs5Su_s-",
+      "title": "BGP-CT",
+      "url": "https://github.com/boucadair/ietf-slice-overview/pull/1",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-06-12T06:56:19Z",
+      "updatedAt": "2023-06-12T15:09:09Z",
+      "baseRepository": "boucadair/ietf-slice-overview",
+      "baseRefName": "main",
+      "baseRefOid": "22ba9ec59b7b59acdd78cbeed034740df1da9e43",
+      "headRepository": "boucadair/ietf-slice-overview",
+      "headRefName": "boucadair-patch-1",
+      "headRefOid": "e38582f63c83c9db1c2cafbe3f1eb25988ac9c0c",
+      "closedAt": "2023-06-12T15:09:07Z",
+      "mergedAt": "2023-06-12T15:09:07Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "1128f83361a98ff0506e3326d6b4dc6d12b7cc8f"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
