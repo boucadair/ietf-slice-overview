@@ -330,6 +330,12 @@ The NRP-ID is a encoded as a 4-octet field.
 {{?I-D.ietf-ippm-pam}} introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice service) is provided in compliance with its
 specified SLOs.
 
+## IPFIX Information Elements for NRP
+
+{{?I-D.liu-opsawg-ipfix-network-slice}} explores how to use IPFIX to export NRP IDs. However, there is currently no one single stable/authoritative specification of NRP-ID. This identifier is being proposed as data plane and control plane extensions. These proposals do not share the same ID format.
+
+The initial version of {{?I-D.liu-opsawg-ipfix-network-slice}} does explain which plan is used, in which layer the ID was exported, etc. Defining an IPFIX IE is useful for network observability, however there is no stable specification yet of the ID to be exported.
+
 # Misc
 
 ## Scalability Considerations for NRP
