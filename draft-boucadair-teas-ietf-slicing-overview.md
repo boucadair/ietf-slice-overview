@@ -241,7 +241,13 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 ## BGP Classful Transport Planes
 
-{{?I-D.ietf-idr-bgp-ct}} specifies mechanisms for classifying underlay routes into a set of classes, called transport classes, and mapping service-specific routes to a specific transport class. For example, {{?I-D.ietf-idr-bgp-ct}} can be used to create a customized topology for Network Slices. These topologies (transport classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target extended community is defined for this purpose. A transport class is identified by a 4-octet identifier: Transport Class ID.
+{{?I-D.ietf-idr-bgp-ct}} specifies mechanisms for classifying underlay routes into a set of classes, called Transport Classes, and mapping service-specific routes to a specific Transport Class. For example, {{?I-D.ietf-idr-bgp-ct}} can be used to create a customized topology for Network Slices. These topologies (Transport Classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target Extended Community is defined for this purpose. A Transport Class is identified by a 4-octet identifier: Transport Class ID.
+
+## BGP Color-Aware Routing (CAR)
+
+{{?I-D.ietf-idr-bgp-car}} specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.
+
+The proposal leverages the BGP Color Extended Community defined in {{?RFC5512}} and builds upon the Color concept defined in {{?RFC9256}}. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.
 
 ## NRP
 
