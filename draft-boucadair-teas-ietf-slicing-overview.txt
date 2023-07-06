@@ -94,14 +94,15 @@ Table of Contents
        5.3.5.  Network Slice Mapping
    6.  Control Plane Extensions
      6.1.  BGP Classful Transport Planes
-     6.2.  NRP
-       6.2.1.  BGP Flowspec
-       6.2.2.  BGP-LS Filters in SR
-       6.2.3.  SR Policies Extensions
-       6.2.4.  PCEP Extensions
-     6.3.  Virtual Transport Networks (VTNs)
-       6.3.1.  IS-IS MT
-       6.3.2.  BGP-LS
+     6.2.  BGP Color-Aware Routing (CAR)
+     6.3.  NRP
+       6.3.1.  BGP Flowspec
+       6.3.2.  BGP-LS Filters in SR
+       6.3.3.  SR Policies Extensions
+       6.3.4.  PCEP Extensions
+     6.4.  Virtual Transport Networks (VTNs)
+       6.4.1.  IS-IS MT
+       6.4.2.  BGP-LS
    7.  Data Plane Extensions
      7.1.  Slice Identifier in the MPLS Entropy Label
      7.2.  Slice Identifier in IPv6 Flow Label
@@ -460,23 +461,37 @@ Table of Contents
 6.1.  BGP Classful Transport Planes
 
    [I-D.ietf-idr-bgp-ct] specifies mechanisms for classifying underlay
-   routes into a set of classes, called transport classes, and mapping
-   service-specific routes to a specific transport class.  For example,
+   routes into a set of classes, called Transport Classes, and mapping
+   service-specific routes to a specific Transport Class.  For example,
    [I-D.ietf-idr-bgp-ct] can be used to create a customized topology for
-   Network Slices.  These topologies (transport classes) will be
+   Network Slices.  These topologies (Transport Classes) will be
    typically created to satisfy certain TE characteristics.  A new
-   Transport Class Route Target extended community is defined for this
-   purpose.  A transport class is identified by a 4-octet identifier:
+   Transport Class Route Target Extended Community is defined for this
+   purpose.  A Transport Class is identified by a 4-octet identifier:
    Transport Class ID.
 
-6.2.  NRP
+6.2.  BGP Color-Aware Routing (CAR)
 
-6.2.1.  BGP Flowspec
+   [I-D.ietf-idr-bgp-car] specifies a new BGP SAFI called BGP Color-
+   Aware Routing (BGP CAR).  Colors are defined to characterize an
+   objective (e.g., low latency).  To satisfy Network Slice
+   requirements, CAR may be used to establish paths that address
+   specific objectives.  These paths will be associated with a Color.
+
+   The proposal leverages the BGP Color Extended Community defined in
+   [RFC5512] and builds upon the Color concept defined in [RFC9256].  In
+   addition, a new Extended Community, called Local-Color-Mapping (LCM)
+   Extended Community, is defined to address cases where the granularity
+   of the exposed colors differs when crossing domains.
+
+6.3.  NRP
+
+6.3.1.  BGP Flowspec
 
    [I-D.ietf-idr-flowspec-network-slice-ts] specifies a BGP Flowspec
    extension for NRP traffic steering.
 
-6.2.2.  BGP-LS Filters in SR
+6.3.2.  BGP-LS Filters in SR
 
    [I-D.drake-teas-bgp-ls-filter-nrp] specifies new BGP-LS attributes,
    called BGP-LS Filters, for NRPs in SR networks.  A BGP-LS Filter
@@ -485,33 +500,33 @@ Table of Contents
    topology defined by the BGP-LS Filters it has imported for a given
    VPN.
 
-6.2.3.  SR Policies Extensions
+6.3.3.  SR Policies Extensions
 
-6.2.3.1.  BGP
+6.3.3.1.  BGP
 
    [I-D.dong-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
    define extensions to BGP in order to advertise NRP ID in an SR
    Policy.  The NRP ID is encoded in 4 octets.
 
-6.2.3.2.  BGP-LS
+6.3.3.2.  BGP-LS
 
    [I-D.chen-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
    for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
 
-6.2.4.  PCEP Extensions
+6.3.4.  PCEP Extensions
 
    [I-D.dong-pce-pcep-nrp] specifie Path Computation Element
    Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
    encoded in 4 octets.
 
-6.3.  Virtual Transport Networks (VTNs)
+6.4.  Virtual Transport Networks (VTNs)
 
-6.3.1.  IS-IS MT
+6.4.1.  IS-IS MT
 
    [I-D.ietf-lsr-isis-sr-vtn-mt] specifies how to use IS-IS Multi-
    Topology (MT) for SR-based VTNs.
 
-6.3.2.  BGP-LS
+6.4.2.  BGP-LS
 
    [I-D.ietf-idr-bgpls-sr-vtn-mt] describes a mechanism to distribute
    the information of SR-based VTNs to the network controller using BGP-
@@ -774,6 +789,13 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-
               aware-mobility-07>.
 
+   [I-D.ietf-idr-bgp-car]
+              Rao, D., Agrawal, S., and Co-authors, "BGP Color-Aware
+              Routing (CAR)", Work in Progress, Internet-Draft, draft-
+              ietf-idr-bgp-car-01, 13 March 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
+              car-01>.
+
    [I-D.ietf-idr-bgp-ct]
               Vairavakkalai, K. and N. Venkataraman, "BGP Classful
               Transport Planes", Work in Progress, Internet-Draft,
@@ -981,6 +1003,12 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-wdbsp-teas-
               nrp-yang-00>.
 
+   [RFC5512]  Mohapatra, P. and E. Rosen, "The BGP Encapsulation
+              Subsequent Address Family Identifier (SAFI) and the BGP
+              Tunnel Encapsulation Attribute", RFC 5512,
+              DOI 10.17487/RFC5512, April 2009,
+              <https://www.rfc-editor.org/rfc/rfc5512>.
+
    [RFC9181]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
               Ed., and Q. Wu, "A Common YANG Data Model for Layer 2 and
               Layer 3 VPNs", RFC 9181, DOI 10.17487/RFC9181, February
@@ -990,6 +1018,11 @@ Table of Contents
               Ed., Munoz, L., and A. Aguado, "A YANG Network Data Model
               for Layer 3 VPNs", RFC 9182, DOI 10.17487/RFC9182,
               February 2022, <https://www.rfc-editor.org/rfc/rfc9182>.
+
+   [RFC9256]  Filsfils, C., Talaulikar, K., Ed., Voyer, D., Bogdanov,
+              A., and P. Mattes, "Segment Routing Policy Architecture",
+              RFC 9256, DOI 10.17487/RFC9256, July 2022,
+              <https://www.rfc-editor.org/rfc/rfc9256>.
 
    [RFC9291]  Boucadair, M., Ed., Gonzalez de Dios, O., Ed., Barguil,
               S., and L. Munoz, "A YANG Network Data Model for Layer 2
