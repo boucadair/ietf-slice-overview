@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-09T01:25:53.377322+00:00",
+  "timestamp": "2023-07-11T01:13:57.760314+00:00",
   "repo": "boucadair/ietf-slice-overview",
   "labels": [
     {
@@ -79,14 +79,38 @@
       "id": "I_kwDOJs7aqs5qHF4_",
       "title": "Add a new section for draft-ietf-idr-bgp-car",
       "url": "https://github.com/boucadair/ietf-slice-overview/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-06-29T06:56:44Z",
-      "updatedAt": "2023-06-29T06:56:44Z",
+      "updatedAt": "2023-07-10T11:46:41Z",
+      "closedAt": "2023-07-10T11:46:41Z",
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "done",
+          "createdAt": "2023-07-10T11:46:40Z",
+          "updatedAt": "2023-07-10T11:46:40Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOJs7aqs5rFdxl",
+      "title": "Add a section about draft-clemm-opsawg-pam-ipfix",
+      "url": "https://github.com/boucadair/ietf-slice-overview/issues/4",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-07-10T11:46:54Z",
+      "updatedAt": "2023-07-10T11:46:54Z",
       "closedAt": null,
       "comments": []
     }
