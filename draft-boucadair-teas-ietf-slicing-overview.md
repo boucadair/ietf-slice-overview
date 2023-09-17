@@ -209,7 +209,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ### Service Attachment Points (SAPs) {#sap}
 
-{{?I-D.ietf-opsawg-sap}} defines a YANG data model for representing an abstract
+{{?RFC9408}} defines a YANG data model for representing an abstract
    view of the provider network topology that contains the points from
    which its services can be attached (e.g., basic connectivity, VPN,
    network slices).  Also, the model can be used to retrieve the points
@@ -251,7 +251,7 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 {{?I-D.ietf-idr-bgp-car}} specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.
 
-The proposal leverages the BGP Color Extended Community defined in {{?RFC5512}} and builds upon the Color concept defined in {{?RFC9256}}. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.
+The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} and builds upon the Color concept defined in {{?RFC9256}}. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.
 
 ## NRP
 
