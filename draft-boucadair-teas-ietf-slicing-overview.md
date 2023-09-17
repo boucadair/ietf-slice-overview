@@ -87,7 +87,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 * Coarse resource control at the transit, and
 * Capacity planning/management for efficient usage of provider network resources.
 
-## Using Network Resource Partitions and Slice-Flow Aggregates {#flow-agg}
+## Using Network Resource Partitions (NRPs) and Slice-Flow Aggregates {#flow-agg}
 
 {{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more RFC XXXX Network Slice Services.
 
@@ -125,6 +125,10 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 ## 3GPP 5G End-to-End Network Slices
 
 {{?I-D.ietf-teas-5g-network-slice-application}} focuses on the application of RFC XXXX Network Slices in the context of the 3GPP 5G slices.
+
+## Encoding 3GPP Slices for Interactive Media Services
+
+{{?I-D.jiang-tsvwg-slice-media-service}} explores how IETF schemes (DSCP and UDP options) can be used to expose some QoS-related metadata for specific flows to 5GS. The draft focuses on the Extended Reality & multi-modality communication (XRM) service.
 
 ## Abstraction and Control of Traffic Engineered Networks (ACTN)
 
