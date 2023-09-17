@@ -220,9 +220,9 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### Network Slice Topology
 
-{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for IETF Network Slice Topology.
+{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for IETF Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.
 
-The need for such a model is yet to be justified as the current scope is redundant with what can be already achieved using the SAP model ({{sap}}).
+The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using {{?I-D.ietf-teas-actn-vn-yang}}. The authors should motivate why {{?I-D.ietf-teas-actn-vn-yang}} is not sufficient.
 
 ### NRP
 
