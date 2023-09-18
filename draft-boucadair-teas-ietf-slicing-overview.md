@@ -1,5 +1,5 @@
 ---
-title: "An Overview of IETF Network Slicing Efforts"
+title: "An Overview of Network Slicing Efforts in The IETF"
 abbrev: "IETF Network Slicing"
 category: info
 
@@ -47,12 +47,10 @@ This document provides an overview of slicing activities in the IETF to hopefull
 * Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places. For example, current specifications  use distinct encoding length of the same attribute (variable, 16-bit, 32-bit).
 * Clarify the relationship and co-existence of identifiers if more than one is needed.
 
-Future versions of this document many include recommendations.
-
 # Reference Framework and Architecture {#slice-fr}
 
 {{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
-of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC XXXX Network Slice" (where XXXX is the number assigned to {{?I-D.ietf-teas-ietf-network-slices}} when published as an RFC".
+of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC XXXX Network Slice" (where XXXX is the number assigned to {{?I-D.ietf-teas-ietf-network-slices}} when published as an RFC").
 
 {{?I-D.ietf-teas-ietf-network-slices}} provides a clear distinction between:
 
@@ -99,11 +97,11 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## VPN+
 
-{{?I-D.ietf-teas-enhanced-vpn}} describes a framework for providing enhanced VPN services based upon VPN and Traffic Engineering (TE) technologies. Enhanced VPN (VPN+) can be used for the realization of IETF network slices. This document introduces the concept of Virtual Transport Network (VTN), which is a virtual underlay network consisting of a subset of network resources allocated from the physical underlay network, and is associated with a customized network topology.
+{{?I-D.ietf-teas-enhanced-vpn}} describes a framework for providing enhanced VPN services based upon VPN and Traffic Engineering (TE) technologies. Enhanced VPN (VPN+) can be used for the realization of Network Slices. This document introduces the concept of Virtual Transport Network (VTN), which is a virtual underlay network consisting of a subset of network resources allocated from the physical underlay network, and is associated with a customized network topology.
 
 ## Instantiation in Service Providers Networks
 
-{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the RFC XXXX Network Slice Services in service provider networks using available data models. In particular, this document describes the relationship between service models for managing the RFC XXXX Network Slice Services and Network Models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
+{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the RFC XXXX Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC XXXX Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
 
 ## Structuring Network Slice Controllers
 
@@ -118,7 +116,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Realization of Composite Network Slices
 
-{{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite RFC XXXX Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-Domain Network Resource Partition Identifier (Inter-domain NRP ID).
+{{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite RFC XXXX Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.
 
 # Applicability and Mapping Scenarios
 
@@ -228,7 +226,7 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using {{?I-D.ietf-teas-actn-vn-yang}}. The authors should motivate why {{?I-D.ietf-teas-actn-vn-yang}} is not sufficient.
 
-### NRP
+### Network Resource Partitions (NRPs)
 
 {{?I-D.wdbsp-teas-nrp-yang}} specifies a YANG data model for managing NRPs.
 
@@ -253,7 +251,7 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} and builds upon the Color concept defined in {{?RFC9256}}. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.
 
-## NRP
+## Network Resource Partitions (NRPs)
 
 ### BGP Flowspec
 
@@ -308,7 +306,7 @@ When an ingress SR router encapsulates a packet in an IPv6 packet with an SRH, {
 
 The length of the VTN ID depends on the context type. When CT=0, the VTN ID is a 4-octet ID.
 
-## NRP
+## Network Resource Partitions (NRPs)
 
 ### Resource-aware Segments
 
