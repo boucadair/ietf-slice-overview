@@ -351,6 +351,10 @@ The initial version of {{?I-D.liu-opsawg-ipfix-network-slice}} does explain whic
 
 {{?I-D.ietf-teas-nrp-scalability}} discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC XXXX Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.
 
+## Deployment Considerations
+
+{{?I-D.ma-teas-ietf-network-slice-deployment}} reports a set of "deployments" from various network operators and identifies some considerations for operating Network Slices (e.g., scalability and automation). Most of these reported cases rely upon SRv6. The document does not provide enough details whether these "deployments" are for testing purposes or reflect setups to carry customers' traffic.
+
 # Security Considerations
 
 Security considerations of the mechanisms listed in the document are discussed in the relevant documents that specify these mechanisms.
