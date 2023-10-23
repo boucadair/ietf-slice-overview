@@ -9,25 +9,25 @@
 <meta content="
        This document lists a set of slicing-related specifications that are being development within the IETF. This document is meant to provide an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent. 
     " name="description">
-<meta content="xml2rfc 3.18.0" name="generator">
+<meta content="xml2rfc 3.18.2" name="generator">
 <meta content="slice specifications" name="keyword">
 <meta content="slice coordination" name="keyword">
 <meta content="draft-boucadair-teas-ietf-slicing-overview-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.18.0
-    Python 3.11.5
+  xml2rfc 3.18.2
+    Python 3.11.6
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.10.0
+    platformdirs 3.11.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.8
 -->
 <link href="draft-boucadair-teas-ietf-slicing-overview.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -650,7 +650,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -743,7 +743,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -867,16 +867,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -889,6 +886,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -990,28 +990,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1048,11 +1026,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">IETF Network Slicing</td>
-<td class="right">September 2023</td>
+<td class="right">October 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair</td>
-<td class="center">Expires 21 March 2024</td>
+<td class="center">Expires 25 April 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1043,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-boucadair-teas-ietf-slicing-overview-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-09-18" class="published">18 September 2023</time>
+<time datetime="2023-10-23" class="published">23 October 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-03-21">21 March 2024</time></dd>
+<dd class="expires"><time datetime="2024-04-25">25 April 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1115,7 +1093,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 21 March 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 April 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1328,6 +1306,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
                 <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-scalability-considerations-" class="internal xref">Scalability Considerations for NRP</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
+                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-deployment-considerations" class="internal xref">Deployment Considerations</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
@@ -1358,13 +1339,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-1-2">Also, there is a lack of cross-WG communications in some cases when a slicing-related specification is candidate for adoption or adopted by a WG. This lack of global view at the IETF level and lack of early cross-WG communications may induce some inconsistency. For example, some proposals argue in favor of specifying extensions to convey specific identifiers in packets. However, distinct identifiers are being proposed: slice identifier, NRP Selector, NRP identifier, VTN identifier, VTN resource identifier, etc. The need and relationship between these identifiers are worth to be discussed independent of the channels that are used to convey these identifiers.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">This document provides an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent, e.g.:<a href="#section-1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1-4.1">Position the various concepts: network slice, network resource partition, virtual transport network, etc.<a href="#section-1-4.1" class="pilcrow">¶</a>
+<li class="normal" id="section-1-4.1">
+          <p id="section-1-4.1.1">Position the various concepts: network slice, network resource partition, virtual transport network, etc.<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-4.2">Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.<a href="#section-1-4.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-1-4.2">
+          <p id="section-1-4.2.1">Clarify the need of the various identifiers introduced so far and soften redundant/duplicate uses.<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-4.3">Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places. For example, current specifications  use distinct encoding length of the same attribute (variable, 16-bit, 32-bit).<a href="#section-1-4.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-1-4.3">
+          <p id="section-1-4.3.1">Harmonize the definition of relevant identifiers (length, encoding, usage, etc.) rather than having the specification of the same identifier repeated in many places. For example, current specifications  use distinct encoding length of the same attribute (variable, 16-bit, 32-bit).<a href="#section-1-4.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-4.4">Clarify the relationship and co-existence of identifiers if more than one is needed.<a href="#section-1-4.4" class="pilcrow">¶</a>
+        <li class="normal" id="section-1-4.4">
+          <p id="section-1-4.4.1">Clarify the relationship and co-existence of identifiers if more than one is needed.<a href="#section-1-4.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
@@ -1378,19 +1363,24 @@ svg :is([fill="white"], [fill^="#fff"]) {
 of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC XXXX Network Slice" (where XXXX is the number assigned to <span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> when published as an RFC").<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> provides a clear distinction between:<a href="#section-2-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-3.1">the "RFC XXXX Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
- used by the service provider, and<a href="#section-2-3.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-3.1">
+          <p id="section-2-3.1.1">the "RFC XXXX Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
+ used by the service provider, and<a href="#section-2-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-3.2">the "RFC XXXX Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.<a href="#section-2-3.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-3.2">
+          <p id="section-2-3.2.1">the "RFC XXXX Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="section-2-4">The RFC XXXX Network Slice Service is specified in terms of:<a href="#section-2-4" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-5.1">a set of Service Demarcation Point (SDP),<a href="#section-2-5.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-5.1">
+          <p id="section-2-5.1.1">a set of Service Demarcation Point (SDP),<a href="#section-2-5.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-5.2">a set of one or more connectivity constructs between subsets of these SDPs, and<a href="#section-2-5.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-5.2">
+          <p id="section-2-5.2.1">a set of one or more connectivity constructs between subsets of these SDPs, and<a href="#section-2-5.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-5.3">a set of service objectives for each SDP sending to each connectivity construct.<a href="#section-2-5.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-5.3">
+          <p id="section-2-5.3.1">a set of service objectives for each SDP sending to each connectivity construct.<a href="#section-2-5.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="section-2-6">The service objectives can be expressed as Service Level Objectives (SLOs) or Service Level Expectations (SLEs).<a href="#section-2-6" class="pilcrow">¶</a></p>
@@ -1412,13 +1402,17 @@ of Network Slice Services over networks that are deployed using technologies tha
         </h3>
 <p id="section-3.1-1"><span>[<a href="#I-D.srld-teas-5g-slicing" class="cite xref">I-D.srld-teas-5g-slicing</a>]</span> describes a model for the realization of RFC XXXX Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.1-2.1">L2VPN/L3VPN service instances for logical separation,<a href="#section-3.1-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.1-2.1">
+            <p id="section-3.1-2.1.1">L2VPN/L3VPN service instances for logical separation,<a href="#section-3.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-3.1-2.2">Fine-grained resource control at the PE,<a href="#section-3.1-2.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.1-2.2">
+            <p id="section-3.1-2.2.1">Fine-grained resource control at the PE,<a href="#section-3.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-3.1-2.3">Coarse resource control at the transit, and<a href="#section-3.1-2.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.1-2.3">
+            <p id="section-3.1-2.3.1">Coarse resource control at the transit, and<a href="#section-3.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-3.1-2.4">Capacity planning/management for efficient usage of provider network resources.<a href="#section-3.1-2.4" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.1-2.4">
+            <p id="section-3.1-2.4.1">Capacity planning/management for efficient usage of provider network resources.<a href="#section-3.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1471,9 +1465,11 @@ of Network Slice Services over networks that are deployed using technologies tha
         </h3>
 <p id="section-3.7-1"><span>[<a href="#I-D.gong-teas-hierarchical-slice-solution" class="cite xref">I-D.gong-teas-hierarchical-slice-solution</a>]</span> proposes a hierarchical approach for realizing RFC XXXX Network Slices in Segment Routing domain. The approach involves two levels:<a href="#section-3.7-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.7-2.1">Level 1 Network Slices are realized using Flex-Algo.<a href="#section-3.7-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.7-2.1">
+            <p id="section-3.7-2.1.1">Level 1 Network Slices are realized using Flex-Algo.<a href="#section-3.7-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-3.7-2.2">Level 2 forwarding paths are restricted in the Level 1 topology by using SR Policy and NRP-ID in the data plane.<a href="#section-3.7-2.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.7-2.2">
+            <p id="section-3.7-2.2.1">Level 2 forwarding paths are restricted in the Level 1 topology by using SR Policy and NRP-ID in the data plane.<a href="#section-3.7-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1672,13 +1668,17 @@ of Network Slice Services over networks that are deployed using technologies tha
           </h4>
 <p id="section-5.3.5-1"><span>[<a href="#I-D.dhody-teas-ietf-network-slice-mapping" class="cite xref">I-D.dhody-teas-ietf-network-slice-mapping</a>]</span> specifies an RFC XXXX Network Slice Service mapping YANG model. The model supports the following mappings:<a href="#section-5.3.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.3.5-2.1">L3NM <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span><a href="#section-5.3.5-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-5.3.5-2.1">
+              <p id="section-5.3.5-2.1.1">L3NM <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span><a href="#section-5.3.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.3.5-2.2">L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span><a href="#section-5.3.5-2.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-5.3.5-2.2">
+              <p id="section-5.3.5-2.2.1">L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span><a href="#section-5.3.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.3.5-2.3">TE <span>[<a href="#I-D.ietf-teas-te-service-mapping-yang" class="cite xref">I-D.ietf-teas-te-service-mapping-yang</a>]</span><a href="#section-5.3.5-2.3" class="pilcrow">¶</a>
+            <li class="normal" id="section-5.3.5-2.3">
+              <p id="section-5.3.5-2.3.1">TE <span>[<a href="#I-D.ietf-teas-te-service-mapping-yang" class="cite xref">I-D.ietf-teas-te-service-mapping-yang</a>]</span><a href="#section-5.3.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.3.5-2.4">NRP<a href="#section-5.3.5-2.4" class="pilcrow">¶</a>
+            <li class="normal" id="section-5.3.5-2.4">
+              <p id="section-5.3.5-2.4.1">NRP<a href="#section-5.3.5-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1856,11 +1856,14 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
           </h4>
 <p id="section-7.5.3-1">As mentioned in <a href="#flow-agg" class="auto internal xref">Section 3.2</a>, packets that are associated with a Slice-Flow Aggregate may carry an NRP Selector (NRPS). This selector is intended to be conveyed in the packet's network layer header to identify the flow aggregate to which a packet belongs. <span>[<a href="#I-D.li-mpls-mna-nrp-selector" class="cite xref">I-D.li-mpls-mna-nrp-selector</a>]</span> investigates a set of options to use MPLS Network Actions (MNA) to carry the NRPS:<a href="#section-7.5.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-7.5.3-2.1">13-bit NRP Selector (NRPS13) Action<a href="#section-7.5.3-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-7.5.3-2.1">
+              <p id="section-7.5.3-2.1.1">13-bit NRP Selector (NRPS13) Action<a href="#section-7.5.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-7.5.3-2.2">20-bit NRP Selector (NRPS20) Action<a href="#section-7.5.3-2.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-7.5.3-2.2">
+              <p id="section-7.5.3-2.2.1">20-bit NRP Selector (NRPS20) Action<a href="#section-7.5.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-7.5.3-2.3">20-bit Entropy and NRP Selector (ENRPS20) Action<a href="#section-7.5.3-2.3" class="pilcrow">¶</a>
+            <li class="normal" id="section-7.5.3-2.3">
+              <p id="section-7.5.3-2.3.1">20-bit Entropy and NRP Selector (ENRPS20) Action<a href="#section-7.5.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1916,6 +1919,14 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-9.1-1"><span>[<a href="#I-D.ietf-teas-nrp-scalability" class="cite xref">I-D.ietf-teas-nrp-scalability</a>]</span> discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC XXXX Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="deployment-considerations">
+<section id="section-9.2">
+        <h3 id="name-deployment-considerations">
+<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-deployment-considerations" class="section-name selfRef">Deployment Considerations</a>
+        </h3>
+<p id="section-9.2-1"><span>[<a href="#I-D.ma-teas-ietf-network-slice-deployment" class="cite xref">I-D.ma-teas-ietf-network-slice-deployment</a>]</span> reports a set of "deployments" from various network operators and identifies some considerations for operating Network Slices (e.g., scalability and automation). Most of these reported cases rely upon SRv6. The document does not provide enough details whether these "deployments" are for testing purposes or reflect setups to carry customers' traffic.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1934,6 +1945,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-11-1">This document does not make any request to IANA.<a href="#section-11-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="sec-informative-references">
 <section id="section-12">
       <h2 id="name-informative-references">
 <a href="#section-12" class="section-number selfRef">12. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
@@ -1957,7 +1969,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.chen-idr-bgp-ls-sr-policy-nrp">[I-D.chen-idr-bgp-ls-sr-policy-nrp]</dt>
       <dd>
-<span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Zhao, D.</span>, <span class="refAuthor">Gong, L.</span>, and <span class="refAuthor">Y. Zhu</span>, <span class="refTitle">"SR Policies Extensions for NRP in BGP-LS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-chen-idr-bgp-ls-sr-policy-nrp-02</span>, <time datetime="2023-04-15" class="refDate">15 April 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-ls-sr-policy-nrp-02">https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-ls-sr-policy-nrp-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Zhao, D.</span>, <span class="refAuthor">Gong, L.</span>, and <span class="refAuthor">Y. Zhu</span>, <span class="refTitle">"SR Policies Extensions for NRP in BGP-LS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-chen-idr-bgp-ls-sr-policy-nrp-03</span>, <time datetime="2023-10-17" class="refDate">17 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-ls-sr-policy-nrp-03">https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-ls-sr-policy-nrp-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.cheng-spring-srv6-encoding-network-sliceid">[I-D.cheng-spring-srv6-encoding-network-sliceid]</dt>
       <dd>
@@ -2009,7 +2021,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-dmm-tn-aware-mobility">[I-D.ietf-dmm-tn-aware-mobility]</dt>
       <dd>
-<span class="refAuthor">Chunduri, U.</span>, <span class="refAuthor">Kaippallimalil, J.</span>, <span class="refAuthor">Bhaskaran, S.</span>, <span class="refAuthor">Tantsura, J.</span>, and <span class="refAuthor">P. Muley</span>, <span class="refTitle">"Mobility aware Transport Network Slicing for 5G"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-dmm-tn-aware-mobility-07</span>, <time datetime="2023-07-05" class="refDate">5 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-07">https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Chunduri, U.</span>, <span class="refAuthor">Kaippallimalil, J.</span>, <span class="refAuthor">Bhaskaran, S.</span>, <span class="refAuthor">Tantsura, J.</span>, and <span class="refAuthor">P. Muley</span>, <span class="refTitle">"Mobility aware Transport Network Slicing for 5G"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-dmm-tn-aware-mobility-08</span>, <time datetime="2023-10-18" class="refDate">18 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-08">https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-bgp-car">[I-D.ietf-idr-bgp-car]</dt>
       <dd>
@@ -2017,7 +2029,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-bgp-ct">[I-D.ietf-idr-bgp-ct]</dt>
       <dd>
-<span class="refAuthor">Vairavakkalai, K.</span> and <span class="refAuthor">N. Venkataraman</span>, <span class="refTitle">"BGP Classful Transport Planes"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-ct-14</span>, <time datetime="2023-08-21" class="refDate">21 August 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-14">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-14</a>&gt;</span>. </dd>
+<span class="refAuthor">Vairavakkalai, K.</span> and <span class="refAuthor">N. Venkataraman</span>, <span class="refTitle">"BGP Classful Transport Planes"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-ct-17</span>, <time datetime="2023-10-20" class="refDate">20 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-17">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-17</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-bgpls-sr-vtn-mt">[I-D.ietf-idr-bgpls-sr-vtn-mt]</dt>
       <dd>
@@ -2029,7 +2041,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-ippm-pam">[I-D.ietf-ippm-pam]</dt>
       <dd>
-<span class="refAuthor">Mirsky, G.</span>, <span class="refAuthor">Halpern, J. M.</span>, <span class="refAuthor">Min, X.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Strassner, J.</span>, and <span class="refAuthor">J. François</span>, <span class="refTitle">"Precision Availability Metrics for Services Governed by Service Level Objectives (SLOs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ippm-pam-06</span>, <time datetime="2023-08-22" class="refDate">22 August 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ippm-pam-06">https://datatracker.ietf.org/doc/html/draft-ietf-ippm-pam-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Mirsky, G.</span>, <span class="refAuthor">Halpern, J. M.</span>, <span class="refAuthor">Min, X.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Strassner, J.</span>, and <span class="refAuthor">J. François</span>, <span class="refTitle">"Precision Availability Metrics for Services Governed by Service Level Objectives (SLOs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ippm-pam-08</span>, <time datetime="2023-10-18" class="refDate">18 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ippm-pam-08">https://datatracker.ietf.org/doc/html/draft-ietf-ippm-pam-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-lsr-isis-sr-vtn-mt">[I-D.ietf-lsr-isis-sr-vtn-mt]</dt>
       <dd>
@@ -2037,11 +2049,11 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-spring-resource-aware-segments">[I-D.ietf-spring-resource-aware-segments]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Bryant, S.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, <span class="refAuthor">Li, Z.</span>, and <span class="refAuthor">F. Clad</span>, <span class="refTitle">"Introducing Resource Awareness to SR Segments"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-resource-aware-segments-07</span>, <time datetime="2023-05-31" class="refDate">31 May 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-07">https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Introducing Resource Awareness to SR Segments"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-resource-aware-segments-08</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-08">https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-spring-sr-for-enhanced-vpn">[I-D.ietf-spring-sr-for-enhanced-vpn]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Bryant, S.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, <span class="refAuthor">Li, Z.</span>, and <span class="refAuthor">F. Clad</span>, <span class="refTitle">"Segment Routing based Virtual Transport Network (VTN) for Enhanced VPN"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-sr-for-enhanced-vpn-05</span>, <time datetime="2023-05-31" class="refDate">31 May 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-05">https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Segment Routing based Virtual Transport Network (VTN) for Enhanced VPN"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-sr-for-enhanced-vpn-06</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-06">https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-5g-network-slice-application">[I-D.ietf-teas-5g-network-slice-application]</dt>
       <dd>
@@ -2049,7 +2061,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-actn-vn-yang">[I-D.ietf-teas-actn-vn-yang]</dt>
       <dd>
-<span class="refAuthor">Lee, Y.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Ceccarelli, D.</span>, <span class="refAuthor">Bryskin, I.</span>, and <span class="refAuthor">B. Y. Yoon</span>, <span class="refTitle">"A YANG Data Model for Virtual Network (VN) Operations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-actn-vn-yang-19</span>, <time datetime="2023-09-12" class="refDate">12 September 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-vn-yang-19">https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-vn-yang-19</a>&gt;</span>. </dd>
+<span class="refAuthor">Lee, Y.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Ceccarelli, D.</span>, <span class="refAuthor">Bryskin, I.</span>, and <span class="refAuthor">B. Y. Yoon</span>, <span class="refTitle">"A YANG Data Model for Virtual Network (VN) Operations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-actn-vn-yang-21</span>, <time datetime="2023-10-22" class="refDate">22 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-vn-yang-21">https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-vn-yang-21</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-applicability-actn-slicing">[I-D.ietf-teas-applicability-actn-slicing]</dt>
       <dd>
@@ -2057,11 +2069,11 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-enhanced-vpn">[I-D.ietf-teas-enhanced-vpn]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Bryant, S.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Miyasaka, T.</span>, and <span class="refAuthor">Y. Lee</span>, <span class="refTitle">"A Framework for Enhanced Virtual Private Network (VPN+)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-enhanced-vpn-14</span>, <time datetime="2023-07-28" class="refDate">28 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-enhanced-vpn-14">https://datatracker.ietf.org/doc/html/draft-ietf-teas-enhanced-vpn-14</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Bryant, S.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Miyasaka, T.</span>, and <span class="refAuthor">Y. Lee</span>, <span class="refTitle">"A Framework for Enhanced Virtual Private Network (VPN+)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-enhanced-vpn-15</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-enhanced-vpn-15">https://datatracker.ietf.org/doc/html/draft-ietf-teas-enhanced-vpn-15</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ietf-network-slice-nbi-yang">[I-D.ietf-teas-ietf-network-slice-nbi-yang]</dt>
       <dd>
-<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Han, L.</span>, and <span class="refAuthor">J. Mullooly</span>, <span class="refTitle">"A YANG Data Model for the IETF Network Slice Service"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slice-nbi-yang-06</span>, <time datetime="2023-07-10" class="refDate">10 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-06">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Han, L.</span>, and <span class="refAuthor">J. Mullooly</span>, <span class="refTitle">"A YANG Data Model for the IETF Network Slice Service"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slice-nbi-yang-07</span>, <time datetime="2023-10-20" class="refDate">20 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-07">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ietf-network-slices">[I-D.ietf-teas-ietf-network-slices]</dt>
       <dd>
@@ -2069,7 +2081,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-nrp-scalability">[I-D.ietf-teas-nrp-scalability]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Yang, G.</span>, <span class="refAuthor">Guichard, J.</span>, <span class="refAuthor">Mishra, G. S.</span>, <span class="refAuthor">Qin, F.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">V. P. Beeram</span>, <span class="refTitle">"Scalability Considerations for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-scalability-02</span>, <time datetime="2023-06-02" class="refDate">2 June 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-02">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Yang, G.</span>, <span class="refAuthor">Mishra, G. S.</span>, and <span class="refAuthor">F. Qin</span>, <span class="refTitle">"Scalability Considerations for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-scalability-03</span>, <time datetime="2023-10-21" class="refDate">21 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-03">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ns-ip-mpls">[I-D.ietf-teas-ns-ip-mpls]</dt>
       <dd>
@@ -2111,6 +2123,10 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
       <dd>
 <span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Tantsura, J.</span>, <span class="refAuthor">Bryskin, I.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Guo, A.</span>, and <span class="refAuthor">I. Busi</span>, <span class="refTitle">"IETF Network Slice Topology YANG Data Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-liu-teas-transport-network-slice-yang-07</span>, <time datetime="2023-07-07" class="refDate">7 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-liu-teas-transport-network-slice-yang-07">https://datatracker.ietf.org/doc/html/draft-liu-teas-transport-network-slice-yang-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="I-D.ma-teas-ietf-network-slice-deployment">[I-D.ma-teas-ietf-network-slice-deployment]</dt>
+      <dd>
+<span class="refAuthor">Ma, Y.</span>, <span class="refAuthor">Luo, R.</span>, <span class="refAuthor">Chan, A.</span>, <span class="refAuthor">Suen, B.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Liu, Y.</span>, and <span class="refAuthor">H. Allahoum</span>, <span class="refTitle">"IETF Network Slice Deployment Status and Considerations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ma-teas-ietf-network-slice-deployment-02</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-02">https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-02</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="I-D.srld-teas-5g-slicing">[I-D.srld-teas-5g-slicing]</dt>
       <dd>
 <span class="refAuthor">Szarkowicz, K. G.</span>, <span class="refAuthor">Roberts, R.</span>, <span class="refAuthor">Lucek, J.</span>, <span class="refAuthor">Boucadair, M.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"A Realization of IETF Network Slices for 5G Networks Using Current IP/ MPLS Technologies"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-srld-teas-5g-slicing-09</span>, <time datetime="2023-05-23" class="refDate">23 May 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-srld-teas-5g-slicing-09">https://datatracker.ietf.org/doc/html/draft-srld-teas-5g-slicing-09</a>&gt;</span>. </dd>
@@ -2149,6 +2165,7 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
 <div id="acknowledgments">
 <section id="appendix-A">
       <h2 id="name-acknowledgments">
