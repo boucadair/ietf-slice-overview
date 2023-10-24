@@ -105,7 +105,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Structuring Network Slice Controllers
 
-{{?I-D.contreras-teas-slice-controller-models}} proposes an approach for structuring the RFC XXXX Network Slice Controller as well as how to use different data models being defined for RFC XXXX Network Slice Service provision.
+{{?I-D.ietf-teas-ns-controller-models}} proposes an approach for structuring the RFC XXXX Network Slice Controller as well as how to use different data models being defined for RFC XXXX Network Slice Service provision.
 
 ## SR-based Hierarchical Network Slices
 
