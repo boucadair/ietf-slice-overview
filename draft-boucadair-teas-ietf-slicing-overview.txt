@@ -4,8 +4,8 @@
 
 Traffic Engineering Architecture and Signaling              M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           23 October 2023
-Expires: 25 April 2024
+Intended status: Informational                           24 October 2023
+Expires: 26 April 2024
 
 
            An Overview of Network Slicing Efforts in The IETF
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 April 2024.
+   This Internet-Draft will expire on 26 April 2024.
 
 Copyright Notice
 
@@ -286,7 +286,7 @@ Table of Contents
 
 3.6.  Structuring Network Slice Controllers
 
-   [I-D.contreras-teas-slice-controller-models] proposes an approach for
+   [I-D.ietf-teas-ns-controller-models] proposes an approach for
    structuring the RFC XXXX Network Slice Controller as well as how to
    use different data models being defined for RFC XXXX Network Slice
    Service provision.
@@ -681,13 +681,14 @@ Table of Contents
 12.  Informative References
 
    [I-D.barguil-teas-network-slices-instantation]
-              Barguil, S., Contreras, L. M., Lopez, V., Rokui, R., de
-              Dios, O. G., King, D., and M. Boucadair, "Instantiation of
-              IETF Network Slice Services in Service Providers
-              Networks", Work in Progress, Internet-Draft, draft-
-              barguil-teas-network-slices-instantation-07, 10 July 2023,
+              Barguil, S., Contreras, L. M., Lopez, V., de Dios, O. G.,
+              Boucadair, M., and R. Rokui, "Applicability of IETF-
+              Defined Service and Network Data Models for RFC XXXX
+              Network Slice Service Management", Work in Progress,
+              Internet-Draft, draft-barguil-teas-network-slices-
+              instantation-08, 23 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-barguil-teas-
-              network-slices-instantation-07>.
+              network-slices-instantation-08>.
 
    [I-D.boro-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
@@ -735,15 +736,6 @@ Table of Contents
               7 July 2023, <https://datatracker.ietf.org/doc/html/draft-
               clemm-opsawg-pam-ipfix-00>.
 
-   [I-D.contreras-teas-slice-controller-models]
-              Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., Liu,
-              X., Dhody, D., and S. Belotti, "IETF Network Slice
-              Controller and its associated data models", Work in
-              Progress, Internet-Draft, draft-contreras-teas-slice-
-              controller-models-05, 13 March 2023,
-              <https://datatracker.ietf.org/doc/html/draft-contreras-
-              teas-slice-controller-models-05>.
-
    [I-D.decraene-mpls-slid-encoded-entropy-label-id]
               Decraene, B., Filsfils, C., Henderickx, W., Saad, T.,
               Beeram, V. P., and L. Jalil, "Using Entropy Label for
@@ -763,18 +755,18 @@ Table of Contents
    [I-D.dong-idr-sr-policy-nrp]
               Dong, J., Hu, Z., and R. Pang, "BGP SR Policy Extensions
               for Network Resource Partition", Work in Progress,
-              Internet-Draft, draft-dong-idr-sr-policy-nrp-03, 5
-              September 2023, <https://datatracker.ietf.org/doc/html/
-              draft-dong-idr-sr-policy-nrp-03>.
+              Internet-Draft, draft-dong-idr-sr-policy-nrp-04, 23
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-dong-idr-sr-policy-nrp-04>.
 
    [I-D.dong-pce-pcep-nrp]
               Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
               M., Beeram, V. P., and T. Saad, "Path Computation Element
               Communication Protocol (PCEP) Extensions for Network
               Resource Partition (NRP)", Work in Progress, Internet-
-              Draft, draft-dong-pce-pcep-nrp-00, 10 March 2023,
+              Draft, draft-dong-pce-pcep-nrp-01, 23 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-dong-pce-
-              pcep-nrp-00>.
+              pcep-nrp-01>.
 
    [I-D.drake-teas-bgp-ls-filter-nrp]
               Drake, J., Farrel, A., Jalil, L., and A. R. Lingala,
@@ -828,9 +820,9 @@ Table of Contents
    [I-D.ietf-idr-bgp-car]
               Rao, D., Agrawal, S., and Co-authors, "BGP Color-Aware
               Routing (CAR)", Work in Progress, Internet-Draft, draft-
-              ietf-idr-bgp-car-02, 6 July 2023,
+              ietf-idr-bgp-car-03, 23 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
-              car-02>.
+              car-03>.
 
    [I-D.ietf-idr-bgp-ct]
               Vairavakkalai, K. and N. Venkataraman, "BGP Classful
@@ -891,9 +883,9 @@ Table of Contents
               Geng, X., Contreras, L. M., Rokui, R., Dong, J., and I.
               Bykov, "IETF Network Slice Application in 3GPP 5G End-to-
               End Network Slice", Work in Progress, Internet-Draft,
-              draft-ietf-teas-5g-network-slice-application-01, 10 July
-              2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              teas-5g-network-slice-application-01>.
+              draft-ietf-teas-5g-network-slice-application-02, 23
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-5g-network-slice-application-02>.
 
    [I-D.ietf-teas-actn-vn-yang]
               Lee, Y., Dhody, D., Ceccarelli, D., Bryskin, I., and B. Y.
@@ -921,12 +913,12 @@ Table of Contents
               enhanced-vpn-15>.
 
    [I-D.ietf-teas-ietf-network-slice-nbi-yang]
-              Wu, B., Dhody, D., Rokui, R., Saad, T., Han, L., and J.
-              Mullooly, "A YANG Data Model for the IETF Network Slice
-              Service", Work in Progress, Internet-Draft, draft-ietf-
-              teas-ietf-network-slice-nbi-yang-07, 20 October 2023,
+              Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
+              "A YANG Data Model for the IETF Network Slice Service",
+              Work in Progress, Internet-Draft, draft-ietf-teas-ietf-
+              network-slice-nbi-yang-08, 23 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              ietf-network-slice-nbi-yang-07>.
+              ietf-network-slice-nbi-yang-08>.
 
    [I-D.ietf-teas-ietf-network-slices]
               Farrel, A., Drake, J., Rokui, R., Homma, S., Makhijani,
@@ -944,6 +936,15 @@ Table of Contents
               teas-nrp-scalability-03, 21 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
               nrp-scalability-03>.
+
+   [I-D.ietf-teas-ns-controller-models]
+              Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., Liu,
+              X., Dhody, D., and S. Belotti, "IETF Network Slice
+              Controller and its associated data models", Work in
+              Progress, Internet-Draft, draft-ietf-teas-ns-controller-
+              models-01, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-
+              controller-models-01>.
 
    [I-D.ietf-teas-ns-ip-mpls]
               Saad, T., Beeram, V. P., Dong, J., Wen, B., Ceccarelli,
@@ -965,9 +966,9 @@ Table of Contents
    [I-D.jiang-tsvwg-slice-media-service]
               Jiang, T. and D. Wang, "Encoding 3GPP Slices for
               Interactive Media Services", Work in Progress, Internet-
-              Draft, draft-jiang-tsvwg-slice-media-service-00, 23 July
-              2023, <https://datatracker.ietf.org/doc/html/draft-jiang-
-              tsvwg-slice-media-service-00>.
+              Draft, draft-jiang-tsvwg-slice-media-service-01, 23
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-jiang-tsvwg-slice-media-service-01>.
 
    [I-D.li-mpls-mna-nrp-selector]
               Li, T., Drake, J., Beeram, V. P., Saad, T., and I. Meilik,
