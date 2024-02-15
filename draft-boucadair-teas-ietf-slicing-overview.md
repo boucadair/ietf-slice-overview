@@ -118,6 +118,11 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 {{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite RFC XXXX Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.
 
+## AAA for Hierarchical Network Slices
+
+{{?I-D.zhang-rtgwg-aaa-hierarchical-network-slices}} describes an authentication, authorization, and accounting process for hierarchical Network Slices. The document
+suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any protocol extension is needed.
+
 # Applicability and Mapping Scenarios
 
 ## 3GPP 5G End-to-End Network Slices
@@ -126,7 +131,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Encoding 3GPP Slices for Interactive Media Services
 
-{{?I-D.jiang-tsvwg-slice-media-service}} explores how IETF schemes (DSCP and UDP options) can be used to expose some QoS-related metadata for specific flows to 5GS. The draft focuses on the Extended Reality & multi-modality communication (XRM) service.
+{{?I-D.jiang-tsvwg-slice-media-service}} explores how IETF schemes (DSCP and UDP options) can be used to expose some QoS-related metadata for specific flows to 5GS. The document focuses on the Extended Reality & multi-modality communication (XRM) service.
 
 ## Abstraction and Control of Traffic Engineered Networks (ACTN)
 
@@ -344,6 +349,12 @@ The NRP-ID is a encoded as a 4-octet field.
 {{?I-D.liu-opsawg-ipfix-network-slice}} explores how to use IPFIX to export NRP IDs. However, there is currently no one single stable/authoritative specification of NRP-ID. This identifier is being proposed as data plane and control plane extensions. These proposals do not share the same ID format.
 
 The initial version of {{?I-D.liu-opsawg-ipfix-network-slice}} does explain which plan is used, in which layer the ID was exported, etc. Defining an IPFIX IE is useful for network observability, however there is no stable specification yet of the ID to be exported.
+
+## PAM-based Path Computation
+
+{{?I-D.contreras-pce-pam}} specifies a new PCEP object (PRECISION METRIC) for
+path calculation with performance requirements expressed as SLOs. The new
+PCEP object uses the attributes defined in {{?I-D.ietf-ippm-pam}}.
 
 # Misc
 
