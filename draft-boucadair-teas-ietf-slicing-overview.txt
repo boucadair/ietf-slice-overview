@@ -4,8 +4,8 @@
 
 Traffic Engineering Architecture and Signaling              M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           24 October 2023
-Expires: 26 April 2024
+Intended status: Informational                          15 February 2024
+Expires: 18 August 2024
 
 
            An Overview of Network Slicing Efforts in The IETF
@@ -46,11 +46,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 April 2024.
+   This Internet-Draft will expire on 18 August 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -76,6 +76,7 @@ Table of Contents
      3.6.  Structuring Network Slice Controllers
      3.7.  SR-based Hierarchical Network Slices
      3.8.  Realization of Composite Network Slices
+     3.9.  AAA for Hierarchical Network Slices
    4.  Applicability and Mapping Scenarios
      4.1.  3GPP 5G End-to-End Network Slices
      4.2.  Encoding 3GPP Slices for Interactive Media Services
@@ -118,6 +119,7 @@ Table of Contents
      8.1.  LSP Ping/Traceroute Extensions
      8.2.  Precision Availability Metrics (PAM)
      8.3.  IPFIX Information Elements for NRP
+     8.4.  PAM-based Path Computation
    9.  Misc
      9.1.  Scalability Considerations for NRP
      9.2.  Deployment Considerations
@@ -309,6 +311,14 @@ Table of Contents
    basically involve other slices).  The document defines a new
    identifier, called Inter-domain NRP ID.
 
+3.9.  AAA for Hierarchical Network Slices
+
+   [I-D.zhang-rtgwg-aaa-hierarchical-network-slices] describes an
+   authentication, authorization, and accounting process for
+   hierarchical Network Slices.  The document suggest adding NRP-ID to
+   accounting meesages, but lacks a discussion whether any protocol
+   extension is needed.
+
 4.  Applicability and Mapping Scenarios
 
 4.1.  3GPP 5G End-to-End Network Slices
@@ -321,8 +331,8 @@ Table of Contents
 
    [I-D.jiang-tsvwg-slice-media-service] explores how IETF schemes (DSCP
    and UDP options) can be used to expose some QoS-related metadata for
-   specific flows to 5GS.  The draft focuses on the Extended Reality &
-   multi-modality communication (XRM) service.
+   specific flows to 5GS.  The document focuses on the Extended Reality
+   & multi-modality communication (XRM) service.
 
 4.3.  Abstraction and Control of Traffic Engineered Networks (ACTN)
 
@@ -649,6 +659,13 @@ Table of Contents
    Defining an IPFIX IE is useful for network observability, however
    there is no stable specification yet of the ID to be exported.
 
+8.4.  PAM-based Path Computation
+
+   [I-D.contreras-pce-pam] specifies a new PCEP object (PRECISION
+   METRIC) for path calculation with performance requirements expressed
+   as SLOs.  The new PCEP object uses the attributes defined in
+   [I-D.ietf-ippm-pam].
+
 9.  Misc
 
 9.1.  Scalability Considerations for NRP
@@ -715,19 +732,20 @@ Table of Contents
               teas-common-ac-02>.
 
    [I-D.chen-idr-bgp-ls-sr-policy-nrp]
-              Chen, R., Zhao, D., Gong, L., and Y. Zhu, "SR Policies
-              Extensions for NRP in BGP-LS", Work in Progress, Internet-
-              Draft, draft-chen-idr-bgp-ls-sr-policy-nrp-03, 17 October
-              2023, <https://datatracker.ietf.org/doc/html/draft-chen-
-              idr-bgp-ls-sr-policy-nrp-03>.
+              Chen, R., Zhao, D., Gong, L., Zhu, Y., and R. Pang, "SR
+              Policies Extensions for NRP in BGP-LS", Work in Progress,
+              Internet-Draft, draft-chen-idr-bgp-ls-sr-policy-nrp-04, 21
+              January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-chen-idr-bgp-ls-sr-policy-nrp-04>.
 
    [I-D.cheng-spring-srv6-encoding-network-sliceid]
               Cheng, W., Ma, P., Ren, F., Lin, C., Gong, L., Zadok, S.,
               Wu, M., and X. wang, "Encoding Network Slice
               Identification for SRv6", Work in Progress, Internet-
               Draft, draft-cheng-spring-srv6-encoding-network-sliceid-
-              07, 10 July 2023, <https://datatracker.ietf.org/doc/html/
-              draft-cheng-spring-srv6-encoding-network-sliceid-07>.
+              08, 7 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-cheng-spring-
+              srv6-encoding-network-sliceid-08>.
 
    [I-D.clemm-opsawg-pam-ipfix]
               Clemm, A., Boucadair, M., and G. Mirsky, "Export of Flow
@@ -735,6 +753,13 @@ Table of Contents
               Progress, Internet-Draft, draft-clemm-opsawg-pam-ipfix-00,
               7 July 2023, <https://datatracker.ietf.org/doc/html/draft-
               clemm-opsawg-pam-ipfix-00>.
+
+   [I-D.contreras-pce-pam]
+              Contreras, L. M., Agraz, F., and S. Spadaro, "Path
+              Computation Based on Precision Availability Metrics", Work
+              in Progress, Internet-Draft, draft-contreras-pce-pam-02,
+              13 February 2024, <https://datatracker.ietf.org/doc/html/
+              draft-contreras-pce-pam-02>.
 
    [I-D.decraene-mpls-slid-encoded-entropy-label-id]
               Decraene, B., Filsfils, C., Henderickx, W., Saad, T.,
@@ -780,18 +805,18 @@ Table of Contents
               Filsfils, C., Clad, F., Camarillo, P., Raza, S., Voyer,
               D., and R. Rokui, "Stateless and Scalable Network Slice
               Identification for SRv6", Work in Progress, Internet-
-              Draft, draft-filsfils-spring-srv6-stateless-slice-id-08, 1
-              August 2023, <https://datatracker.ietf.org/doc/html/draft-
-              filsfils-spring-srv6-stateless-slice-id-08>.
+              Draft, draft-filsfils-spring-srv6-stateless-slice-id-09,
+              29 January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-filsfils-spring-srv6-stateless-slice-id-09>.
 
    [I-D.gong-teas-hierarchical-slice-solution]
               Gong, L., Cheng, W., Lin, C., Chen, M., Dong, J., Chen,
               R., and Y. Liang, "Segment Routing based Solution for
               Hierarchical IETF Network Slices", Work in Progress,
               Internet-Draft, draft-gong-teas-hierarchical-slice-
-              solution-02, 6 July 2023,
+              solution-03, 7 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-gong-teas-
-              hierarchical-slice-solution-02>.
+              hierarchical-slice-solution-03>.
 
    [I-D.ietf-6man-enhanced-vpn-vtn-id]
               Dong, J., Li, Z., Xie, C., Ma, C., and G. S. Mishra,
@@ -805,9 +830,9 @@ Table of Contents
               Guo, A., Contreras, L. M., Belotti, S., Rokui, R., Xu, Y.,
               Zhao, Y., and X. Liu, "Framework and Data Model for OTN
               Network Slicing", Work in Progress, Internet-Draft, draft-
-              ietf-ccamp-yang-otn-slicing-05, 7 July 2023,
+              ietf-ccamp-yang-otn-slicing-06, 24 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              yang-otn-slicing-05>.
+              yang-otn-slicing-06>.
 
    [I-D.ietf-dmm-tn-aware-mobility]
               Chunduri, U., Kaippallimalil, J., Bhaskaran, S., Tantsura,
@@ -820,16 +845,16 @@ Table of Contents
    [I-D.ietf-idr-bgp-car]
               Rao, D., Agrawal, S., and Co-authors, "BGP Color-Aware
               Routing (CAR)", Work in Progress, Internet-Draft, draft-
-              ietf-idr-bgp-car-03, 23 October 2023,
+              ietf-idr-bgp-car-06, 2 February 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
-              car-03>.
+              car-06>.
 
    [I-D.ietf-idr-bgp-ct]
               Vairavakkalai, K. and N. Venkataraman, "BGP Classful
               Transport Planes", Work in Progress, Internet-Draft,
-              draft-ietf-idr-bgp-ct-17, 20 October 2023,
+              draft-ietf-idr-bgp-ct-23, 1 February 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
-              ct-17>.
+              ct-23>.
 
    [I-D.ietf-idr-bgpls-sr-vtn-mt]
               Xie, C., Li, C., Dong, J., and Z. Li, "BGP-LS with Multi-
@@ -851,17 +876,17 @@ Table of Contents
               Mirsky, G., Halpern, J. M., Min, X., Clemm, A., Strassner,
               J., and J. François, "Precision Availability Metrics for
               Services Governed by Service Level Objectives (SLOs)",
-              Work in Progress, Internet-Draft, draft-ietf-ippm-pam-08,
-              18 October 2023, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ippm-pam-08>.
+              Work in Progress, Internet-Draft, draft-ietf-ippm-pam-09,
+              1 December 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-ippm-pam-09>.
 
    [I-D.ietf-lsr-isis-sr-vtn-mt]
-              Xie, C., Ma, C., Dong, J., and Z. Li, "Using IS-IS Multi-
-              Topology (MT) for Segment Routing based Virtual Transport
-              Network", Work in Progress, Internet-Draft, draft-ietf-
-              lsr-isis-sr-vtn-mt-05, 10 July 2023,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-lsr-
-              isis-sr-vtn-mt-05>.
+              Xie, C., Ma, C., Dong, J., and Z. Li, "Applicability of
+              IS-IS Multi-Topology (MT) for Segment Routing based
+              Network Resource Partition (NRP)", Work in Progress,
+              Internet-Draft, draft-ietf-lsr-isis-sr-vtn-mt-07, 23
+              January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lsr-isis-sr-vtn-mt-07>.
 
    [I-D.ietf-spring-resource-aware-segments]
               Dong, J., Miyasaka, T., Zhu, Y., Qin, F., and Z. Li,
@@ -891,26 +916,26 @@ Table of Contents
               Lee, Y., Dhody, D., Ceccarelli, D., Bryskin, I., and B. Y.
               Yoon, "A YANG Data Model for Virtual Network (VN)
               Operations", Work in Progress, Internet-Draft, draft-ietf-
-              teas-actn-vn-yang-21, 22 October 2023,
+              teas-actn-vn-yang-23, 30 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-vn-yang-21>.
+              actn-vn-yang-23>.
 
    [I-D.ietf-teas-applicability-actn-slicing]
               King, D., Drake, J., Zheng, H., and A. Farrel,
               "Applicability of Abstraction and Control of Traffic
               Engineered Networks (ACTN) to Network Slicing", Work in
               Progress, Internet-Draft, draft-ietf-teas-applicability-
-              actn-slicing-04, 29 August 2023,
+              actn-slicing-05, 11 February 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              applicability-actn-slicing-04>.
+              applicability-actn-slicing-05>.
 
    [I-D.ietf-teas-enhanced-vpn]
               Dong, J., Bryant, S., Li, Z., Miyasaka, T., and Y. Lee, "A
-              Framework for Enhanced Virtual Private Network (VPN+)",
+              Framework for NRP-based Enhanced Virtual Private Network",
               Work in Progress, Internet-Draft, draft-ietf-teas-
-              enhanced-vpn-15, 23 October 2023,
+              enhanced-vpn-17, 25 December 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              enhanced-vpn-15>.
+              enhanced-vpn-17>.
 
    [I-D.ietf-teas-ietf-network-slice-nbi-yang]
               Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
@@ -951,9 +976,9 @@ Table of Contents
               D., Halpern, J. M., Peng, S., Chen, R., Liu, X.,
               Contreras, L. M., Rokui, R., and L. Jalil, "Realizing
               Network Slices in IP/MPLS Networks", Work in Progress,
-              Internet-Draft, draft-ietf-teas-ns-ip-mpls-02, 13 March
+              Internet-Draft, draft-ietf-teas-ns-ip-mpls-03, 26 November
               2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              teas-ns-ip-mpls-02>.
+              teas-ns-ip-mpls-03>.
 
    [I-D.ietf-teas-te-service-mapping-yang]
               Lee, Y., Dhody, D., Fioccola, G., Wu, Q., Ceccarelli, D.,
@@ -1011,18 +1036,18 @@ Table of Contents
    [I-D.liu-spring-nrp-id-in-srv6-segment]
               Liu, Y., Lin, C., Li, H., and L. Gong, "NRP ID in SRv6
               segment", Work in Progress, Internet-Draft, draft-liu-
-              spring-nrp-id-in-srv6-segment-02, 17 April 2023,
+              spring-nrp-id-in-srv6-segment-03, 8 November 2023,
               <https://datatracker.ietf.org/doc/html/draft-liu-spring-
-              nrp-id-in-srv6-segment-02>.
+              nrp-id-in-srv6-segment-03>.
 
    [I-D.liu-teas-transport-network-slice-yang]
               Liu, X., Tantsura, J., Bryskin, I., Contreras, L. M., Wu,
               Q., Belotti, S., Rokui, R., Guo, A., and I. Busi, "IETF
               Network Slice Topology YANG Data Model", Work in Progress,
               Internet-Draft, draft-liu-teas-transport-network-slice-
-              yang-07, 7 July 2023,
+              yang-08, 24 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-liu-teas-
-              transport-network-slice-yang-07>.
+              transport-network-slice-yang-08>.
 
    [I-D.ma-teas-ietf-network-slice-deployment]
               Ma, Y., Luo, R., Chan, A., Suen, B., Dong, J., Liu, Y.,
@@ -1051,9 +1076,16 @@ Table of Contents
               Wu, B., Dhody, D., Beeram, V. P., Saad, T., and S. Peng,
               "A YANG Data Model for Network Resource Partitions
               (NRPs)", Work in Progress, Internet-Draft, draft-wdbsp-
-              teas-nrp-yang-02, 28 August 2023,
+              teas-nrp-yang-04, 3 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-wdbsp-teas-
-              nrp-yang-02>.
+              nrp-yang-04>.
+
+   [I-D.zhang-rtgwg-aaa-hierarchical-network-slices]
+              Zhang, X., Lin, C., and Y. Qiu, "AAA for Hierarchical
+              Network Slices", Work in Progress, Internet-Draft, draft-
+              zhang-rtgwg-aaa-hierarchical-network-slices-00, 7 January
+              2024, <https://datatracker.ietf.org/doc/html/draft-zhang-
+              rtgwg-aaa-hierarchical-network-slices-00>.
 
    [RFC9012]  Patel, K., Van de Velde, G., Sangli, S., and J. Scudder,
               "The BGP Tunnel Encapsulation Attribute", RFC 9012,
