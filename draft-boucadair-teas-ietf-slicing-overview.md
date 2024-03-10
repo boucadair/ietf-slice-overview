@@ -270,7 +270,7 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 #### BGP
 
-{{?I-D.dong-idr-sr-policy-nrp}} and {{?I-D.liu-idr-bgp-network-slicing}} define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.
+{{?I-D.ietf-idr-sr-policy-nrp}} and {{?I-D.liu-idr-bgp-network-slicing}} define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.
 
 #### BGP-LS
 
