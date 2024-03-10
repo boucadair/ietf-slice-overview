@@ -78,7 +78,7 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Using Current IP/MPLS Technologies {#no-extension}
 
-{{?I-D.srld-teas-5g-slicing}} describes a model for the realization of RFC XXXX Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
+{{?I-D.ietf-teas-5g-ns-ip-mpls}} describes a model for the realization of RFC XXXX Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
 
 * L2VPN/L3VPN service instances for logical separation,
 * Fine-grained resource control at the PE,
@@ -196,13 +196,13 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
 
 {{?RFC9181}} specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.
 
-{{?I-D.boro-opsawg-teas-common-ac}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
+{{?I-D.ietf-opsawg-teas-common-ac}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
 
 ## Service Models
 
 ### Attachment Circuit as a Service (ACaaS) Data Model
 
-{{?I-D.boro-opsawg-teas-attachment-circuit}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
+{{?I-D.ietf-opsawg-teas-attachment-circuit}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
 
 ### Network Slice Service Data Model
 
@@ -223,7 +223,7 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### AC-augmented SAPs
 
-{{?I-D.boro-opsawg-ntw-attachment-circuit}} augments the SAP model with more details for managing ACs at the network level.
+{{?I-D.ietf-opsawg-ntw-attachment-circuit}} augments the SAP model with more details for managing ACs at the network level.
 
 ### Network Slice Topology
 
@@ -233,7 +233,7 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 ### Network Resource Partitions (NRPs)
 
-{{?I-D.wdbsp-teas-nrp-yang}} specifies a YANG data model for managing NRPs.
+{{?I-D.ietf-teas-nrp-yang}} specifies a YANG data model for managing NRPs.
 
 ### Network Slice Mapping
 
@@ -357,6 +357,12 @@ path calculation with performance requirements expressed as SLOs. The new
 PCEP object uses the attributes defined in {{?I-D.ietf-ippm-pam}}.
 
 # Misc
+
+## Enforcement of 5G End-to-End Network Slice QoS
+
+{{?I-D.cbs-teas-5qi-to-dscp-mapping}} documents an example of possible mapping of 5QI values
+to DSCP markings with a focus on 5G Network Slices. The document groups different 5QI types in classes based
+on their SLOs.
 
 ## Scalability Considerations for NRP
 
