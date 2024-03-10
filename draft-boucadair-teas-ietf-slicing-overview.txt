@@ -529,7 +529,7 @@ Table of Contents
 
 6.3.3.1.  BGP
 
-   [I-D.dong-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
+   [I-D.ietf-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
    define extensions to BGP in order to advertise NRP ID in an SR
    Policy.  The NRP ID is encoded in 4 octets.
 
@@ -770,13 +770,6 @@ Table of Contents
               2023, <https://datatracker.ietf.org/doc/html/draft-dhody-
               teas-ietf-network-slice-mapping-04>.
 
-   [I-D.dong-idr-sr-policy-nrp]
-              Dong, J., Hu, Z., and R. Pang, "BGP SR Policy Extensions
-              for Network Resource Partition", Work in Progress,
-              Internet-Draft, draft-dong-idr-sr-policy-nrp-04, 23
-              October 2023, <https://datatracker.ietf.org/doc/html/
-              draft-dong-idr-sr-policy-nrp-04>.
-
    [I-D.dong-pce-pcep-nrp]
               Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
               M., Beeram, V. P., and T. Saad, "Path Computation Element
@@ -864,6 +857,13 @@ Table of Contents
               slice-ts-02, 4 March 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-
               flowspec-network-slice-ts-02>.
+
+   [I-D.ietf-idr-sr-policy-nrp]
+              Dong, J., Hu, Z., and R. Pang, "BGP SR Policy Extensions
+              for Network Resource Partition", Work in Progress,
+              Internet-Draft, draft-ietf-idr-sr-policy-nrp-00, 17
+              December 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-idr-sr-policy-nrp-00>.
 
    [I-D.ietf-ippm-pam]
               Mirsky, G., Halpern, J. M., Min, X., Clemm, A., Strassner,
