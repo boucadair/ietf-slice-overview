@@ -1030,7 +1030,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair</td>
-<td class="center">Expires 11 September 2024</td>
+<td class="center">Expires 14 September 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1043,12 +1043,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-boucadair-teas-ietf-slicing-overview-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-03-10" class="published">10 March 2024</time>
+<time datetime="2024-03-13" class="published">13 March 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-09-11">11 September 2024</time></dd>
+<dd class="expires"><time datetime="2024-09-14">14 September 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1093,7 +1093,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 11 September 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 September 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1368,19 +1368,19 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-reference-framework-and-arc">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-reference-framework-and-arc" class="section-name selfRef">Reference Framework and Architecture</a>
       </h2>
-<p id="section-2-1"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
-of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC XXXX Network Slice" (where XXXX is the number assigned to <span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> when published as an RFC").<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> provides a clear distinction between:<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-1"><span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span> is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
+of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC 9543 Network Slice".<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2"><span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span> provides a clear distinction between:<a href="#section-2-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-3.1">
-          <p id="section-2-3.1.1">the "RFC XXXX Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
+          <p id="section-2-3.1.1">the "RFC 9543 Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
  used by the service provider, and<a href="#section-2-3.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-3.2">
-          <p id="section-2-3.2.1">the "RFC XXXX Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
+          <p id="section-2-3.2.1">the "RFC 9543 Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-2-4">The RFC XXXX Network Slice Service is specified in terms of:<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-4">The RFC 9543 Network Slice Service is specified in terms of:<a href="#section-2-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2-5.1">
           <p id="section-2-5.1.1">a set of Service Demarcation Point (SDP),<a href="#section-2-5.1.1" class="pilcrow">¶</a></p>
@@ -1393,10 +1393,10 @@ of Network Slice Services over networks that are deployed using technologies tha
 </li>
       </ul>
 <p id="section-2-6">The service objectives can be expressed as Service Level Objectives (SLOs) or Service Level Expectations (SLEs).<a href="#section-2-6" class="pilcrow">¶</a></p>
-<p id="section-2-7">In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an RFC XXXX Network Slice Service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).<a href="#section-2-7" class="pilcrow">¶</a></p>
-<p id="section-2-8">In other deployments, RFC XXXX Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).<a href="#section-2-8" class="pilcrow">¶</a></p>
-<p id="section-2-9">RFC XXXX Network Slices can be realized using existing tools (<a href="#no-extension" class="auto internal xref">Section 3.1</a>). The extensions listed in <a href="#cp-ext" class="auto internal xref">Section 6</a> or <a href="#dp-ext" class="auto internal xref">Section 7</a> are not required in such a case.<a href="#section-2-9" class="pilcrow">¶</a></p>
-<p id="section-2-10"><span>[<a href="#I-D.ietf-teas-ietf-network-slices" class="cite xref">I-D.ietf-teas-ietf-network-slices</a>]</span> does not provide any recommendation about the technological means to realize an RFC XXXX Network Slice Service. These considerations are deployment specific.<a href="#section-2-10" class="pilcrow">¶</a></p>
+<p id="section-2-7">In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an RFC 9543 Network Slice Service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">In other deployments, RFC 9543 Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">RFC 9543 Network Slices can be realized using existing tools (<a href="#no-extension" class="auto internal xref">Section 3.1</a>). The extensions listed in <a href="#cp-ext" class="auto internal xref">Section 6</a> or <a href="#dp-ext" class="auto internal xref">Section 7</a> are not required in such a case.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<p id="section-2-10"><span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span> does not provide any recommendation about the technological means to realize an RFC 9543 Network Slice Service. These considerations are deployment specific.<a href="#section-2-10" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="models-for-realizing-network-slices">
@@ -1409,7 +1409,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-using-current-ip-mpls-techn">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-using-current-ip-mpls-techn" class="section-name selfRef">Using Current IP/MPLS Technologies</a>
         </h3>
-<p id="section-3.1-1"><span>[<a href="#I-D.ietf-teas-5g-ns-ip-mpls" class="cite xref">I-D.ietf-teas-5g-ns-ip-mpls</a>]</span> describes a model for the realization of RFC XXXX Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1"><span>[<a href="#I-D.ietf-teas-5g-ns-ip-mpls" class="cite xref">I-D.ietf-teas-5g-ns-ip-mpls</a>]</span> describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1-2.1">
             <p id="section-3.1-2.1.1">L2VPN/L3VPN service instances for logical separation,<a href="#section-3.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1431,7 +1431,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-using-network-resource-part">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-using-network-resource-part" class="section-name selfRef">Using Network Resource Partitions (NRPs) and Slice-Flow Aggregates</a>
         </h3>
-<p id="section-3.2-1"><span>[<a href="#I-D.ietf-teas-ns-ip-mpls" class="cite xref">I-D.ietf-teas-ns-ip-mpls</a>]</span> proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more RFC XXXX Network Slice Services.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-1"><span>[<a href="#I-D.ietf-teas-ns-ip-mpls" class="cite xref">I-D.ietf-teas-ns-ip-mpls</a>]</span> proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more RFC 9543 Network Slice Services.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2"><span>[<a href="#I-D.ietf-teas-ns-ip-mpls" class="cite xref">I-D.ietf-teas-ns-ip-mpls</a>]</span> also introduces the notion of NRP Policy that is used to trigger the creation of NRPs that will support a given Slice-Flow Aggregate. In some deployment schemes, packets that belong to a Slice-Flow Aggregate are forwarded by intermediate node along the appropriate NRP by processing an NRP Selector that is carried by these packets.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1440,7 +1440,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-optical-transport-networks-">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-optical-transport-networks-" class="section-name selfRef">Optical Transport Networks (OTN) Slicing</a>
         </h3>
-<p id="section-3.3-1"><span>[<a href="#I-D.ietf-ccamp-yang-otn-slicing" class="cite xref">I-D.ietf-ccamp-yang-otn-slicing</a>]</span> defines Optical Transport Networks (OTN) slice as an OTN virtual network topology connecting a number of OTN endpoints using a set of shared or dedicated OTN network resources to satisfy specific SLOs. OTN slices are considered as a technology-specific realization of an RFC XXXX Network Slice in the OTN domain.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-1"><span>[<a href="#I-D.ietf-ccamp-yang-otn-slicing" class="cite xref">I-D.ietf-ccamp-yang-otn-slicing</a>]</span> defines Optical Transport Networks (OTN) slice as an OTN virtual network topology connecting a number of OTN endpoints using a set of shared or dedicated OTN network resources to satisfy specific SLOs. OTN slices are considered as a technology-specific realization of an RFC 9543 Network Slice in the OTN domain.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="vpn">
@@ -1456,7 +1456,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-instantiation-in-service-pr">
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-instantiation-in-service-pr" class="section-name selfRef">Instantiation in Service Providers Networks</a>
         </h3>
-<p id="section-3.5-1"><span>[<a href="#I-D.barguil-teas-network-slices-instantation" class="cite xref">I-D.barguil-teas-network-slices-instantation</a>]</span> focuses on the instantiation of the RFC XXXX Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC XXXX Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span>), the Layer-2 Network Model (L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span>)) used for the realization of the slices.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.5-1"><span>[<a href="#I-D.barguil-teas-network-slices-instantation" class="cite xref">I-D.barguil-teas-network-slices-instantation</a>]</span> focuses on the instantiation of the RFC 9543 Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC 9543 Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span>), the Layer-2 Network Model (L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span>)) used for the realization of the slices.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="structuring-network-slice-controllers">
@@ -1464,7 +1464,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-structuring-network-slice-c">
 <a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-structuring-network-slice-c" class="section-name selfRef">Structuring Network Slice Controllers</a>
         </h3>
-<p id="section-3.6-1"><span>[<a href="#I-D.ietf-teas-ns-controller-models" class="cite xref">I-D.ietf-teas-ns-controller-models</a>]</span> proposes an approach for structuring the RFC XXXX Network Slice Controller as well as how to use different data models being defined for RFC XXXX Network Slice Service provision.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.6-1"><span>[<a href="#I-D.ietf-teas-ns-controller-models" class="cite xref">I-D.ietf-teas-ns-controller-models</a>]</span> proposes an approach for structuring the RFC 9543 Network Slice Controller as well as how to use different data models being defined for RFC 9543 Network Slice Service provision.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sr-based-hierarchical-network-slices">
@@ -1472,7 +1472,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-sr-based-hierarchical-netwo">
 <a href="#section-3.7" class="section-number selfRef">3.7. </a><a href="#name-sr-based-hierarchical-netwo" class="section-name selfRef">SR-based Hierarchical Network Slices</a>
         </h3>
-<p id="section-3.7-1"><span>[<a href="#I-D.gong-teas-hierarchical-slice-solution" class="cite xref">I-D.gong-teas-hierarchical-slice-solution</a>]</span> proposes a hierarchical approach for realizing RFC XXXX Network Slices in Segment Routing domain. The approach involves two levels:<a href="#section-3.7-1" class="pilcrow">¶</a></p>
+<p id="section-3.7-1"><span>[<a href="#I-D.gong-teas-hierarchical-slice-solution" class="cite xref">I-D.gong-teas-hierarchical-slice-solution</a>]</span> proposes a hierarchical approach for realizing RFC 9543 Network Slices in Segment Routing domain. The approach involves two levels:<a href="#section-3.7-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.7-2.1">
             <p id="section-3.7-2.1.1">Level 1 Network Slices are realized using Flex-Algo.<a href="#section-3.7-2.1.1" class="pilcrow">¶</a></p>
@@ -1488,7 +1488,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-realization-of-composite-ne">
 <a href="#section-3.8" class="section-number selfRef">3.8. </a><a href="#name-realization-of-composite-ne" class="section-name selfRef">Realization of Composite Network Slices</a>
         </h3>
-<p id="section-3.8-1"><span>[<a href="#I-D.li-teas-composite-network-slices" class="cite xref">I-D.li-teas-composite-network-slices</a>]</span> investigates a set of scenarios for realizing composite RFC XXXX Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.<a href="#section-3.8-1" class="pilcrow">¶</a></p>
+<p id="section-3.8-1"><span>[<a href="#I-D.li-teas-composite-network-slices" class="cite xref">I-D.li-teas-composite-network-slices</a>]</span> investigates a set of scenarios for realizing composite RFC 9543 Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.<a href="#section-3.8-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="aaa-for-hierarchical-network-slices">
@@ -1512,7 +1512,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
         <h3 id="name-3gpp-5g-end-to-end-network-">
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-3gpp-5g-end-to-end-network-" class="section-name selfRef">3GPP 5G End-to-End Network Slices</a>
         </h3>
-<p id="section-4.1-1"><span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span> focuses on the application of RFC XXXX Network Slices in the context of the 3GPP 5G slices.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-1"><span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span> focuses on the application of RFC 9543 Network Slices in the context of the 3GPP 5G slices.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="encoding-3gpp-slices-for-interactive-media-services">
@@ -1536,7 +1536,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
         <h3 id="name-mobility-aware-transport-ne">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-mobility-aware-transport-ne" class="section-name selfRef">Mobility-Aware Transport Network Slicing</a>
         </h3>
-<p id="section-4.4-1"><span>[<a href="#I-D.ietf-dmm-tn-aware-mobility" class="cite xref">I-D.ietf-dmm-tn-aware-mobility</a>]</span> discusses a mapping of 5G slices to RFC XXXX Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC XXXX Network Slice segments that is listed in <span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span>.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4-1"><span>[<a href="#I-D.ietf-dmm-tn-aware-mobility" class="cite xref">I-D.ietf-dmm-tn-aware-mobility</a>]</span> discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in <span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span>.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="detnet">
@@ -1544,7 +1544,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
         <h3 id="name-detnet">
 <a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-detnet" class="section-name selfRef">DetNet</a>
         </h3>
-<p id="section-4.5-1"><span>[<a href="#I-D.sw-detnet-network-slice-mapping-yang" class="cite xref">I-D.sw-detnet-network-slice-mapping-yang</a>]</span> describes the applicability of DetNet to RFC XXXX Network Slice, particularly to provide deterministic services. The document describes how to use DetNet flow aggregation as the Slice-Flow Aggregates over an underlying NRP following the approach in <a href="#flow-agg" class="auto internal xref">Section 3.2</a>.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
+<p id="section-4.5-1"><span>[<a href="#I-D.sw-detnet-network-slice-mapping-yang" class="cite xref">I-D.sw-detnet-network-slice-mapping-yang</a>]</span> describes the applicability of DetNet to RFC 9543 Network Slice, particularly to provide deterministic services. The document describes how to use DetNet flow aggregation as the Slice-Flow Aggregates over an underlying NRP following the approach in <a href="#flow-agg" class="auto internal xref">Section 3.2</a>.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1630,7 +1630,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
           <h4 id="name-network-slice-service-data-">
 <a href="#section-5.2.2" class="section-number selfRef">5.2.2. </a><a href="#name-network-slice-service-data-" class="section-name selfRef">Network Slice Service Data Model</a>
           </h4>
-<p id="section-5.2.2-1"><span>[<a href="#I-D.ietf-teas-ietf-network-slice-nbi-yang" class="cite xref">I-D.ietf-teas-ietf-network-slice-nbi-yang</a>]</span> defines a YANG data model for manaing RFC XXXX Network Slice Services.<a href="#section-5.2.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2.2-1"><span>[<a href="#I-D.ietf-teas-ietf-network-slice-nbi-yang" class="cite xref">I-D.ietf-teas-ietf-network-slice-nbi-yang</a>]</span> defines a YANG data model for manaing RFC 9543 Network Slice Services.<a href="#section-5.2.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1651,7 +1651,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
    network slices).  Also, the model can be used to retrieve the points
    where the services are actually being delivered to customers
    (including peer networks).<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.3.1-2">A SAP network topology can be used for one or multiple service types ('service-type'). Setting this data node to 'network-slice' allows a controller to expose where RFC XXXX Network Slices services are being delivered. It can also be used to check where RFC XXXX Network Slice Services can be delivered.<a href="#section-5.3.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.3.1-2">A SAP network topology can be used for one or multiple service types ('service-type'). Setting this data node to 'network-slice' allows a controller to expose where RFC 9543 Network Slices services are being delivered. It can also be used to check where RFC 9543 Network Slice Services can be delivered.<a href="#section-5.3.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="ac-augmented-saps">
@@ -1667,7 +1667,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
           <h4 id="name-network-slice-topology">
 <a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-network-slice-topology" class="section-name selfRef">Network Slice Topology</a>
           </h4>
-<p id="section-5.3.3-1"><span>[<a href="#I-D.liu-teas-transport-network-slice-yang" class="cite xref">I-D.liu-teas-transport-network-slice-yang</a>]</span> specifies a YANG model for RFC XXXX Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.3-1"><span>[<a href="#I-D.liu-teas-transport-network-slice-yang" class="cite xref">I-D.liu-teas-transport-network-slice-yang</a>]</span> specifies a YANG model for RFC 9543 Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.3.3-2">The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using <span>[<a href="#I-D.ietf-teas-actn-vn-yang" class="cite xref">I-D.ietf-teas-actn-vn-yang</a>]</span>. The authors should motivate why <span>[<a href="#I-D.ietf-teas-actn-vn-yang" class="cite xref">I-D.ietf-teas-actn-vn-yang</a>]</span> is not sufficient.<a href="#section-5.3.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1684,7 +1684,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
           <h4 id="name-network-slice-mapping">
 <a href="#section-5.3.5" class="section-number selfRef">5.3.5. </a><a href="#name-network-slice-mapping" class="section-name selfRef">Network Slice Mapping</a>
           </h4>
-<p id="section-5.3.5-1"><span>[<a href="#I-D.dhody-teas-ietf-network-slice-mapping" class="cite xref">I-D.dhody-teas-ietf-network-slice-mapping</a>]</span> specifies an RFC XXXX Network Slice Service mapping YANG model. The model supports the following mappings:<a href="#section-5.3.5-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.5-1"><span>[<a href="#I-D.dhody-teas-ietf-network-slice-mapping" class="cite xref">I-D.dhody-teas-ietf-network-slice-mapping</a>]</span> specifies an RFC 9543 Network Slice Service mapping YANG model. The model supports the following mappings:<a href="#section-5.3.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.3.5-2.1">
               <p id="section-5.3.5-2.1.1">L3NM <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span><a href="#section-5.3.5-2.1.1" class="pilcrow">¶</a></p>
@@ -1954,7 +1954,7 @@ on their SLOs.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
         <h3 id="name-scalability-considerations-">
 <a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-scalability-considerations-" class="section-name selfRef">Scalability Considerations for NRP</a>
         </h3>
-<p id="section-9.2-1"><span>[<a href="#I-D.ietf-teas-nrp-scalability" class="cite xref">I-D.ietf-teas-nrp-scalability</a>]</span> discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC XXXX Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
+<p id="section-9.2-1"><span>[<a href="#I-D.ietf-teas-nrp-scalability" class="cite xref">I-D.ietf-teas-nrp-scalability</a>]</span> discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC 9543 Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="deployment-considerations">
@@ -2121,10 +2121,6 @@ on their SLOs.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
       <dd>
 <span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">J. Mullooly</span>, <span class="refTitle">"A YANG Data Model for the RFC AAAA Network Slice Service"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slice-nbi-yang-09</span>, <time datetime="2024-02-17" class="refDate">17 February 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-09">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-09</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.ietf-teas-ietf-network-slices">[I-D.ietf-teas-ietf-network-slices]</dt>
-      <dd>
-<span class="refAuthor">Farrel, A.</span>, <span class="refAuthor">Drake, J.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Homma, S.</span>, <span class="refAuthor">Makhijani, K.</span>, <span class="refAuthor">Contreras, L. M.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A Framework for Network Slices in Networks Built from IETF Technologies"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slices-25</span>, <time datetime="2023-09-14" class="refDate">14 September 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slices-25">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slices-25</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="I-D.ietf-teas-nrp-scalability">[I-D.ietf-teas-nrp-scalability]</dt>
       <dd>
 <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Yang, G.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"Scalability Considerations for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-scalability-04</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-04">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-04</a>&gt;</span>. </dd>
@@ -2210,8 +2206,12 @@ on their SLOs.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
 <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Gonzalez de Dios, O., Ed.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">L. Munoz</span>, <span class="refTitle">"A YANG Network Data Model for Layer 2 VPNs"</span>, <span class="seriesInfo">RFC 9291</span>, <span class="seriesInfo">DOI 10.17487/RFC9291</span>, <time datetime="2022-09" class="refDate">September 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9291">https://www.rfc-editor.org/rfc/rfc9291</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9408">[RFC9408]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Gonzalez de Dios, O.</span>, <span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Wu, Q.</span>, and <span class="refAuthor">V. Lopez</span>, <span class="refTitle">"A YANG Network Data Model for Service Attachment Points (SAPs)"</span>, <span class="seriesInfo">RFC 9408</span>, <span class="seriesInfo">DOI 10.17487/RFC9408</span>, <time datetime="2023-06" class="refDate">June 2023</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9408">https://www.rfc-editor.org/rfc/rfc9408</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9543">[RFC9543]</dt>
+    <dd>
+<span class="refAuthor">Farrel, A., Ed.</span>, <span class="refAuthor">Drake, J., Ed.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Homma, S.</span>, <span class="refAuthor">Makhijani, K.</span>, <span class="refAuthor">Contreras, L.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A Framework for Network Slices in Networks Built from IETF Technologies"</span>, <span class="seriesInfo">RFC 9543</span>, <span class="seriesInfo">DOI 10.17487/RFC9543</span>, <time datetime="2024-03" class="refDate">March 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9543">https://www.rfc-editor.org/rfc/rfc9543</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
