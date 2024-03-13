@@ -49,16 +49,16 @@ This document provides an overview of slicing activities in the IETF to hopefull
 
 # Reference Framework and Architecture {#slice-fr}
 
-{{?I-D.ietf-teas-ietf-network-slices}} is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
-of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC XXXX Network Slice" (where XXXX is the number assigned to {{?I-D.ietf-teas-ietf-network-slices}} when published as an RFC").
+{{?RFC9543}} is the authoritative IETF framework for Network Slices. It provides definitions for a slice-related core terms and specifies a framework for the provision
+of Network Slice Services over networks that are deployed using technologies that are owned by the IETF (IP, MPLS, etc.). The document refers to such slices as IETF Network Slice or "the term "RFC 9543 Network Slice".
 
-{{?I-D.ietf-teas-ietf-network-slices}} provides a clear distinction between:
+{{?RFC9543}} provides a clear distinction between:
 
-* the "RFC XXXX Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
+* the "RFC 9543 Network Slice Service" which is the service delivered to the customer and which is agnostic to the technologies and mechanisms
    used by the service provider, and
-* the "RFC XXXX Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.
+* the "RFC 9543 Network Slice" which is the realization of the service in the service provider's network achieved by partitioning network resources and by applying a set of mechanisms within the network.
 
-The RFC XXXX Network Slice Service is specified in terms of:
+The RFC 9543 Network Slice Service is specified in terms of:
 
 * a set of Service Demarcation Point (SDP),
 * a set of one or more connectivity constructs between subsets of these SDPs, and
@@ -66,19 +66,19 @@ The RFC XXXX Network Slice Service is specified in terms of:
 
 The service objectives can be expressed as Service Level Objectives (SLOs) or Service Level Expectations (SLEs).
 
-In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an RFC XXXX Network Slice Service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).
+In some deploymenets, the underlying network can be customized to select a subset of resources that are suitable for the delivery of an RFC 9543 Network Slice Service. Such a customization can be achieved by creating a set of Network Resource Partitions (NRPs).
 
-In other deployments, RFC XXXX Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).
+In other deployments, RFC 9543 Network Slices can be hosted directly on the underlay network (i.e., without requiring any NRP).
 
-RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}). The extensions listed in {{cp-ext}} or {{dp-ext}} are not required in such a case.
+RFC 9543 Network Slices can be realized using existing tools ({{no-extension}}). The extensions listed in {{cp-ext}} or {{dp-ext}} are not required in such a case.
 
-{{?I-D.ietf-teas-ietf-network-slices}} does not provide any recommendation about the technological means to realize an RFC XXXX Network Slice Service. These considerations are deployment specific.
+{{?RFC9543}} does not provide any recommendation about the technological means to realize an RFC 9543 Network Slice Service. These considerations are deployment specific.
 
 # Models for Realizing Network Slices
 
 ## Using Current IP/MPLS Technologies {#no-extension}
 
-{{?I-D.ietf-teas-5g-ns-ip-mpls}} describes a model for the realization of RFC XXXX Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
+{{?I-D.ietf-teas-5g-ns-ip-mpls}} describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
 
 * L2VPN/L3VPN service instances for logical separation,
 * Fine-grained resource control at the PE,
@@ -87,13 +87,13 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Using Network Resource Partitions (NRPs) and Slice-Flow Aggregates {#flow-agg}
 
-{{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more RFC XXXX Network Slice Services.
+{{?I-D.ietf-teas-ns-ip-mpls}} proposes a model that is inspired from the Diffserv model for the realization of Network Slices over IP/MPLS networks. Specifically, this model introduces the concept of Slice-Flow Aggregate which is defined as a collection of packets that are mapped to an NRP and are given the same forwarding treatment in a shared network. An aggregate can group flows from of one or more RFC 9543 Network Slice Services.
 
 {{?I-D.ietf-teas-ns-ip-mpls}} also introduces the notion of NRP Policy that is used to trigger the creation of NRPs that will support a given Slice-Flow Aggregate. In some deployment schemes, packets that belong to a Slice-Flow Aggregate are forwarded by intermediate node along the appropriate NRP by processing an NRP Selector that is carried by these packets.
 
 ## Optical Transport Networks (OTN) Slicing
 
-{{?I-D.ietf-ccamp-yang-otn-slicing}} defines Optical Transport Networks (OTN) slice as an OTN virtual network topology connecting a number of OTN endpoints using a set of shared or dedicated OTN network resources to satisfy specific SLOs. OTN slices are considered as a technology-specific realization of an RFC XXXX Network Slice in the OTN domain.
+{{?I-D.ietf-ccamp-yang-otn-slicing}} defines Optical Transport Networks (OTN) slice as an OTN virtual network topology connecting a number of OTN endpoints using a set of shared or dedicated OTN network resources to satisfy specific SLOs. OTN slices are considered as a technology-specific realization of an RFC 9543 Network Slice in the OTN domain.
 
 ## VPN+
 
@@ -101,22 +101,22 @@ RFC XXXX Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Instantiation in Service Providers Networks
 
-{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the RFC XXXX Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC XXXX Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
+{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the RFC 9543 Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC 9543 Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
 
 ## Structuring Network Slice Controllers
 
-{{?I-D.ietf-teas-ns-controller-models}} proposes an approach for structuring the RFC XXXX Network Slice Controller as well as how to use different data models being defined for RFC XXXX Network Slice Service provision.
+{{?I-D.ietf-teas-ns-controller-models}} proposes an approach for structuring the RFC 9543 Network Slice Controller as well as how to use different data models being defined for RFC 9543 Network Slice Service provision.
 
 ## SR-based Hierarchical Network Slices
 
-{{?I-D.gong-teas-hierarchical-slice-solution}} proposes a hierarchical approach for realizing RFC XXXX Network Slices in Segment Routing domain. The approach involves two levels:
+{{?I-D.gong-teas-hierarchical-slice-solution}} proposes a hierarchical approach for realizing RFC 9543 Network Slices in Segment Routing domain. The approach involves two levels:
 
 * Level 1 Network Slices are realized using Flex-Algo.
 * Level 2 forwarding paths are restricted in the Level 1 topology by using SR Policy and NRP-ID in the data plane.
 
 ## Realization of Composite Network Slices
 
-{{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite RFC XXXX Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.
+{{?I-D.li-teas-composite-network-slices}} investigates a set of scenarios for realizing composite RFC 9543 Network Slices (that basically involve other slices).  The document defines a new identifier, called Inter-domain NRP ID.
 
 ## AAA for Hierarchical Network Slices
 
@@ -127,7 +127,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
 
 ## 3GPP 5G End-to-End Network Slices
 
-{{?I-D.ietf-teas-5g-network-slice-application}} focuses on the application of RFC XXXX Network Slices in the context of the 3GPP 5G slices.
+{{?I-D.ietf-teas-5g-network-slice-application}} focuses on the application of RFC 9543 Network Slices in the context of the 3GPP 5G slices.
 
 ## Encoding 3GPP Slices for Interactive Media Services
 
@@ -139,11 +139,11 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
 
 ## Mobility-Aware Transport Network Slicing
 
-{{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to RFC XXXX Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC XXXX Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
+{{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
 
 ## DetNet
 
-{{?I-D.sw-detnet-network-slice-mapping-yang}} describes the applicability of DetNet to RFC XXXX Network Slice, particularly to provide deterministic services. The document describes how to use DetNet flow aggregation as the Slice-Flow Aggregates over an underlying NRP following the approach in {{flow-agg}}.
+{{?I-D.sw-detnet-network-slice-mapping-yang}} describes the applicability of DetNet to RFC 9543 Network Slice, particularly to provide deterministic services. The document describes how to use DetNet flow aggregation as the Slice-Flow Aggregates over an underlying NRP following the approach in {{flow-agg}}.
 
 
 # Orchestration and Data Models
@@ -206,7 +206,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
 
 ### Network Slice Service Data Model
 
-{{?I-D.ietf-teas-ietf-network-slice-nbi-yang}} defines a YANG data model for manaing RFC XXXX Network Slice Services.
+{{?I-D.ietf-teas-ietf-network-slice-nbi-yang}} defines a YANG data model for manaing RFC 9543 Network Slice Services.
 
 ## Network Models
 
@@ -219,7 +219,7 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
    where the services are actually being delivered to customers
    (including peer networks).
 
-A SAP network topology can be used for one or multiple service types ('service-type'). Setting this data node to 'network-slice' allows a controller to expose where RFC XXXX Network Slices services are being delivered. It can also be used to check where RFC XXXX Network Slice Services can be delivered.
+A SAP network topology can be used for one or multiple service types ('service-type'). Setting this data node to 'network-slice' allows a controller to expose where RFC 9543 Network Slices services are being delivered. It can also be used to check where RFC 9543 Network Slice Services can be delivered.
 
 ### AC-augmented SAPs
 
@@ -227,7 +227,7 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### Network Slice Topology
 
-{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for RFC XXXX Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.
+{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for RFC 9543 Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.
 
 The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using {{?I-D.ietf-teas-actn-vn-yang}}. The authors should motivate why {{?I-D.ietf-teas-actn-vn-yang}} is not sufficient.
 
@@ -237,7 +237,7 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 ### Network Slice Mapping
 
-{{?I-D.dhody-teas-ietf-network-slice-mapping}} specifies an RFC XXXX Network Slice Service mapping YANG model. The model supports the following mappings:
+{{?I-D.dhody-teas-ietf-network-slice-mapping}} specifies an RFC 9543 Network Slice Service mapping YANG model. The model supports the following mappings:
 
    *  L3NM {{?RFC9182}}
    *  L2NM {{?RFC9291}}
@@ -366,7 +366,7 @@ on their SLOs.
 
 ## Scalability Considerations for NRP
 
-{{?I-D.ietf-teas-nrp-scalability}} discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC XXXX Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.
+{{?I-D.ietf-teas-nrp-scalability}} discusses a set of scenarios for the deployment of NRP with a focus on scalability implications. The document reasons about the increase of requested RFC 9543 Network Slice Services that would require NRPs. Such an increase of slices is speculative at this stage.
 
 ## Deployment Considerations
 
