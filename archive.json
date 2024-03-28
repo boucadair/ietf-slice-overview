@@ -1,0 +1,164 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-03-28T00:55:57.816207+00:00",
+  "repo": "boucadair/ietf-slice-overview",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOJs7aqs5qHFsZ",
+      "title": "Add a new section for draft-liu-opsawg-ipfix-network-slice",
+      "url": "https://github.com/boucadair/ietf-slice-overview/issues/2",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Hi Yao, all,\r\n\r\nThank you for sharing this draft. Good to have more interest in ops considerations of slicing.\r\n\r\nI\u2019m ccing teas as you also circulated this draft there. \r\n\r\nThe goal of the draft is completely fine. However, I don\u2019t think we are ready yet to specify a generic NRP-ID IE for the following reasons:\r\n\r\n\u2022\tUnlike what is may be interpreted in the draft, the use of NRPs is not mandatory.\r\n\u2022\tThe identification of an NRP does tell us to which network slice a flow belong.  \r\n\u2022\tThere is not one single stable specification of NRP-ID. draft-ietf-teas-ipo-mpls is not an authoritative reference for this I-D. Actually, the ID is being proposed in many extensions, with distinct encodings (32, 16, 20, 24!). Please refer to draft-boucadair-teas-ietf-slicing-overview which lists at least the following proposals to convey the ID:\r\n\r\n6.  Control Plane Extensions\r\n\r\n    \u2026\r\n\r\n    6.2.  NRP\r\n\r\n        6.2.1.  BGP Flowspec\r\n        6.2.2.  BGP-LS Filters in SR\r\n        6.2.3.  SR Policies Extensions\r\n        6.2.4.  PCEP Extensions\r\n    \u2026\r\n\r\n7.  Data Plane Extensions\r\n\r\n    7.1.  Slice Identifier in the MPLS Entropy Label\r\n    7.2.  Slice Identifier in IPv6 Flow Label\r\n    7.3.  Slice Identifier in the Source Address of Encapsulated SRH\r\n    7.4.  VTN Resource ID in an IPv6 Extension Header\r\n    7.5.  NRP\r\n        7.5.1.  Resource-aware Segments\r\n        7.5.2.  NRP ID in SRv6\r\n        7.5.3.  NRP Selector in MPLS Network Actions\r\n\r\n\u2022\tJoel Halpern already raised a point about the target plane. Your draft should indicate whether it targets data plane or control plane or both.\r\n\u2022\tGiven that the ID can be present in many channels, I\u2019m not sure we can define a generic IE without linking it to where it was conveyed (IPv6 EH, MPLS, etc.).\r\n\u2022\tSome considerations may arise such as what to report when the ID is present in more than one place, etc.\r\n\r\nFWIW, some few edits/comments can be seen at: \r\n\u2022\tPdf: https://github.com/boucadair/IETF-Drafts-Reviews/blob/master/draft-liu-opsawg-ipfix-network-slice-00-rev%20Med.pdf \r\n\u2022\tDoc: https://github.com/boucadair/IETF-Drafts-Reviews/raw/master/draft-liu-opsawg-ipfix-network-slice-00-rev%20Med.docx\r\n\r\n\r\nI suggest that in the next iteration of the draft you let aside the IE format, but focus on defining the scope and discuss the issue listed above. I hope we will have more visibility about the various ID specifications.\r\n\r\nThank you.\r\n\r\nCheers,\r\nMed\r\n",
+      "createdAt": "2023-06-29T06:55:56Z",
+      "updatedAt": "2023-07-06T14:10:17Z",
+      "closedAt": "2023-07-06T14:10:17Z",
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "A new section was added to the draft.",
+          "createdAt": "2023-07-06T14:10:11Z",
+          "updatedAt": "2023-07-06T14:10:11Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOJs7aqs5qHF4_",
+      "title": "Add a new section for draft-ietf-idr-bgp-car",
+      "url": "https://github.com/boucadair/ietf-slice-overview/issues/3",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-06-29T06:56:44Z",
+      "updatedAt": "2023-07-10T11:46:41Z",
+      "closedAt": "2023-07-10T11:46:41Z",
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "done",
+          "createdAt": "2023-07-10T11:46:40Z",
+          "updatedAt": "2023-07-10T11:46:40Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOJs7aqs5rFdxl",
+      "title": "Add a section about draft-clemm-opsawg-pam-ipfix",
+      "url": "https://github.com/boucadair/ietf-slice-overview/issues/4",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-07-10T11:46:54Z",
+      "updatedAt": "2023-09-18T06:42:46Z",
+      "closedAt": "2023-09-18T06:42:45Z",
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOJs7aqs5saOWc",
+      "title": "draft-jiang-tsvwg-slice-media-service",
+      "url": "https://github.com/boucadair/ietf-slice-overview/issues/5",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-07-24T17:12:14Z",
+      "updatedAt": "2023-09-18T06:42:51Z",
+      "closedAt": "2023-09-18T06:42:51Z",
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJs7aqs5Su_s-",
+      "title": "BGP-CT",
+      "url": "https://github.com/boucadair/ietf-slice-overview/pull/1",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-06-12T06:56:19Z",
+      "updatedAt": "2023-06-12T15:09:09Z",
+      "baseRepository": "boucadair/ietf-slice-overview",
+      "baseRefName": "main",
+      "baseRefOid": "22ba9ec59b7b59acdd78cbeed034740df1da9e43",
+      "headRepository": "boucadair/ietf-slice-overview",
+      "headRefName": "boucadair-patch-1",
+      "headRefOid": "e38582f63c83c9db1c2cafbe3f1eb25988ac9c0c",
+      "closedAt": "2023-06-12T15:09:07Z",
+      "mergedAt": "2023-06-12T15:09:07Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "1128f83361a98ff0506e3326d6b4dc6d12b7cc8f"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}

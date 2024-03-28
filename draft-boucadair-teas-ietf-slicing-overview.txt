@@ -1,0 +1,1142 @@
+
+
+
+
+Traffic Engineering Architecture and Signaling              M. Boucadair
+Internet-Draft                                                    Orange
+Intended status: Informational                             13 March 2024
+Expires: 14 September 2024
+
+
+           An Overview of Network Slicing Efforts in The IETF
+           draft-boucadair-teas-ietf-slicing-overview-latest
+
+Abstract
+
+   This document lists a set of slicing-related specifications that are
+   being development within the IETF.  This document is meant to provide
+   an overview of slicing activities in the IETF to hopefully ease
+   coordination and ensure that specifications that are developed in
+   many WGs are consistent.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Discussion of this document takes place on the Traffic Engineering
+   Architecture and Signaling Working Group mailing list
+   (teas@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/teas/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/boucadair/ietf-slice-overview.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 14 September 2024.
+
+Copyright Notice
+
+   Copyright (c) 2024 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Reference Framework and Architecture
+   3.  Models for Realizing Network Slices
+     3.1.  Using Current IP/MPLS Technologies
+     3.2.  Using Network Resource Partitions (NRPs) and Slice-Flow
+           Aggregates
+     3.3.  Optical Transport Networks (OTN) Slicing
+     3.4.  VPN+
+     3.5.  Instantiation in Service Providers Networks
+     3.6.  Structuring Network Slice Controllers
+     3.7.  SR-based Hierarchical Network Slices
+     3.8.  Realization of Composite Network Slices
+     3.9.  AAA for Hierarchical Network Slices
+   4.  Applicability and Mapping Scenarios
+     4.1.  3GPP 5G End-to-End Network Slices
+     4.2.  Encoding 3GPP Slices for Interactive Media Services
+     4.3.  Abstraction and Control of Traffic Engineered Networks
+           (ACTN)
+     4.4.  Mobility-Aware Transport Network Slicing
+     4.5.  DetNet
+   5.  Orchestration and Data Models
+     5.1.  Common Models
+     5.2.  Service Models
+       5.2.1.  Attachment Circuit as a Service (ACaaS) Data Model
+       5.2.2.  Network Slice Service Data Model
+     5.3.  Network Models
+       5.3.1.  Service Attachment Points (SAPs)
+       5.3.2.  AC-augmented SAPs
+       5.3.3.  Network Slice Topology
+       5.3.4.  Network Resource Partitions (NRPs)
+       5.3.5.  Network Slice Mapping
+   6.  Control Plane Extensions
+     6.1.  BGP Classful Transport Planes
+     6.2.  BGP Color-Aware Routing (CAR)
+     6.3.  Network Resource Partitions (NRPs)
+       6.3.1.  BGP Flowspec
+       6.3.2.  BGP-LS Filters in SR
+       6.3.3.  SR Policies Extensions
+       6.3.4.  PCEP Extensions
+     6.4.  Virtual Transport Networks (VTNs)
+       6.4.1.  IS-IS MT
+       6.4.2.  BGP-LS
+   7.  Data Plane Extensions
+     7.1.  Slice Identifier in the MPLS Entropy Label
+     7.2.  Slice Identifier in IPv6 Flow Label
+     7.3.  Slice Identifier in the Source Address of Encapsulated SRH
+     7.4.  VTN Resource ID in an IPv6 Extension Header
+     7.5.  Network Resource Partitions (NRPs)
+       7.5.1.  Resource-aware Segments
+       7.5.2.  NRP ID in SRv6
+       7.5.3.  NRP Selector in MPLS Network Actions
+   8.  OAM
+     8.1.  LSP Ping/Traceroute Extensions
+     8.2.  Precision Availability Metrics (PAM)
+     8.3.  IPFIX Information Elements for NRP
+     8.4.  PAM-based Path Computation
+   9.  Misc
+     9.1.  Enforcement of 5G End-to-End Network Slice QoS
+     9.2.  Scalability Considerations for NRP
+     9.3.  Deployment Considerations
+   10. Security Considerations
+   11. IANA Considerations
+   12. Informative References
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   Various slicing efforts are being conduced within various IETF WGs
+   (e.g., teas, idr, spring, ccamp, mpls, opsawg, 6man, and ippm) and
+   areas (e.g., rtg, int, tsv, and ops).  All these efforts are
+   referring to the IETF framework that is developed by the teas WG
+   (Section 2), however there is a lack of a global visibility about
+   these efforts and their interdependency.
+
+   Also, there is a lack of cross-WG communications in some cases when a
+   slicing-related specification is candidate for adoption or adopted by
+   a WG.  This lack of global view at the IETF level and lack of early
+   cross-WG communications may induce some inconsistency.  For example,
+   some proposals argue in favor of specifying extensions to convey
+   specific identifiers in packets.  However, distinct identifiers are
+   being proposed: slice identifier, NRP Selector, NRP identifier, VTN
+   identifier, VTN resource identifier, etc.  The need and relationship
+   between these identifiers are worth to be discussed independent of
+   the channels that are used to convey these identifiers.
+
+   This document provides an overview of slicing activities in the IETF
+   to hopefully ease coordination and ensure that specifications that
+   are developed in many WGs are consistent, e.g.:
+
+   *  Position the various concepts: network slice, network resource
+      partition, virtual transport network, etc.
+
+   *  Clarify the need of the various identifiers introduced so far and
+      soften redundant/duplicate uses.
+
+   *  Harmonize the definition of relevant identifiers (length,
+      encoding, usage, etc.) rather than having the specification of the
+      same identifier repeated in many places.  For example, current
+      specifications use distinct encoding length of the same attribute
+      (variable, 16-bit, 32-bit).
+
+   *  Clarify the relationship and co-existence of identifiers if more
+      than one is needed.
+
+2.  Reference Framework and Architecture
+
+   [RFC9543] is the authoritative IETF framework for Network Slices.  It
+   provides definitions for a slice-related core terms and specifies a
+   framework for the provision of Network Slice Services over networks
+   that are deployed using technologies that are owned by the IETF (IP,
+   MPLS, etc.).  The document refers to such slices as IETF Network
+   Slice or "the term "RFC 9543 Network Slice".
+
+   [RFC9543] provides a clear distinction between:
+
+   *  the "RFC 9543 Network Slice Service" which is the service
+      delivered to the customer and which is agnostic to the
+      technologies and mechanisms used by the service provider, and
+
+   *  the "RFC 9543 Network Slice" which is the realization of the
+      service in the service provider's network achieved by partitioning
+      network resources and by applying a set of mechanisms within the
+      network.
+
+   The RFC 9543 Network Slice Service is specified in terms of:
+
+   *  a set of Service Demarcation Point (SDP),
+
+   *  a set of one or more connectivity constructs between subsets of
+      these SDPs, and
+
+   *  a set of service objectives for each SDP sending to each
+      connectivity construct.
+
+   The service objectives can be expressed as Service Level Objectives
+   (SLOs) or Service Level Expectations (SLEs).
+
+   In some deploymenets, the underlying network can be customized to
+   select a subset of resources that are suitable for the delivery of an
+   RFC 9543 Network Slice Service.  Such a customization can be achieved
+   by creating a set of Network Resource Partitions (NRPs).
+
+   In other deployments, RFC 9543 Network Slices can be hosted directly
+   on the underlay network (i.e., without requiring any NRP).
+
+   RFC 9543 Network Slices can be realized using existing tools
+   (Section 3.1).  The extensions listed in Section 6 or Section 7 are
+   not required in such a case.
+
+   [RFC9543] does not provide any recommendation about the technological
+   means to realize an RFC 9543 Network Slice Service.  These
+   considerations are deployment specific.
+
+3.  Models for Realizing Network Slices
+
+3.1.  Using Current IP/MPLS Technologies
+
+   [I-D.ietf-teas-5g-ns-ip-mpls] describes a model for the realization
+   of RFC 9543 Network Slices for 5G networks.  This realization model
+   reuses many building blocks that are commonly used in service
+   provider networks, specifically:
+
+   *  L2VPN/L3VPN service instances for logical separation,
+
+   *  Fine-grained resource control at the PE,
+
+   *  Coarse resource control at the transit, and
+
+   *  Capacity planning/management for efficient usage of provider
+      network resources.
+
+3.2.  Using Network Resource Partitions (NRPs) and Slice-Flow Aggregates
+
+   [I-D.ietf-teas-ns-ip-mpls] proposes a model that is inspired from the
+   Diffserv model for the realization of Network Slices over IP/MPLS
+   networks.  Specifically, this model introduces the concept of Slice-
+   Flow Aggregate which is defined as a collection of packets that are
+   mapped to an NRP and are given the same forwarding treatment in a
+   shared network.  An aggregate can group flows from of one or more RFC
+   9543 Network Slice Services.
+
+   [I-D.ietf-teas-ns-ip-mpls] also introduces the notion of NRP Policy
+   that is used to trigger the creation of NRPs that will support a
+   given Slice-Flow Aggregate.  In some deployment schemes, packets that
+   belong to a Slice-Flow Aggregate are forwarded by intermediate node
+   along the appropriate NRP by processing an NRP Selector that is
+   carried by these packets.
+
+3.3.  Optical Transport Networks (OTN) Slicing
+
+   [I-D.ietf-ccamp-yang-otn-slicing] defines Optical Transport Networks
+   (OTN) slice as an OTN virtual network topology connecting a number of
+   OTN endpoints using a set of shared or dedicated OTN network
+   resources to satisfy specific SLOs.  OTN slices are considered as a
+   technology-specific realization of an RFC 9543 Network Slice in the
+   OTN domain.
+
+3.4.  VPN+
+
+   [I-D.ietf-teas-enhanced-vpn] describes a framework for providing
+   enhanced VPN services based upon VPN and Traffic Engineering (TE)
+   technologies.  Enhanced VPN (VPN+) can be used for the realization of
+   Network Slices.  This document introduces the concept of Virtual
+   Transport Network (VTN), which is a virtual underlay network
+   consisting of a subset of network resources allocated from the
+   physical underlay network, and is associated with a customized
+   network topology.
+
+3.5.  Instantiation in Service Providers Networks
+
+   [I-D.barguil-teas-network-slices-instantation] focuses on the
+   instantiation of the RFC 9543 Network Slice Services in service
+   provider networks using existing data models.  In particular, this
+   document describes the relationship between service models for
+   managing the RFC 9543 Network Slice Services and network models
+   (e.g., the Layer-3 Network Model (L3NPM, [RFC9182]), the Layer-2
+   Network Model (L2NM [RFC9291])) used for the realization of the
+   slices.
+
+3.6.  Structuring Network Slice Controllers
+
+   [I-D.ietf-teas-ns-controller-models] proposes an approach for
+   structuring the RFC 9543 Network Slice Controller as well as how to
+   use different data models being defined for RFC 9543 Network Slice
+   Service provision.
+
+3.7.  SR-based Hierarchical Network Slices
+
+   [I-D.gong-teas-hierarchical-slice-solution] proposes a hierarchical
+   approach for realizing RFC 9543 Network Slices in Segment Routing
+   domain.  The approach involves two levels:
+
+   *  Level 1 Network Slices are realized using Flex-Algo.
+
+   *  Level 2 forwarding paths are restricted in the Level 1 topology by
+      using SR Policy and NRP-ID in the data plane.
+
+3.8.  Realization of Composite Network Slices
+
+   [I-D.li-teas-composite-network-slices] investigates a set of
+   scenarios for realizing composite RFC 9543 Network Slices (that
+   basically involve other slices).  The document defines a new
+   identifier, called Inter-domain NRP ID.
+
+3.9.  AAA for Hierarchical Network Slices
+
+   [I-D.zhang-rtgwg-aaa-hierarchical-network-slices] describes an
+   authentication, authorization, and accounting process for
+   hierarchical Network Slices.  The document suggest adding NRP-ID to
+   accounting meesages, but lacks a discussion whether any protocol
+   extension is needed.
+
+4.  Applicability and Mapping Scenarios
+
+4.1.  3GPP 5G End-to-End Network Slices
+
+   [I-D.ietf-teas-5g-network-slice-application] focuses on the
+   application of RFC 9543 Network Slices in the context of the 3GPP 5G
+   slices.
+
+4.2.  Encoding 3GPP Slices for Interactive Media Services
+
+   [I-D.jiang-tsvwg-slice-media-service] explores how IETF schemes (DSCP
+   and UDP options) can be used to expose some QoS-related metadata for
+   specific flows to 5GS.  The document focuses on the Extended Reality
+   & multi-modality communication (XRM) service.
+
+4.3.  Abstraction and Control of Traffic Engineered Networks (ACTN)
+
+   [I-D.ietf-teas-applicability-actn-slicing] describes the
+   applicability of ACTN to Network Slicing.
+
+4.4.  Mobility-Aware Transport Network Slicing
+
+   [I-D.ietf-dmm-tn-aware-mobility] discusses a mapping of 5G slices to
+   RFC 9543 Network Slices when the transport network is separated from
+   the networks in which the 5G network functions are deployed (e.g., 5G
+   functions distributed across data centers).  This document zooms into
+   the use of UDP source port number in GTP-U outer header and LAN to
+   map between a 5G slice and corresponding RFC 9543 Network Slice
+   segments that is listed in
+   [I-D.ietf-teas-5g-network-slice-application].
+
+4.5.  DetNet
+
+   [I-D.sw-detnet-network-slice-mapping-yang] describes the
+   applicability of DetNet to RFC 9543 Network Slice, particularly to
+   provide deterministic services.  The document describes how to use
+   DetNet flow aggregation as the Slice-Flow Aggregates over an
+   underlying NRP following the approach in Section 3.2.
+
+5.  Orchestration and Data Models
+
+   Figure 1 provides an example of the various data models that can be
+   invoked in the context of Network Slicing.
+
+                                 +---------------+
+                                  |   Customer    |
+                                  +-------+-------+
+                  Customer Service Model  |
+                  e.g., slice-svc, ac-svc,| and bearer-svc
+                                  +-------+-------+
+                                  |    Service    |
+                                  | Orchestration |
+                                  +-------+-------+
+                   Network Model          |
+     e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
+                                  +-------+-------+
+                                  |   Network     |
+                                  | Orchestration |
+                                  +-------+-------+
+            Network Configuration Model   |
+                              +-----------+-----------+
+                              |                       |
+                     +--------+------+       +--------+------+
+                     |    Domain     |       |     Domain    |
+                     | Orchestration |       | Orchestration |
+                     +---+-----------+       +--------+------+
+          Device         |        |                   |
+          Configuration  |        |                   |
+          Model          |        |                   |
+                    +----+----+   |                   |
+                    | Config  |   |                   |
+                    | Manager |   |                   |
+                    +----+----+   |                   |
+                         |        |                   |
+                         | NETCONF/CLI..................
+                         |        |                   |
+                       +--------------------------------+
+         +----+ Bearer |                                | Bearer +----+
+         |CE#1+--------+            Network             +--------+CE#2|
+         +----+   AC   |                                |   AC   +----+
+                       +--------------------------------+
+          Site A                                                  Site B
+
+         Figure 1: Overview of Data Models used for Network Slicing
+
+5.1.  Common Models
+
+   [RFC9181] specifies a set of reusable types and groupings to manage
+   VPN services.  Note that VPNs are used for the realization of Network
+   Slices.
+
+   [I-D.ietf-opsawg-teas-common-ac] specifies a set of reusable types
+   and groupings to manage Attachment Circuits (ACs).
+
+5.2.  Service Models
+
+5.2.1.  Attachment Circuit as a Service (ACaaS) Data Model
+
+   [I-D.ietf-opsawg-teas-attachment-circuit] specifies YANG data models
+   for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also
+   bearers.  These ACs and bearers are used to identify where to deliver
+   a slice service.
+
+5.2.2.  Network Slice Service Data Model
+
+   [I-D.ietf-teas-ietf-network-slice-nbi-yang] defines a YANG data model
+   for manaing RFC 9543 Network Slice Services.
+
+5.3.  Network Models
+
+5.3.1.  Service Attachment Points (SAPs)
+
+   [RFC9408] defines a YANG data model for representing an abstract view
+   of the provider network topology that contains the points from which
+   its services can be attached (e.g., basic connectivity, VPN, network
+   slices).  Also, the model can be used to retrieve the points where
+   the services are actually being delivered to customers (including
+   peer networks).
+
+   A SAP network topology can be used for one or multiple service types
+   ('service-type').  Setting this data node to 'network-slice' allows a
+   controller to expose where RFC 9543 Network Slices services are being
+   delivered.  It can also be used to check where RFC 9543 Network Slice
+   Services can be delivered.
+
+5.3.2.  AC-augmented SAPs
+
+   [I-D.ietf-opsawg-ntw-attachment-circuit] augments the SAP model with
+   more details for managing ACs at the network level.
+
+5.3.3.  Network Slice Topology
+
+   [I-D.liu-teas-transport-network-slice-yang] specifies a YANG model
+   for RFC 9543 Network Slice Topology with on exposing a customized
+   topology that contains a topology intent with required SLO/SLEs to
+   express the customer’s intent for resource reservation.
+
+   The need for such a model is yet to be justified as the current scope
+   is redundant with, e.g., what can be already achieved using
+   [I-D.ietf-teas-actn-vn-yang].  The authors should motivate why
+   [I-D.ietf-teas-actn-vn-yang] is not sufficient.
+
+5.3.4.  Network Resource Partitions (NRPs)
+
+   [I-D.ietf-teas-nrp-yang] specifies a YANG data model for managing
+   NRPs.
+
+5.3.5.  Network Slice Mapping
+
+   [I-D.dhody-teas-ietf-network-slice-mapping] specifies an RFC 9543
+   Network Slice Service mapping YANG model.  The model supports the
+   following mappings:
+
+   *  L3NM [RFC9182]
+
+   *  L2NM [RFC9291]
+
+   *  TE [I-D.ietf-teas-te-service-mapping-yang]
+
+   *  NRP
+
+6.  Control Plane Extensions
+
+6.1.  BGP Classful Transport Planes
+
+   [I-D.ietf-idr-bgp-ct] specifies mechanisms for classifying underlay
+   routes into a set of classes, called Transport Classes, and mapping
+   service-specific routes to a specific Transport Class.  For example,
+   [I-D.ietf-idr-bgp-ct] can be used to create a customized topology for
+   Network Slices.  These topologies (Transport Classes) will be
+   typically created to satisfy certain TE characteristics.  A new
+   Transport Class Route Target Extended Community is defined for this
+   purpose.  A Transport Class is identified by a 4-octet identifier:
+   Transport Class ID.
+
+6.2.  BGP Color-Aware Routing (CAR)
+
+   [I-D.ietf-idr-bgp-car] specifies a new BGP SAFI called BGP Color-
+   Aware Routing (BGP CAR).  Colors are defined to characterize an
+   objective (e.g., low latency).  To satisfy Network Slice
+   requirements, CAR may be used to establish paths that address
+   specific objectives.  These paths will be associated with a Color.
+
+   The proposal leverages the BGP Color Extended Community defined in
+   [RFC9012] and builds upon the Color concept defined in [RFC9256].  In
+   addition, a new Extended Community, called Local-Color-Mapping (LCM)
+   Extended Community, is defined to address cases where the granularity
+   of the exposed colors differs when crossing domains.
+
+6.3.  Network Resource Partitions (NRPs)
+
+6.3.1.  BGP Flowspec
+
+   [I-D.ietf-idr-flowspec-network-slice-ts] specifies a BGP Flowspec
+   extension for NRP traffic steering.
+
+6.3.2.  BGP-LS Filters in SR
+
+   [I-D.drake-teas-bgp-ls-filter-nrp] specifies new BGP-LS attributes,
+   called BGP-LS Filters, for NRPs in SR networks.  A BGP-LS Filter
+   provides a description of a subset of the links and nodes in an
+   underlay network.  Ingress PE selects a path to an egress PE from the
+   topology defined by the BGP-LS Filters it has imported for a given
+   VPN.
+
+6.3.3.  SR Policies Extensions
+
+6.3.3.1.  BGP
+
+   [I-D.ietf-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
+   define extensions to BGP in order to advertise NRP ID in an SR
+   Policy.  The NRP ID is encoded in 4 octets.
+
+6.3.3.2.  BGP-LS
+
+   [I-D.chen-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
+   for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
+
+6.3.4.  PCEP Extensions
+
+   [I-D.dong-pce-pcep-nrp] specifie Path Computation Element
+   Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
+   encoded in 4 octets.
+
+6.4.  Virtual Transport Networks (VTNs)
+
+6.4.1.  IS-IS MT
+
+   [I-D.ietf-lsr-isis-sr-vtn-mt] specifies how to use IS-IS Multi-
+   Topology (MT) for SR-based VTNs.
+
+6.4.2.  BGP-LS
+
+   [I-D.ietf-idr-bgpls-sr-vtn-mt] describes a mechanism to distribute
+   the information of SR-based VTNs to the network controller using BGP-
+   LS with Multi-Topology.
+
+7.  Data Plane Extensions
+
+7.1.  Slice Identifier in the MPLS Entropy Label
+
+   [I-D.decraene-mpls-slid-encoded-entropy-label-id] proposes an
+   approach to encode slice identifiers in a portion of the MPLS Entropy
+   Label (EL).  The number of bits to be used for encoding the slice
+   identifier in the EL is policy-based.  Transit LSRs uses the slice
+   identifier in the EL to apply per-slice policies.
+
+7.2.  Slice Identifier in IPv6 Flow Label
+
+   [I-D.filsfils-spring-srv6-stateless-slice-id] proposes to encode
+   slice identifers in a portion of the IPv6 Flow Label.  Slice
+   identifiers are used by intermediate IPv6 routers to process the
+   packet according to a network slice policy.
+
+7.3.  Slice Identifier in the Source Address of Encapsulated SRH
+
+   When an ingress SR router encapsulates a packet in an IPv6 packet
+   with an SRH, [I-D.cheng-spring-srv6-encoding-network-sliceid]
+   suggests to use the least significant bits of the outer IPv6 source
+   address to encode a slide identifier.  SLID Presence Indicator (SPI)
+   is used to indicate the presence of a slice identifier.  The number
+   of bits used to encode slice identifiers is local to an SR domain.
+
+7.4.  VTN Resource ID in an IPv6 Extension Header
+
+   [I-D.ietf-6man-enhanced-vpn-vtn-id] describes a mechanism to carry an
+   identifier, called VTN resource ID, in the IPv6 Hop-by-Hop extension
+   header.  The document claims that "VTN resource ID" is equivalent to
+   NRP-ID, but does motivate why another yet ID is thus needed rather
+   than using "NRP-ID".
+
+   The length of the VTN ID depends on the context type.  When CT=0, the
+   VTN ID is a 4-octet ID.
+
+7.5.  Network Resource Partitions (NRPs)
+
+7.5.1.  Resource-aware Segments
+
+   An NRP can be represented in SR networks using a set of NRP-specific
+   resource-aware segments [I-D.ietf-spring-resource-aware-segments]
+   [I-D.ietf-spring-sr-for-enhanced-vpn].
+
+7.5.2.  NRP ID in SRv6
+
+   [I-D.liu-spring-nrp-id-in-srv6-segment] specifies an approach to
+   encode the NRP ID in the SRH.  This ID is used by intermediate IPv6
+   routers to identify the NRP to be used for forwarding.  The encoding
+   of the NRP ID in an IPv6 address is variable; an instruction is thus
+   needed to help identifyint the NRP-ID position (e.g., low 16 bits).
+
+7.5.3.  NRP Selector in MPLS Network Actions
+
+   As mentioned in Section 3.2, packets that are associated with a
+   Slice-Flow Aggregate may carry an NRP Selector (NRPS).  This selector
+   is intended to be conveyed in the packet's network layer header to
+   identify the flow aggregate to which a packet belongs.
+   [I-D.li-mpls-mna-nrp-selector] investigates a set of options to use
+   MPLS Network Actions (MNA) to carry the NRPS:
+
+   *  13-bit NRP Selector (NRPS13) Action
+
+   *  20-bit NRP Selector (NRPS20) Action
+
+   *  20-bit Entropy and NRP Selector (ENRPS20) Action
+
+8.  OAM
+
+8.1.  LSP Ping/Traceroute Extensions
+
+   [I-D.liu-mpls-lsp-ping-nrp] specifies extenstions to the LSP Ping/
+   Traceroute to convey NRP-ID in SR domains.
+
+   The NRP-ID is a encoded as a 4-octet field.
+
+8.2.  Precision Availability Metrics (PAM)
+
+   [I-D.ietf-ippm-pam] introduces a new set of metrics, called Precision
+   Availability Metrics (PAM).  These metrics are used to assess whether
+   a service (e.g., Network Slice Service) is provided in compliance
+   with its specified SLOs.
+
+   [I-D.clemm-opsawg-pam-ipfix] specifies a set of new IP Flow
+   Information Export (IPFIX) Information Elements to export precision
+   availability data associated with Flows.  These Information Elements
+   are specifically designed to indicate compliance of a Flow with an
+   SLO.
+
+8.3.  IPFIX Information Elements for NRP
+
+   [I-D.liu-opsawg-ipfix-network-slice] explores how to use IPFIX to
+   export NRP IDs.  However, there is currently no one single stable/
+   authoritative specification of NRP-ID.  This identifier is being
+   proposed as data plane and control plane extensions.  These proposals
+   do not share the same ID format.
+
+   The initial version of [I-D.liu-opsawg-ipfix-network-slice] does
+   explain which plan is used, in which layer the ID was exported, etc.
+   Defining an IPFIX IE is useful for network observability, however
+   there is no stable specification yet of the ID to be exported.
+
+8.4.  PAM-based Path Computation
+
+   [I-D.contreras-pce-pam] specifies a new PCEP object (PRECISION
+   METRIC) for path calculation with performance requirements expressed
+   as SLOs.  The new PCEP object uses the attributes defined in
+   [I-D.ietf-ippm-pam].
+
+9.  Misc
+
+9.1.  Enforcement of 5G End-to-End Network Slice QoS
+
+   [I-D.cbs-teas-5qi-to-dscp-mapping] documents an example of possible
+   mapping of 5QI values to DSCP markings with a focus on 5G Network
+   Slices.  The document groups different 5QI types in classes based on
+   their SLOs.
+
+9.2.  Scalability Considerations for NRP
+
+   [I-D.ietf-teas-nrp-scalability] discusses a set of scenarios for the
+   deployment of NRP with a focus on scalability implications.  The
+   document reasons about the increase of requested RFC 9543 Network
+   Slice Services that would require NRPs.  Such an increase of slices
+   is speculative at this stage.
+
+9.3.  Deployment Considerations
+
+   [I-D.ma-teas-ietf-network-slice-deployment] reports a set of
+   "deployments" from various network operators and identifies some
+   considerations for operating Network Slices (e.g., scalability and
+   automation).  Most of these reported cases rely upon SRv6.  The
+   document does not provide enough details whether these "deployments"
+   are for testing purposes or reflect setups to carry customers'
+   traffic.
+
+10.  Security Considerations
+
+   Security considerations of the mechanisms listed in the document are
+   discussed in the relevant documents that specify these mechanisms.
+
+11.  IANA Considerations
+
+   This document does not make any request to IANA.
+
+12.  Informative References
+
+   [I-D.barguil-teas-network-slices-instantation]
+              Barguil, S., Contreras, L. M., Lopez, V., de Dios, O. G.,
+              Boucadair, M., and R. Rokui, "Applicability of IETF-
+              Defined Service and Network Data Models for RFC XXXX
+              Network Slice Service Management", Work in Progress,
+              Internet-Draft, draft-barguil-teas-network-slices-
+              instantation-08, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-barguil-teas-
+              network-slices-instantation-08>.
+
+   [I-D.cbs-teas-5qi-to-dscp-mapping]
+              Contreras, L. M., Bykov, I., and K. G. Szarkowicz, "5QI to
+              DiffServ DSCP Mapping Example for Enforcement of 5G End-
+              to-End Network Slice QoS", Work in Progress, Internet-
+              Draft, draft-cbs-teas-5qi-to-dscp-mapping-00, 4 March
+              2024, <https://datatracker.ietf.org/doc/html/draft-cbs-
+              teas-5qi-to-dscp-mapping-00>.
+
+   [I-D.chen-idr-bgp-ls-sr-policy-nrp]
+              Chen, R., Dong, J., Zhao, D., Gong, L., Zhu, Y., and R.
+              Pang, "SR Policies Extensions for NRP in BGP-LS", Work in
+              Progress, Internet-Draft, draft-chen-idr-bgp-ls-sr-policy-
+              nrp-05, 23 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-
+              ls-sr-policy-nrp-05>.
+
+   [I-D.cheng-spring-srv6-encoding-network-sliceid]
+              Cheng, W., Ma, P., Ren, F., Lin, C., Gong, L., Zadok, S.,
+              Wu, M., and X. wang, "Encoding Network Slice
+              Identification for SRv6", Work in Progress, Internet-
+              Draft, draft-cheng-spring-srv6-encoding-network-sliceid-
+              08, 7 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-cheng-spring-
+              srv6-encoding-network-sliceid-08>.
+
+   [I-D.clemm-opsawg-pam-ipfix]
+              Clemm, A., Boucadair, M., and G. Mirsky, "Export of Flow
+              Precision Availability Metrics Using IPFIX", Work in
+              Progress, Internet-Draft, draft-clemm-opsawg-pam-ipfix-00,
+              7 July 2023, <https://datatracker.ietf.org/doc/html/draft-
+              clemm-opsawg-pam-ipfix-00>.
+
+   [I-D.contreras-pce-pam]
+              Contreras, L. M., Agraz, F., and S. Spadaro, "Path
+              Computation Based on Precision Availability Metrics", Work
+              in Progress, Internet-Draft, draft-contreras-pce-pam-02,
+              13 February 2024, <https://datatracker.ietf.org/doc/html/
+              draft-contreras-pce-pam-02>.
+
+   [I-D.decraene-mpls-slid-encoded-entropy-label-id]
+              Decraene, B., Filsfils, C., Henderickx, W., Saad, T.,
+              Beeram, V. P., and L. Jalil, "Using Entropy Label for
+              Network Slice Identification in MPLS networks.", Work in
+              Progress, Internet-Draft, draft-decraene-mpls-slid-
+              encoded-entropy-label-id-05, 12 December 2022,
+              <https://datatracker.ietf.org/doc/html/draft-decraene-
+              mpls-slid-encoded-entropy-label-id-05>.
+
+   [I-D.dhody-teas-ietf-network-slice-mapping]
+              Dhody, D. and B. Wu, "IETF Network Slice Service Mapping
+              YANG Model", Work in Progress, Internet-Draft, draft-
+              dhody-teas-ietf-network-slice-mapping-04, 12 September
+              2023, <https://datatracker.ietf.org/doc/html/draft-dhody-
+              teas-ietf-network-slice-mapping-04>.
+
+   [I-D.dong-pce-pcep-nrp]
+              Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
+              M., Beeram, V. P., and T. Saad, "Path Computation Element
+              Communication Protocol (PCEP) Extensions for Network
+              Resource Partition (NRP)", Work in Progress, Internet-
+              Draft, draft-dong-pce-pcep-nrp-01, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-dong-pce-
+              pcep-nrp-01>.
+
+   [I-D.drake-teas-bgp-ls-filter-nrp]
+              Drake, J., Farrel, A., Jalil, L., and A. R. Lingala,
+              "Using BGP-LS Filters to Instanted Network Resource
+              Partitions", Work in Progress, Internet-Draft, draft-
+              drake-teas-bgp-ls-filter-nrp-00, 16 December 2022,
+              <https://datatracker.ietf.org/doc/html/draft-drake-teas-
+              bgp-ls-filter-nrp-00>.
+
+   [I-D.filsfils-spring-srv6-stateless-slice-id]
+              Filsfils, C., Clad, F., Camarillo, P., Raza, S. K., Voyer,
+              D., and R. Rokui, "Stateless and Scalable Network Slice
+              Identification for SRv6", Work in Progress, Internet-
+              Draft, draft-filsfils-spring-srv6-stateless-slice-id-09,
+              29 January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-filsfils-spring-srv6-stateless-slice-id-09>.
+
+   [I-D.gong-teas-hierarchical-slice-solution]
+              Gong, L., Cheng, W., Lin, C., Chen, M., Dong, J., Chen,
+              R., and Y. Liang, "Segment Routing based Solution for
+              Hierarchical IETF Network Slices", Work in Progress,
+              Internet-Draft, draft-gong-teas-hierarchical-slice-
+              solution-03, 7 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-gong-teas-
+              hierarchical-slice-solution-03>.
+
+   [I-D.ietf-6man-enhanced-vpn-vtn-id]
+              Dong, J., Li, Z., Xie, C., Ma, C., and G. S. Mishra,
+              "Carrying Network Resource Partition (NRP) Information in
+              IPv6 Extension Header", Work in Progress, Internet-Draft,
+              draft-ietf-6man-enhanced-vpn-vtn-id-06, 20 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-6man-
+              enhanced-vpn-vtn-id-06>.
+
+   [I-D.ietf-ccamp-yang-otn-slicing]
+              Guo, A., Contreras, L. M., Belotti, S., Rokui, R., Xu, Y.,
+              Zhao, Y., and X. Liu, "Framework and Data Model for OTN
+              Network Slicing", Work in Progress, Internet-Draft, draft-
+              ietf-ccamp-yang-otn-slicing-06, 24 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              yang-otn-slicing-06>.
+
+   [I-D.ietf-dmm-tn-aware-mobility]
+              Chunduri, U., Kaippallimalil, J., Bhaskaran, S., Tantsura,
+              J., and P. Muley, "Mobility aware Transport Network
+              Slicing for 5G", Work in Progress, Internet-Draft, draft-
+              ietf-dmm-tn-aware-mobility-09, 29 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-
+              aware-mobility-09>.
+
+   [I-D.ietf-idr-bgp-car]
+              Rao, D., Agrawal, S., and Co-authors, "BGP Color-Aware
+              Routing (CAR)", Work in Progress, Internet-Draft, draft-
+              ietf-idr-bgp-car-06, 2 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
+              car-06>.
+
+   [I-D.ietf-idr-bgp-ct]
+              Vairavakkalai, K. and N. Venkataraman, "BGP Classful
+              Transport Planes", Work in Progress, Internet-Draft,
+              draft-ietf-idr-bgp-ct-27, 4 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
+              ct-27>.
+
+   [I-D.ietf-idr-bgpls-sr-vtn-mt]
+              Xie, C., Li, C., Dong, J., and Z. Li, "BGP-LS with Multi-
+              topology for Segment Routing based Virtual Transport
+              Networks", Work in Progress, Internet-Draft, draft-ietf-
+              idr-bgpls-sr-vtn-mt-03, 10 September 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-
+              bgpls-sr-vtn-mt-03>.
+
+   [I-D.ietf-idr-flowspec-network-slice-ts]
+              Dong, J., Chen, R., Wang, S., and J. Wenying, "BGP
+              Flowspec for IETF Network Slice Traffic Steering", Work in
+              Progress, Internet-Draft, draft-ietf-idr-flowspec-network-
+              slice-ts-02, 4 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-
+              flowspec-network-slice-ts-02>.
+
+   [I-D.ietf-idr-sr-policy-nrp]
+              Dong, J., Hu, Z., and R. Pang, "BGP SR Policy Extensions
+              for Network Resource Partition", Work in Progress,
+              Internet-Draft, draft-ietf-idr-sr-policy-nrp-00, 17
+              December 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-idr-sr-policy-nrp-00>.
+
+   [I-D.ietf-ippm-pam]
+              Mirsky, G., Halpern, J. M., Min, X., Clemm, A., Strassner,
+              J., and J. François, "Precision Availability Metrics for
+              Services Governed by Service Level Objectives (SLOs)",
+              Work in Progress, Internet-Draft, draft-ietf-ippm-pam-09,
+              1 December 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-ippm-pam-09>.
+
+   [I-D.ietf-lsr-isis-sr-vtn-mt]
+              Xie, C., Ma, C., Dong, J., and Z. Li, "Applicability of
+              IS-IS Multi-Topology (MT) for Segment Routing based
+              Network Resource Partition (NRP)", Work in Progress,
+              Internet-Draft, draft-ietf-lsr-isis-sr-vtn-mt-07, 23
+              January 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lsr-isis-sr-vtn-mt-07>.
+
+   [I-D.ietf-opsawg-ntw-attachment-circuit]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "A Network YANG Data Model for Attachment
+              Circuits", Work in Progress, Internet-Draft, draft-ietf-
+              opsawg-ntw-attachment-circuit-05, 9 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
+              ntw-attachment-circuit-05>.
+
+   [I-D.ietf-opsawg-teas-attachment-circuit]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "YANG Data Models for Bearers and 'Attachment
+              Circuits'-as-a-Service (ACaaS)", Work in Progress,
+              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
+              07, 4 March 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-opsawg-teas-attachment-circuit-07>.
+
+   [I-D.ietf-opsawg-teas-common-ac]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "A Common YANG Data Model for Attachment
+              Circuits", Work in Progress, Internet-Draft, draft-ietf-
+              opsawg-teas-common-ac-05, 9 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
+              teas-common-ac-05>.
+
+   [I-D.ietf-spring-resource-aware-segments]
+              Dong, J., Miyasaka, T., Zhu, Y., Qin, F., and Z. Li,
+              "Introducing Resource Awareness to SR Segments", Work in
+              Progress, Internet-Draft, draft-ietf-spring-resource-
+              aware-segments-08, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-spring-
+              resource-aware-segments-08>.
+
+   [I-D.ietf-spring-sr-for-enhanced-vpn]
+              Dong, J., Miyasaka, T., Zhu, Y., Qin, F., and Z. Li,
+              "Segment Routing based Network Resource Partition (NRP)
+              for Enhanced VPN", Work in Progress, Internet-Draft,
+              draft-ietf-spring-sr-for-enhanced-vpn-07, 3 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-spring-
+              sr-for-enhanced-vpn-07>.
+
+   [I-D.ietf-teas-5g-network-slice-application]
+              Geng, X., Contreras, L. M., Rokui, R., Dong, J., and I.
+              Bykov, "IETF Network Slice Application in 3GPP 5G End-to-
+              End Network Slice", Work in Progress, Internet-Draft,
+              draft-ietf-teas-5g-network-slice-application-02, 23
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-5g-network-slice-application-02>.
+
+   [I-D.ietf-teas-5g-ns-ip-mpls]
+              Szarkowicz, K. G., Roberts, R., Lucek, J., Boucadair, M.,
+              and L. M. Contreras, "A Realization of Network Slices for
+              5G Networks Using Current IP/MPLS Technologies", Work in
+              Progress, Internet-Draft, draft-ietf-teas-5g-ns-ip-mpls-
+              03, 28 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-
+              ns-ip-mpls-03>.
+
+   [I-D.ietf-teas-actn-vn-yang]
+              Lee, Y., Dhody, D., Ceccarelli, D., Bryskin, I., and B. Y.
+              Yoon, "A YANG Data Model for Virtual Network (VN)
+              Operations", Work in Progress, Internet-Draft, draft-ietf-
+              teas-actn-vn-yang-23, 30 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              actn-vn-yang-23>.
+
+   [I-D.ietf-teas-applicability-actn-slicing]
+              King, D., Drake, J., Zheng, H., and A. Farrel,
+              "Applicability of Abstraction and Control of Traffic
+              Engineered Networks (ACTN) to Network Slicing", Work in
+              Progress, Internet-Draft, draft-ietf-teas-applicability-
+              actn-slicing-05, 11 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              applicability-actn-slicing-05>.
+
+   [I-D.ietf-teas-enhanced-vpn]
+              Dong, J., Bryant, S., Li, Z., Miyasaka, T., and Y. Lee, "A
+              Framework for NRP-based Enhanced Virtual Private Network",
+              Work in Progress, Internet-Draft, draft-ietf-teas-
+              enhanced-vpn-17, 25 December 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              enhanced-vpn-17>.
+
+   [I-D.ietf-teas-ietf-network-slice-nbi-yang]
+              Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
+              "A YANG Data Model for the RFC AAAA Network Slice
+              Service", Work in Progress, Internet-Draft, draft-ietf-
+              teas-ietf-network-slice-nbi-yang-09, 17 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              ietf-network-slice-nbi-yang-09>.
+
+   [I-D.ietf-teas-nrp-scalability]
+              Dong, J., Li, Z., Gong, L., Yang, G., and G. S. Mishra,
+              "Scalability Considerations for Network Resource
+              Partition", Work in Progress, Internet-Draft, draft-ietf-
+              teas-nrp-scalability-04, 4 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              nrp-scalability-04>.
+
+   [I-D.ietf-teas-nrp-yang]
+              Wu, B., Dhody, D., Beeram, V. P., Saad, T., and S. Peng,
+              "A YANG Data Model for Network Resource Partitions
+              (NRPs)", Work in Progress, Internet-Draft, draft-ietf-
+              teas-nrp-yang-00, 5 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              nrp-yang-00>.
+
+   [I-D.ietf-teas-ns-controller-models]
+              Contreras, L. M., Rokui, R., Tantsura, J., Wu, B., Liu,
+              X., Dhody, D., and S. Belotti, "IETF Network Slice
+              Controller and its associated data models", Work in
+              Progress, Internet-Draft, draft-ietf-teas-ns-controller-
+              models-01, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-
+              controller-models-01>.
+
+   [I-D.ietf-teas-ns-ip-mpls]
+              Saad, T., Beeram, V. P., Dong, J., Wen, B., Ceccarelli,
+              D., Halpern, J. M., Peng, S., Chen, R., Liu, X.,
+              Contreras, L. M., Rokui, R., and L. Jalil, "Realizing
+              Network Slices in IP/MPLS Networks", Work in Progress,
+              Internet-Draft, draft-ietf-teas-ns-ip-mpls-03, 26 November
+              2023, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              teas-ns-ip-mpls-03>.
+
+   [I-D.ietf-teas-te-service-mapping-yang]
+              Lee, Y., Dhody, D., Fioccola, G., Wu, Q., Ceccarelli, D.,
+              and J. Tantsura, "Traffic Engineering (TE) and Service
+              Mapping YANG Data Model", Work in Progress, Internet-
+              Draft, draft-ietf-teas-te-service-mapping-yang-14, 12
+              September 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-te-service-mapping-yang-14>.
+
+   [I-D.jiang-tsvwg-slice-media-service]
+              Jiang, T. and D. Wang, "Encoding 3GPP Slices for
+              Interactive Media Services", Work in Progress, Internet-
+              Draft, draft-jiang-tsvwg-slice-media-service-01, 23
+              October 2023, <https://datatracker.ietf.org/doc/html/
+              draft-jiang-tsvwg-slice-media-service-01>.
+
+   [I-D.li-mpls-mna-nrp-selector]
+              Li, T., Drake, J., Beeram, V. P., Saad, T., and I. Meilik,
+              "MPLS Network Actions for Network Resource Partition
+              Selector", Work in Progress, Internet-Draft, draft-li-
+              mpls-mna-nrp-selector-00, 5 May 2023,
+              <https://datatracker.ietf.org/doc/html/draft-li-mpls-mna-
+              nrp-selector-00>.
+
+   [I-D.li-teas-composite-network-slices]
+              Li, Z., Dong, J., Pang, R., Zhu, Y., and L. M. Contreras,
+              "Realization of Composite IETF Network Slices", Work in
+              Progress, Internet-Draft, draft-li-teas-composite-network-
+              slices-02, 4 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-li-teas-
+              composite-network-slices-02>.
+
+   [I-D.liu-idr-bgp-network-slicing]
+              Liu, Y. and S. Peng, "BGP Extensions to Support Packet
+              Network Slicing in SR Policy", Work in Progress, Internet-
+              Draft, draft-liu-idr-bgp-network-slicing-02, 31 March
+              2023, <https://datatracker.ietf.org/doc/html/draft-liu-
+              idr-bgp-network-slicing-02>.
+
+   [I-D.liu-mpls-lsp-ping-nrp]
+              Liu, Y. and S. Peng, "LSP Ping/Traceroute for SR-MPLS NRP
+              SIDs", Work in Progress, Internet-Draft, draft-liu-mpls-
+              lsp-ping-nrp-01, 12 March 2023,
+              <https://datatracker.ietf.org/doc/html/draft-liu-mpls-lsp-
+              ping-nrp-01>.
+
+   [I-D.liu-opsawg-ipfix-network-slice]
+              Liu, Y., "Export of Network Resource Partition (NRP)
+              Information in IP Flow Information Export (IPFIX)", Work
+              in Progress, Internet-Draft, draft-liu-opsawg-ipfix-
+              network-slice-00, 28 June 2023,
+              <https://datatracker.ietf.org/doc/html/draft-liu-opsawg-
+              ipfix-network-slice-00>.
+
+   [I-D.liu-spring-nrp-id-in-srv6-segment]
+              Liu, Y., Lin, C., Li, H., and L. Gong, "NRP ID in SRv6
+              segment", Work in Progress, Internet-Draft, draft-liu-
+              spring-nrp-id-in-srv6-segment-03, 8 November 2023,
+              <https://datatracker.ietf.org/doc/html/draft-liu-spring-
+              nrp-id-in-srv6-segment-03>.
+
+   [I-D.liu-teas-transport-network-slice-yang]
+              Liu, X., Tantsura, J., Bryskin, I., Contreras, L. M., Wu,
+              Q., Belotti, S., Rokui, R., Guo, A., and I. Busi, "IETF
+              Network Slice Topology YANG Data Model", Work in Progress,
+              Internet-Draft, draft-liu-teas-transport-network-slice-
+              yang-09, 1 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-liu-teas-
+              transport-network-slice-yang-09>.
+
+   [I-D.ma-teas-ietf-network-slice-deployment]
+              Ma, Y., Luo, R., Chan, A., Suen, B., Dong, J., Liu, Y.,
+              and H. Allahoum, "IETF Network Slice Deployment Status and
+              Considerations", Work in Progress, Internet-Draft, draft-
+              ma-teas-ietf-network-slice-deployment-02, 23 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-
+              network-slice-deployment-02>.
+
+   [I-D.sw-detnet-network-slice-mapping-yang]
+              Song, X. and H. Wu, "YANG Data Model for DetNet Mapping
+              with Network Slice", Work in Progress, Internet-Draft,
+              draft-sw-detnet-network-slice-mapping-yang-02, 8 March
+              2023, <https://datatracker.ietf.org/doc/html/draft-sw-
+              detnet-network-slice-mapping-yang-02>.
+
+   [I-D.zhang-rtgwg-aaa-hierarchical-network-slices]
+              Zhang, X., Lin, C., and Y. Qiu, "AAA for Hierarchical
+              Network Slices", Work in Progress, Internet-Draft, draft-
+              zhang-rtgwg-aaa-hierarchical-network-slices-00, 7 January
+              2024, <https://datatracker.ietf.org/doc/html/draft-zhang-
+              rtgwg-aaa-hierarchical-network-slices-00>.
+
+   [RFC9012]  Patel, K., Van de Velde, G., Sangli, S., and J. Scudder,
+              "The BGP Tunnel Encapsulation Attribute", RFC 9012,
+              DOI 10.17487/RFC9012, April 2021,
+              <https://www.rfc-editor.org/rfc/rfc9012>.
+
+   [RFC9181]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
+              Ed., and Q. Wu, "A Common YANG Data Model for Layer 2 and
+              Layer 3 VPNs", RFC 9181, DOI 10.17487/RFC9181, February
+              2022, <https://www.rfc-editor.org/rfc/rfc9181>.
+
+   [RFC9182]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
+              Ed., Munoz, L., and A. Aguado, "A YANG Network Data Model
+              for Layer 3 VPNs", RFC 9182, DOI 10.17487/RFC9182,
+              February 2022, <https://www.rfc-editor.org/rfc/rfc9182>.
+
+   [RFC9256]  Filsfils, C., Talaulikar, K., Ed., Voyer, D., Bogdanov,
+              A., and P. Mattes, "Segment Routing Policy Architecture",
+              RFC 9256, DOI 10.17487/RFC9256, July 2022,
+              <https://www.rfc-editor.org/rfc/rfc9256>.
+
+   [RFC9291]  Boucadair, M., Ed., Gonzalez de Dios, O., Ed., Barguil,
+              S., and L. Munoz, "A YANG Network Data Model for Layer 2
+              VPNs", RFC 9291, DOI 10.17487/RFC9291, September 2022,
+              <https://www.rfc-editor.org/rfc/rfc9291>.
+
+   [RFC9408]  Boucadair, M., Ed., Gonzalez de Dios, O., Barguil, S., Wu,
+              Q., and V. Lopez, "A YANG Network Data Model for Service
+              Attachment Points (SAPs)", RFC 9408, DOI 10.17487/RFC9408,
+              June 2023, <https://www.rfc-editor.org/rfc/rfc9408>.
+
+   [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
+              Makhijani, K., Contreras, L., and J. Tantsura, "A
+              Framework for Network Slices in Networks Built from IETF
+              Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
+              <https://www.rfc-editor.org/rfc/rfc9543>.
+
+Acknowledgments
+
+   Thanks to Kaliraj Vairavakkalai for the comments.
+
+Author's Address
+
+   Mohamed Boucadair
+   Orange
+   35000 Rennes
+   France
+   Email: mohamed.boucadair@orange.com
