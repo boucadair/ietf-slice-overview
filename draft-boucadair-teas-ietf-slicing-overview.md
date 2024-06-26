@@ -109,7 +109,7 @@ RFC 9543 Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## SR-based Hierarchical Network Slices
 
-{{?I-D.gong-teas-hierarchical-slice-solution}} proposes a hierarchical approach for realizing RFC 9543 Network Slices in Segment Routing domain. The approach involves two levels:
+{{?I-D.gong-spring-hierarchical-slice-solution}} proposes a hierarchical approach for realizing RFC 9543 Network Slices in Segment Routing domain. The approach involves two levels:
 
 * Level 1 Network Slices are realized using Flex-Algo.
 * Level 2 forwarding paths are restricted in the Level 1 topology by using SR Policy and NRP-ID in the data plane.
@@ -128,6 +128,12 @@ suggest adding NRP-ID to accounting meesages, but lacks a discussion whether any
 ## 3GPP 5G End-to-End Network Slices
 
 {{?I-D.ietf-teas-5g-network-slice-application}} focuses on the application of RFC 9543 Network Slices in the context of the 3GPP 5G slices.
+
+## Enforcement of 5G End-to-End Network Slice QoS
+
+{{?I-D.cbs-teas-5qi-to-dscp-mapping}} documents an example of possible mapping of 5QI values
+to DSCP markings with a focus on 5G Network Slices. The document groups different 5QI types in classes based
+on their SLOs.
 
 ## Encoding 3GPP Slices for Interactive Media Services
 
@@ -266,6 +272,8 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 {{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.
 
+{{?ID.chen-idr-bgp-ls-transport-slice}} adds new BGP-LS attribute TLVs to encode information such as NRP-ID.
+
 ### SR Policies Extensions
 
 #### BGP
@@ -330,6 +338,10 @@ As mentioned in {{flow-agg}}, packets that are associated with a Slice-Flow Aggr
 * 20-bit NRP Selector (NRPS20) Action
 * 20-bit Entropy and NRP Selector (ENRPS20) Action
 
+### SRv6 Resource Programming
+
+{{?I-D.gong-spring-srv6-nrp-flavor}} defines a new SRv6 Endpoint behavior {{?RFC8986}} to associate a SID with a set of NRPs.
+
 # OAM
 
 ## LSP Ping/Traceroute Extensions
@@ -357,12 +369,6 @@ path calculation with performance requirements expressed as SLOs. The new
 PCEP object uses the attributes defined in {{?I-D.ietf-ippm-pam}}.
 
 # Misc
-
-## Enforcement of 5G End-to-End Network Slice QoS
-
-{{?I-D.cbs-teas-5qi-to-dscp-mapping}} documents an example of possible mapping of 5QI values
-to DSCP markings with a focus on 5G Network Slices. The document groups different 5QI types in classes based
-on their SLOs.
 
 ## Scalability Considerations for NRP
 
