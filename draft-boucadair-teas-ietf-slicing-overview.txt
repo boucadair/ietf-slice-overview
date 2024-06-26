@@ -649,7 +649,7 @@ Table of Contents
 
 8.2.  Precision Availability Metrics (PAM)
 
-   [I-D.ietf-ippm-pam] introduces a new set of metrics, called Precision
+   [RFC9544] introduces a new set of metrics, called Precision
    Availability Metrics (PAM).  These metrics are used to assess whether
    a service (e.g., Network Slice Service) is provided in compliance
    with its specified SLOs.
@@ -678,7 +678,7 @@ Table of Contents
    [I-D.contreras-pce-pam] specifies a new PCEP object (PRECISION
    METRIC) for path calculation with performance requirements expressed
    as SLOs.  The new PCEP object uses the attributes defined in
-   [I-D.ietf-ippm-pam].
+   [RFC9544].
 
 9.  Misc
 
@@ -884,14 +884,6 @@ Table of Contents
               Internet-Draft, draft-ietf-idr-sr-policy-nrp-00, 17
               December 2023, <https://datatracker.ietf.org/doc/html/
               draft-ietf-idr-sr-policy-nrp-00>.
-
-   [I-D.ietf-ippm-pam]
-              Mirsky, G., Halpern, J. M., Min, X., Clemm, A., Strassner,
-              J., and J. François, "Precision Availability Metrics for
-              Services Governed by Service Level Objectives (SLOs)",
-              Work in Progress, Internet-Draft, draft-ietf-ippm-pam-09,
-              1 December 2023, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ippm-pam-09>.
 
    [I-D.ietf-lsr-isis-sr-vtn-mt]
               Xie, C., Ma, C., Dong, J., and Z. Li, "Applicability of
@@ -1156,6 +1148,12 @@ Table of Contents
               Framework for Network Slices in Networks Built from IETF
               Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
               <https://www.rfc-editor.org/rfc/rfc9543>.
+
+   [RFC9544]  Mirsky, G., Halpern, J., Min, X., Clemm, A., Strassner,
+              J., and J. François, "Precision Availability Metrics
+              (PAMs) for Services Governed by Service Level Objectives
+              (SLOs)", RFC 9544, DOI 10.17487/RFC9544, March 2024,
+              <https://www.rfc-editor.org/rfc/rfc9544>.
 
 Acknowledgments
 
