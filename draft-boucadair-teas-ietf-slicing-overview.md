@@ -352,7 +352,7 @@ The NRP-ID is a encoded as a 4-octet field.
 
 ## Precision Availability Metrics (PAM)
 
-{{?I-D.ietf-ippm-pam}} introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice Service) is provided in compliance with its specified SLOs.
+{{?RFC9544}} introduces a new set of metrics, called Precision Availability Metrics (PAM). These metrics are used to assess whether a service (e.g., Network Slice Service) is provided in compliance with its specified SLOs.
 
 {{?I-D.clemm-opsawg-pam-ipfix}} specifies a set of new IP Flow Information Export (IPFIX) Information Elements to export precision availability data associated with Flows. These Information Elements are specifically designed to indicate compliance of a Flow with an SLO.
 
@@ -366,7 +366,7 @@ The initial version of {{?I-D.liu-opsawg-ipfix-network-slice}} does explain whic
 
 {{?I-D.contreras-pce-pam}} specifies a new PCEP object (PRECISION METRIC) for
 path calculation with performance requirements expressed as SLOs. The new
-PCEP object uses the attributes defined in {{?I-D.ietf-ippm-pam}}.
+PCEP object uses the attributes defined in {{?RFC9544}}.
 
 # Misc
 
