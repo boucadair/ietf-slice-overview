@@ -272,7 +272,7 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 {{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.
 
-{{?ID.chen-idr-bgp-ls-transport-slice}} adds new BGP-LS attribute TLVs to encode information such as NRP-ID.
+{{?I-D.chen-idr-bgp-ls-transport-slice}} adds new BGP-LS attribute TLVs to encode information such as NRP-ID.
 
 ### SR Policies Extensions
 
