@@ -1,6 +1,6 @@
 ---
-title: "xxxx"
-abbrev: "xxxx"
+title: "cccc"
+abbrev: "cccc"
 category: info
 
 docname: draft-tailhardat-nmop-incident-management-noria-latest
@@ -9,17 +9,11 @@ number:
 date:
 consensus: true
 v: 3
-area: OPS
-workgroup: Network Management Operations
+workgroup: "NMOP"
 keyword:
  - knowledge graphs
  - incident management
  - anomaly detection
-venue:
-  group: NMOP
-  type: Working Group
-  mail: nmop@ietf.org
-  github: GenEars/draft-noria-incident-management-at-scale
 
 author:
  -
@@ -35,41 +29,34 @@ author:
     organization: Orange
     email: yoan.chabot@orange.com
 
+
 normative:
 
 informative:
 
-
 --- abstract
 
-TODO Abstract
-
+TBc
 
 --- middle
 
 # Introduction
 
-TODO Introduction
+TBC
 
-
-# Conventions and Definitions
-
-{::boilerplate bcp14-tagged}
+# Another Section
 
 
 # Security Considerations
 
-TODO Security
+TBC
 
+# IANA Considerations {#IANA}
 
-# IANA Considerations
-
-This document has no IANA actions.
-
-
+TBC
 --- back
 
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+TBC
