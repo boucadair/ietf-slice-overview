@@ -1310,6 +1310,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.4">
                     <p id="section-toc.1-1.7.2.5.2.4.1"><a href="#section-7.5.4" class="auto internal xref">7.5.4</a>.  <a href="#name-srv6-resource-programming" class="internal xref">SRv6 Resource Programming</a></p>
 </li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.5">
+                    <p id="section-toc.1-1.7.2.5.2.5.1"><a href="#section-7.5.5" class="auto internal xref">7.5.5</a>.  <a href="#name-bgp-extensions" class="internal xref">BGP Extensions</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.6">
+                    <p id="section-toc.1-1.7.2.5.2.6.1"><a href="#section-7.5.6" class="auto internal xref">7.5.6</a>.  <a href="#name-bgp-link-state-extensions" class="internal xref">BGP Link State Extensions</a></p>
+</li>
                 </ul>
 </li>
             </ul>
@@ -1569,6 +1575,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-mobility-aware-transport-ne" class="section-name selfRef">Mobility-Aware Transport Network Slicing</a>
         </h3>
 <p id="section-4.5-1"><span>[<a href="#I-D.ietf-dmm-tn-aware-mobility" class="cite xref">I-D.ietf-dmm-tn-aware-mobility</a>]</span> discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in <span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span>.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
+<p id="section-4.5-2">The document specifies an ACaaS extension <span>[<a href="#I-D.ietf-opsawg-teas-attachment-circuit" class="cite xref">I-D.ietf-opsawg-teas-attachment-circuit</a>]</span> to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.<a href="#section-4.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="detnet">
@@ -2011,6 +2018,22 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-7.5.4-1"><span>[<a href="#I-D.gong-spring-srv6-nrp-flavor" class="cite xref">I-D.gong-spring-srv6-nrp-flavor</a>]</span> defines a new SRv6 Endpoint behavior <span>[<a href="#RFC8986" class="cite xref">RFC8986</a>]</span> to associate a SID with a set of NRPs.<a href="#section-7.5.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="bgp-extensions">
+<section id="section-7.5.5">
+          <h4 id="name-bgp-extensions">
+<a href="#section-7.5.5" class="section-number selfRef">7.5.5. </a><a href="#name-bgp-extensions" class="section-name selfRef">BGP Extensions</a>
+          </h4>
+<p id="section-7.5.5-1"><span>[<a href="#I-D.dong-idr-bgp-nrp-policy" class="cite xref">I-D.dong-idr-bgp-nrp-policy</a>]</span> specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.<a href="#section-7.5.5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="bgp-link-state-extensions">
+<section id="section-7.5.6">
+          <h4 id="name-bgp-link-state-extensions">
+<a href="#section-7.5.6" class="section-number selfRef">7.5.6. </a><a href="#name-bgp-link-state-extensions" class="section-name selfRef">BGP Link State Extensions</a>
+          </h4>
+<p id="section-7.5.6-1"><span>[<a href="#I-D.dong-idr-bgp-ls-scalable-nrp" class="cite xref">I-D.dong-idr-bgp-ls-scalable-nrp</a>]</span> specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.<a href="#section-7.5.6-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 </section>
@@ -2131,6 +2154,14 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dt id="I-D.dhody-teas-ietf-network-slice-mapping">[I-D.dhody-teas-ietf-network-slice-mapping]</dt>
       <dd>
 <span class="refAuthor">Dhody, D.</span> and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"IETF Network Slice Service Mapping YANG Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dhody-teas-ietf-network-slice-mapping-06</span>, <time datetime="2025-01-29" class="refDate">29 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-06">https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-06</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.dong-idr-bgp-ls-scalable-nrp">[I-D.dong-idr-bgp-ls-scalable-nrp]</dt>
+      <dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Hu, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Ge, J.</span>, and <span class="refAuthor">KaZhang</span>, <span class="refTitle">"BGP Link State Extensions for Scalable Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dong-idr-bgp-ls-scalable-nrp-02</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-ls-scalable-nrp-02">https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-ls-scalable-nrp-02</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.dong-idr-bgp-nrp-policy">[I-D.dong-idr-bgp-nrp-policy]</dt>
+      <dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">KaZhang</span>, and <span class="refAuthor">L. Gong</span>, <span class="refTitle">"Advertising Network Resource Partition (NRP) Policy in BGP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dong-idr-bgp-nrp-policy-01</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-nrp-policy-01">https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-nrp-policy-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.dong-pce-pcep-nrp">[I-D.dong-pce-pcep-nrp]</dt>
       <dd>

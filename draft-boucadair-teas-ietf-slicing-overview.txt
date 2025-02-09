@@ -117,6 +117,8 @@ Table of Contents
        7.5.2.  NRP ID in SRv6
        7.5.3.  NRP Selector in MPLS Network Actions
        7.5.4.  SRv6 Resource Programming
+       7.5.5.  BGP Extensions
+       7.5.6.  BGP Link State Extensions
    8.  OAM
      8.1.  LSP Ping/Traceroute Extensions
      8.2.  Precision Availability Metrics (PAM)
@@ -354,6 +356,10 @@ Table of Contents
    map between a 5G slice and corresponding RFC 9543 Network Slice
    segments that is listed in
    [I-D.ietf-teas-5g-network-slice-application].
+
+   The document specifies an ACaaS extension
+   [I-D.ietf-opsawg-teas-attachment-circuit] to support a layer 3 GTP-U
+   (or UDP encapsulated GTP) bearer as an attachment circuit.
 
 4.6.  DetNet
 
@@ -637,6 +643,16 @@ Table of Contents
    [I-D.gong-spring-srv6-nrp-flavor] defines a new SRv6 Endpoint
    behavior [RFC8986] to associate a SID with a set of NRPs.
 
+7.5.5.  BGP Extensions
+
+   [I-D.dong-idr-bgp-nrp-policy] specifies extensions to BGP to
+   advertise NRPs to the network nodes involved in the NRP.
+
+7.5.6.  BGP Link State Extensions
+
+   [I-D.dong-idr-bgp-ls-scalable-nrp] specifies extensions to BGP Link-
+   State (BGP-LS) to advertise NRPs to network controllers.
+
 8.  OAM
 
 8.1.  LSP Ping/Traceroute Extensions
@@ -765,6 +781,21 @@ Table of Contents
               dhody-teas-ietf-network-slice-mapping-06, 29 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-dhody-teas-
               ietf-network-slice-mapping-06>.
+
+   [I-D.dong-idr-bgp-ls-scalable-nrp]
+              Dong, J., Zhu, Y., Hu, Z., Gong, L., Ge, J., and KaZhang,
+              "BGP Link State Extensions for Scalable Network Resource
+              Partition", Work in Progress, Internet-Draft, draft-dong-
+              idr-bgp-ls-scalable-nrp-02, 21 October 2024,
+              <https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-
+              ls-scalable-nrp-02>.
+
+   [I-D.dong-idr-bgp-nrp-policy]
+              Dong, J., KaZhang, and L. Gong, "Advertising Network
+              Resource Partition (NRP) Policy in BGP", Work in Progress,
+              Internet-Draft, draft-dong-idr-bgp-nrp-policy-01, 21
+              October 2024, <https://datatracker.ietf.org/doc/html/
+              draft-dong-idr-bgp-nrp-policy-01>.
 
    [I-D.dong-pce-pcep-nrp]
               Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
