@@ -101,9 +101,11 @@ Table of Contents
      6.2.  BGP Color-Aware Routing (CAR)
      6.3.  Network Resource Partitions (NRPs)
        6.3.1.  BGP Flowspec
-       6.3.2.  BGP-LS Filters in SR
-       6.3.3.  SR Policies Extensions
-       6.3.4.  PCEP Extensions
+       6.3.2.  BGP-LS NRP Filters in SR
+       6.3.3.  BGP NRP Extensions
+       6.3.4.  BGP-LS NRP Extensions
+       6.3.5.  SR Policies Extensions
+       6.3.6.  PCEP Extensions
      6.4.  Virtual Transport Networks (VTNs)
        6.4.1.  IS-IS MT
        6.4.2.  BGP-LS
@@ -117,8 +119,6 @@ Table of Contents
        7.5.2.  NRP ID in SRv6
        7.5.3.  NRP Selector in MPLS Network Actions
        7.5.4.  SRv6 Resource Programming
-       7.5.5.  BGP Extensions
-       7.5.6.  BGP Link State Extensions
    8.  OAM
      8.1.  LSP Ping/Traceroute Extensions
      8.2.  Precision Availability Metrics (PAM)
@@ -526,7 +526,7 @@ Table of Contents
    [I-D.ietf-idr-flowspec-network-slice-ts] specifies a BGP Flowspec
    extension for NRP traffic steering.
 
-6.3.2.  BGP-LS Filters in SR
+6.3.2.  BGP-LS NRP Filters in SR
 
    [I-D.drake-teas-bgp-ls-filter-nrp] specifies new BGP-LS attributes,
    called BGP-LS Filters, for NRPs in SR networks.  A BGP-LS Filter
@@ -538,20 +538,30 @@ Table of Contents
    [I-D.chen-idr-bgp-ls-transport-slice] adds new BGP-LS attribute TLVs
    to encode information such as NRP-ID.
 
-6.3.3.  SR Policies Extensions
+6.3.3.  BGP NRP Extensions
 
-6.3.3.1.  BGP
+   [I-D.dong-idr-bgp-nrp-policy] specifies extensions to BGP to
+   advertise NRPs to the network nodes involved in the NRP.
+
+6.3.4.  BGP-LS NRP Extensions
+
+   [I-D.dong-idr-bgp-ls-scalable-nrp] specifies extensions to BGP Link-
+   State (BGP-LS) to advertise NRPs to network controllers.
+
+6.3.5.  SR Policies Extensions
+
+6.3.5.1.  BGP
 
    [I-D.ietf-idr-sr-policy-nrp] and [I-D.liu-idr-bgp-network-slicing]
    define extensions to BGP in order to advertise NRP ID in an SR
    Policy.  The NRP ID is encoded in 4 octets.
 
-6.3.3.2.  BGP-LS
+6.3.5.2.  BGP-LS
 
    [I-D.ietf-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
    for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
 
-6.3.4.  PCEP Extensions
+6.3.6.  PCEP Extensions
 
    [I-D.dong-pce-pcep-nrp] specifie Path Computation Element
    Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
@@ -642,16 +652,6 @@ Table of Contents
 
    [I-D.gong-spring-srv6-nrp-flavor] defines a new SRv6 Endpoint
    behavior [RFC8986] to associate a SID with a set of NRPs.
-
-7.5.5.  BGP Extensions
-
-   [I-D.dong-idr-bgp-nrp-policy] specifies extensions to BGP to
-   advertise NRPs to the network nodes involved in the NRP.
-
-7.5.6.  BGP Link State Extensions
-
-   [I-D.dong-idr-bgp-ls-scalable-nrp] specifies extensions to BGP Link-
-   State (BGP-LS) to advertise NRPs to network controllers.
 
 8.  OAM
 

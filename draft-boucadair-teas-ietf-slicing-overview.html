@@ -1257,13 +1257,19 @@ svg :is([fill="white"], [fill^="#fff"]) {
                     <p id="section-toc.1-1.6.2.3.2.1.1"><a href="#section-6.3.1" class="auto internal xref">6.3.1</a>.  <a href="#name-bgp-flowspec" class="internal xref">BGP Flowspec</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.2">
-                    <p id="section-toc.1-1.6.2.3.2.2.1"><a href="#section-6.3.2" class="auto internal xref">6.3.2</a>.  <a href="#name-bgp-ls-filters-in-sr" class="internal xref">BGP-LS Filters in SR</a></p>
+                    <p id="section-toc.1-1.6.2.3.2.2.1"><a href="#section-6.3.2" class="auto internal xref">6.3.2</a>.  <a href="#name-bgp-ls-nrp-filters-in-sr" class="internal xref">BGP-LS NRP Filters in SR</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.3">
-                    <p id="section-toc.1-1.6.2.3.2.3.1"><a href="#section-6.3.3" class="auto internal xref">6.3.3</a>.  <a href="#name-sr-policies-extensions" class="internal xref">SR Policies Extensions</a></p>
+                    <p id="section-toc.1-1.6.2.3.2.3.1"><a href="#section-6.3.3" class="auto internal xref">6.3.3</a>.  <a href="#name-bgp-nrp-extensions" class="internal xref">BGP NRP Extensions</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.4">
-                    <p id="section-toc.1-1.6.2.3.2.4.1"><a href="#section-6.3.4" class="auto internal xref">6.3.4</a>.  <a href="#name-pcep-extensions" class="internal xref">PCEP Extensions</a></p>
+                    <p id="section-toc.1-1.6.2.3.2.4.1"><a href="#section-6.3.4" class="auto internal xref">6.3.4</a>.  <a href="#name-bgp-ls-nrp-extensions" class="internal xref">BGP-LS NRP Extensions</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.5">
+                    <p id="section-toc.1-1.6.2.3.2.5.1"><a href="#section-6.3.5" class="auto internal xref">6.3.5</a>.  <a href="#name-sr-policies-extensions" class="internal xref">SR Policies Extensions</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.6">
+                    <p id="section-toc.1-1.6.2.3.2.6.1"><a href="#section-6.3.6" class="auto internal xref">6.3.6</a>.  <a href="#name-pcep-extensions" class="internal xref">PCEP Extensions</a></p>
 </li>
                 </ul>
 </li>
@@ -1309,12 +1315,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.4">
                     <p id="section-toc.1-1.7.2.5.2.4.1"><a href="#section-7.5.4" class="auto internal xref">7.5.4</a>.  <a href="#name-srv6-resource-programming" class="internal xref">SRv6 Resource Programming</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.5">
-                    <p id="section-toc.1-1.7.2.5.2.5.1"><a href="#section-7.5.5" class="auto internal xref">7.5.5</a>.  <a href="#name-bgp-extensions" class="internal xref">BGP Extensions</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5.2.6">
-                    <p id="section-toc.1-1.7.2.5.2.6.1"><a href="#section-7.5.6" class="auto internal xref">7.5.6</a>.  <a href="#name-bgp-link-state-extensions" class="internal xref">BGP Link State Extensions</a></p>
 </li>
                 </ul>
 </li>
@@ -1863,44 +1863,60 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-6.3.1-1"><span>[<a href="#I-D.ietf-idr-flowspec-network-slice-ts" class="cite xref">I-D.ietf-idr-flowspec-network-slice-ts</a>]</span> specifies a BGP Flowspec extension for NRP traffic steering.<a href="#section-6.3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="bgp-ls-filters-in-sr">
+<div id="bgp-ls-nrp-filters-in-sr">
 <section id="section-6.3.2">
-          <h4 id="name-bgp-ls-filters-in-sr">
-<a href="#section-6.3.2" class="section-number selfRef">6.3.2. </a><a href="#name-bgp-ls-filters-in-sr" class="section-name selfRef">BGP-LS Filters in SR</a>
+          <h4 id="name-bgp-ls-nrp-filters-in-sr">
+<a href="#section-6.3.2" class="section-number selfRef">6.3.2. </a><a href="#name-bgp-ls-nrp-filters-in-sr" class="section-name selfRef">BGP-LS NRP Filters in SR</a>
           </h4>
 <p id="section-6.3.2-1"><span>[<a href="#I-D.drake-teas-bgp-ls-filter-nrp" class="cite xref">I-D.drake-teas-bgp-ls-filter-nrp</a>]</span> specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.<a href="#section-6.3.2-1" class="pilcrow">¶</a></p>
 <p id="section-6.3.2-2"><span>[<a href="#I-D.chen-idr-bgp-ls-transport-slice" class="cite xref">I-D.chen-idr-bgp-ls-transport-slice</a>]</span> adds new BGP-LS attribute TLVs to encode information such as NRP-ID.<a href="#section-6.3.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="sr-policies-extensions">
+<div id="bgp-nrp-extensions">
 <section id="section-6.3.3">
+          <h4 id="name-bgp-nrp-extensions">
+<a href="#section-6.3.3" class="section-number selfRef">6.3.3. </a><a href="#name-bgp-nrp-extensions" class="section-name selfRef">BGP NRP Extensions</a>
+          </h4>
+<p id="section-6.3.3-1"><span>[<a href="#I-D.dong-idr-bgp-nrp-policy" class="cite xref">I-D.dong-idr-bgp-nrp-policy</a>]</span> specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.<a href="#section-6.3.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="bgp-ls-nrp-extensions">
+<section id="section-6.3.4">
+          <h4 id="name-bgp-ls-nrp-extensions">
+<a href="#section-6.3.4" class="section-number selfRef">6.3.4. </a><a href="#name-bgp-ls-nrp-extensions" class="section-name selfRef">BGP-LS NRP Extensions</a>
+          </h4>
+<p id="section-6.3.4-1"><span>[<a href="#I-D.dong-idr-bgp-ls-scalable-nrp" class="cite xref">I-D.dong-idr-bgp-ls-scalable-nrp</a>]</span> specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.<a href="#section-6.3.4-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sr-policies-extensions">
+<section id="section-6.3.5">
           <h4 id="name-sr-policies-extensions">
-<a href="#section-6.3.3" class="section-number selfRef">6.3.3. </a><a href="#name-sr-policies-extensions" class="section-name selfRef">SR Policies Extensions</a>
+<a href="#section-6.3.5" class="section-number selfRef">6.3.5. </a><a href="#name-sr-policies-extensions" class="section-name selfRef">SR Policies Extensions</a>
           </h4>
 <div id="bgp">
-<section id="section-6.3.3.1">
+<section id="section-6.3.5.1">
             <h5 id="name-bgp">
-<a href="#section-6.3.3.1" class="section-number selfRef">6.3.3.1. </a><a href="#name-bgp" class="section-name selfRef">BGP</a>
+<a href="#section-6.3.5.1" class="section-number selfRef">6.3.5.1. </a><a href="#name-bgp" class="section-name selfRef">BGP</a>
             </h5>
-<p id="section-6.3.3.1-1"><span>[<a href="#I-D.ietf-idr-sr-policy-nrp" class="cite xref">I-D.ietf-idr-sr-policy-nrp</a>]</span> and <span>[<a href="#I-D.liu-idr-bgp-network-slicing" class="cite xref">I-D.liu-idr-bgp-network-slicing</a>]</span> define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.<a href="#section-6.3.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.5.1-1"><span>[<a href="#I-D.ietf-idr-sr-policy-nrp" class="cite xref">I-D.ietf-idr-sr-policy-nrp</a>]</span> and <span>[<a href="#I-D.liu-idr-bgp-network-slicing" class="cite xref">I-D.liu-idr-bgp-network-slicing</a>]</span> define extensions to BGP in order to advertise NRP ID in an SR Policy. The NRP ID is encoded in 4 octets.<a href="#section-6.3.5.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="bgp-ls">
-<section id="section-6.3.3.2">
+<section id="section-6.3.5.2">
             <h5 id="name-bgp-ls">
-<a href="#section-6.3.3.2" class="section-number selfRef">6.3.3.2. </a><a href="#name-bgp-ls" class="section-name selfRef">BGP-LS</a>
+<a href="#section-6.3.5.2" class="section-number selfRef">6.3.5.2. </a><a href="#name-bgp-ls" class="section-name selfRef">BGP-LS</a>
             </h5>
-<p id="section-6.3.3.2-1"><span>[<a href="#I-D.ietf-idr-bgp-ls-sr-policy-nrp" class="cite xref">I-D.ietf-idr-bgp-ls-sr-policy-nrp</a>]</span> specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.<a href="#section-6.3.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.5.2-1"><span>[<a href="#I-D.ietf-idr-bgp-ls-sr-policy-nrp" class="cite xref">I-D.ietf-idr-bgp-ls-sr-policy-nrp</a>]</span> specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.<a href="#section-6.3.5.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="pcep-extensions">
-<section id="section-6.3.4">
+<section id="section-6.3.6">
           <h4 id="name-pcep-extensions">
-<a href="#section-6.3.4" class="section-number selfRef">6.3.4. </a><a href="#name-pcep-extensions" class="section-name selfRef">PCEP Extensions</a>
+<a href="#section-6.3.6" class="section-number selfRef">6.3.6. </a><a href="#name-pcep-extensions" class="section-name selfRef">PCEP Extensions</a>
           </h4>
-<p id="section-6.3.4-1"><span>[<a href="#I-D.dong-pce-pcep-nrp" class="cite xref">I-D.dong-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.<a href="#section-6.3.4-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.6-1"><span>[<a href="#I-D.dong-pce-pcep-nrp" class="cite xref">I-D.dong-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.<a href="#section-6.3.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2016,22 +2032,6 @@ a network slice policy.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <a href="#section-7.5.4" class="section-number selfRef">7.5.4. </a><a href="#name-srv6-resource-programming" class="section-name selfRef">SRv6 Resource Programming</a>
           </h4>
 <p id="section-7.5.4-1"><span>[<a href="#I-D.gong-spring-srv6-nrp-flavor" class="cite xref">I-D.gong-spring-srv6-nrp-flavor</a>]</span> defines a new SRv6 Endpoint behavior <span>[<a href="#RFC8986" class="cite xref">RFC8986</a>]</span> to associate a SID with a set of NRPs.<a href="#section-7.5.4-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="bgp-extensions">
-<section id="section-7.5.5">
-          <h4 id="name-bgp-extensions">
-<a href="#section-7.5.5" class="section-number selfRef">7.5.5. </a><a href="#name-bgp-extensions" class="section-name selfRef">BGP Extensions</a>
-          </h4>
-<p id="section-7.5.5-1"><span>[<a href="#I-D.dong-idr-bgp-nrp-policy" class="cite xref">I-D.dong-idr-bgp-nrp-policy</a>]</span> specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.<a href="#section-7.5.5-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="bgp-link-state-extensions">
-<section id="section-7.5.6">
-          <h4 id="name-bgp-link-state-extensions">
-<a href="#section-7.5.6" class="section-number selfRef">7.5.6. </a><a href="#name-bgp-link-state-extensions" class="section-name selfRef">BGP Link State Extensions</a>
-          </h4>
-<p id="section-7.5.6-1"><span>[<a href="#I-D.dong-idr-bgp-ls-scalable-nrp" class="cite xref">I-D.dong-idr-bgp-ls-scalable-nrp</a>]</span> specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.<a href="#section-7.5.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
