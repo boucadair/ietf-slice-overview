@@ -4,8 +4,8 @@
 
 Traffic Engineering Architecture and Signaling              M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           4 February 2025
-Expires: 8 August 2025
+Intended status: Informational                           9 February 2025
+Expires: 13 August 2025
 
 
            An Overview of Network Slicing Efforts in The IETF
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 August 2025.
+   This Internet-Draft will expire on 13 August 2025.
 
 Copyright Notice
 
@@ -276,14 +276,13 @@ Table of Contents
 
 3.5.  Instantiation in Service Providers Networks
 
-   [I-D.barguil-teas-network-slices-instantation] focuses on the
-   instantiation of the RFC 9543 Network Slice Services in service
-   provider networks using existing data models.  In particular, this
-   document describes the relationship between service models for
-   managing the RFC 9543 Network Slice Services and network models
-   (e.g., the Layer-3 Network Model (L3NPM, [RFC9182]), the Layer-2
-   Network Model (L2NM [RFC9291])) used for the realization of the
-   slices.
+   [I-D.ietf-teas-ns-models-applicability] focuses on the instantiation
+   of the RFC 9543 Network Slice Services in service provider networks
+   using existing data models.  In particular, this document describes
+   the relationship between service models for managing the RFC 9543
+   Network Slice Services and network models (e.g., the Layer-3 Network
+   Model (L3NPM, [RFC9182]), the Layer-2 Network Model (L2NM [RFC9291]))
+   used for the realization of the slices.
 
 3.6.  Structuring Network Slice Controllers
 
@@ -369,37 +368,37 @@ Table of Contents
    Figure 1 provides an example of the various data models that can be
    invoked in the context of Network Slicing.
 
-                                 +---------------+
+                                   .-------------.
                                   |   Customer    |
-                                  +-------+-------+
+                                   '------+------'
                   Customer Service Model  |
                   e.g., slice-svc, ac-svc,| and bearer-svc
-                                  +-------+-------+
+                                   .------+------.
                                   |    Service    |
                                   | Orchestration |
-                                  +-------+-------+
+                                   '------+------'
                    Network Model          |
      e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
-                                  +-------+-------+
+                                   .------+------.
                                   |   Network     |
                                   | Orchestration |
-                                  +-------+-------+
+                                   '------+------'
             Network Configuration Model   |
-                              +-----------+-----------+
+                              .-----------+-----------.
                               |                       |
-                     +--------+------+       +--------+------+
+                      .-------+-----.         .-------+-----.
                      |    Domain     |       |     Domain    |
                      | Orchestration |       | Orchestration |
-                     +---+-----------+       +--------+------+
+                      '--+----------'         '-------+-----'
           Device         |        |                   |
           Configuration  |        |                   |
           Model          |        |                   |
-                    +----+----+   |                   |
+                     .---+---.    |                   |
                     | Config  |   |                   |
                     | Manager |   |                   |
-                    +----+----+   |                   |
+                     '---+---'    |                   |
                          |        |                   |
-                         | NETCONF/CLI..................
+                         NETCONF/CLI..................
                          |        |                   |
                        +--------------------------------+
          +----+ Bearer |                                | Bearer +----+
@@ -543,7 +542,7 @@ Table of Contents
 
 6.3.3.2.  BGP-LS
 
-   [I-D.chen-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
+   [I-D.ietf-idr-bgp-ls-sr-policy-nrp] specifies SR Policy extensions
    for NRP in BGP-LS.  The NRP ID is encoded in 4 octets.
 
 6.3.4.  PCEP Extensions
@@ -711,15 +710,6 @@ Table of Contents
 
 12.  Informative References
 
-   [I-D.barguil-teas-network-slices-instantation]
-              Barguil, S., Contreras, L. M., Lopez, V., de Dios, O. G.,
-              and M. Boucadair, "Applicability of IETF-Defined Service
-              and Network Data Models for Network Slice Service
-              Management", Work in Progress, Internet-Draft, draft-
-              barguil-teas-network-slices-instantation-11, 21 October
-              2024, <https://datatracker.ietf.org/doc/html/draft-
-              barguil-teas-network-slices-instantation-11>.
-
    [I-D.cbs-teas-5qi-to-dscp-mapping]
               Contreras, L. M., Bykov, I., and K. G. Szarkowicz, "5QI to
               DiffServ DSCP Mapping Example for Enforcement of 5G End-
@@ -727,14 +717,6 @@ Table of Contents
               Draft, draft-cbs-teas-5qi-to-dscp-mapping-03, 21 October
               2024, <https://datatracker.ietf.org/doc/html/draft-cbs-
               teas-5qi-to-dscp-mapping-03>.
-
-   [I-D.chen-idr-bgp-ls-sr-policy-nrp]
-              Chen, R., Dong, J., Zhao, D., Gong, L., Zhu, Y., and R.
-              Pang, "SR Policies Extensions for Network Resource
-              Partition in BGP-LS", Work in Progress, Internet-Draft,
-              draft-chen-idr-bgp-ls-sr-policy-nrp-09, 21 July 2024,
-              <https://datatracker.ietf.org/doc/html/draft-chen-idr-bgp-
-              ls-sr-policy-nrp-09>.
 
    [I-D.chen-idr-bgp-ls-transport-slice]
               Chen, R., Peng, S., Saad, T., and V. P. Beeram, "BGP-LS
@@ -852,16 +834,24 @@ Table of Contents
    [I-D.ietf-idr-bgp-car]
               Rao, D. and S. Agrawal, "BGP Color-Aware Routing (CAR)",
               Work in Progress, Internet-Draft, draft-ietf-idr-bgp-car-
-              11, 30 January 2025,
+              12, 7 February 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
-              car-11>.
+              car-12>.
 
    [I-D.ietf-idr-bgp-ct]
               Vairavakkalai, K. and N. Venkataraman, "BGP Classful
               Transport Planes", Work in Progress, Internet-Draft,
-              draft-ietf-idr-bgp-ct-35, 24 January 2025,
+              draft-ietf-idr-bgp-ct-36, 7 February 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
-              ct-35>.
+              ct-36>.
+
+   [I-D.ietf-idr-bgp-ls-sr-policy-nrp]
+              Chen, R., Dong, J., Zhao, D., Gong, L., Zhu, Y., and R.
+              Pang, "SR Policies Extensions for Network Resource
+              Partition in BGP-LS", Work in Progress, Internet-Draft,
+              draft-ietf-idr-bgp-ls-sr-policy-nrp-01, 26 January 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-
+              ls-sr-policy-nrp-01>.
 
    [I-D.ietf-idr-bgpls-sr-vtn-mt]
               Xie, C., Li, C., Dong, J., and Z. Li, "Applicability of
@@ -981,9 +971,9 @@ Table of Contents
               Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
               "A YANG Data Model for the RFC 9543 Network Slice
               Service", Work in Progress, Internet-Draft, draft-ietf-
-              teas-ietf-network-slice-nbi-yang-20, 27 January 2025,
+              teas-ietf-network-slice-nbi-yang-22, 8 February 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              ietf-network-slice-nbi-yang-20>.
+              ietf-network-slice-nbi-yang-22>.
 
    [I-D.ietf-teas-nrp-scalability]
               Dong, J., Li, Z., Gong, L., Yang, G., and G. S. Mishra,
@@ -1017,6 +1007,15 @@ Table of Contents
               Internet-Draft, draft-ietf-teas-ns-ip-mpls-04, 28 May
               2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
               teas-ns-ip-mpls-04>.
+
+   [I-D.ietf-teas-ns-models-applicability]
+              Barguil, S., Contreras, L. M., Lopez, V., de Dios, O. G.,
+              and M. Boucadair, "Applicability of IETF-Defined Service
+              and Network Data Models for Network Slice Service
+              Management", Work in Progress, Internet-Draft, draft-ietf-
+              teas-ns-models-applicability-00, 4 February 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-
+              models-applicability-00>.
 
    [I-D.ietf-teas-te-service-mapping-yang]
               Lee, Y., Dhody, D., Fioccola, G., Wu, Q., Ceccarelli, D.,
