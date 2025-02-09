@@ -147,7 +147,7 @@ on their SLOs.
 
 {{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
 
-The document specifies an ACaaS extension {{?I-D.ietf-opsawg-teas-attachment-circuit}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit. 
+The document specifies an ACaaS extension {{?I-D.ietf-opsawg-teas-attachment-circuit}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.
 
 ## DetNet
 
