@@ -270,11 +270,19 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 {{?I-D.ietf-idr-flowspec-network-slice-ts}} specifies a BGP Flowspec extension for NRP traffic steering.
 
-### BGP-LS Filters in SR
+### BGP-LS NRP Filters in SR
 
 {{?I-D.drake-teas-bgp-ls-filter-nrp}} specifies new BGP-LS attributes, called BGP-LS Filters, for NRPs in SR networks. A BGP-LS Filter provides a description of a subset of the links and nodes in an underlay network. Ingress PE selects a path to an egress PE from the topology defined by the BGP-LS Filters it has imported for a given VPN.
 
 {{?I-D.chen-idr-bgp-ls-transport-slice}} adds new BGP-LS attribute TLVs to encode information such as NRP-ID.
+
+### BGP NRP Extensions
+
+{{?I-D.dong-idr-bgp-nrp-policy}} specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.
+
+### BGP-LS NRP Extensions
+
+{{?I-D.dong-idr-bgp-ls-scalable-nrp}} specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.
 
 ### SR Policies Extensions
 
@@ -343,14 +351,6 @@ As mentioned in {{flow-agg}}, packets that are associated with a Slice-Flow Aggr
 ### SRv6 Resource Programming
 
 {{?I-D.gong-spring-srv6-nrp-flavor}} defines a new SRv6 Endpoint behavior {{?RFC8986}} to associate a SID with a set of NRPs.
-
-### BGP Extensions
-
-{{?I-D.dong-idr-bgp-nrp-policy}} specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.
-
-### BGP Link State Extensions
-
-{{?I-D.dong-idr-bgp-ls-scalable-nrp}} specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.
 
 # OAM
 
