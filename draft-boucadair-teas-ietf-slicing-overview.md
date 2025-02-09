@@ -101,7 +101,7 @@ RFC 9543 Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Instantiation in Service Providers Networks
 
-{{?I-D.barguil-teas-network-slices-instantation}} focuses on the instantiation of the RFC 9543 Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC 9543 Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
+{{?I-D.ietf-teas-ns-models-applicability}} focuses on the instantiation of the RFC 9543 Network Slice Services in service provider networks using existing data models. In particular, this document describes the relationship between service models for managing the RFC 9543 Network Slice Services and network models (e.g., the Layer-3 Network Model (L3NPM, {{?RFC9182}}), the Layer-2 Network Model (L2NM {{?RFC9291}})) used for the realization of the slices.
 
 ## Structuring Network Slice Controllers
 
@@ -156,38 +156,38 @@ on their SLOs.
 
 {{model-overview}} provides an example of the various data models that can be invoked in the context of Network Slicing.
 
-~~~
-                              +---------------+
+~~~ aasvg
+                                .-------------.
                                |   Customer    |
-                               +-------+-------+
+                                '------+------'
                Customer Service Model  |
                e.g., slice-svc, ac-svc,| and bearer-svc
-                               +-------+-------+
+                                .------+------.
                                |    Service    |
                                | Orchestration |
-                               +-------+-------+
+                                '------+------'
                 Network Model          |
   e.g., l2vpn-ntw, l3vpn-ntw, sap, and | ac-ntw
-                               +-------+-------+
+                                .------+------.
                                |   Network     |
                                | Orchestration |
-                               +-------+-------+
+                                '------+------'
          Network Configuration Model   |
-                           +-----------+-----------+
+                           .-----------+-----------.
                            |                       |
-                  +--------+------+       +--------+------+
+                   .-------+-----.         .-------+-----.
                   |    Domain     |       |     Domain    |
                   | Orchestration |       | Orchestration |
-                  +---+-----------+       +--------+------+
+                   '--+----------'         '-------+-----'
        Device         |        |                   |
        Configuration  |        |                   |
        Model          |        |                   |
-                 +----+----+   |                   |
+                  .---+---.    |                   |
                  | Config  |   |                   |
                  | Manager |   |                   |
-                 +----+----+   |                   |
+                  '---+---'    |                   |
                       |        |                   |
-                      | NETCONF/CLI..................
+                      NETCONF/CLI..................
                       |        |                   |
                     +--------------------------------+
       +----+ Bearer |                                | Bearer +----+
@@ -282,7 +282,7 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 #### BGP-LS
 
-{{?I-D.chen-idr-bgp-ls-sr-policy-nrp}} specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.
+{{?I-D.ietf-idr-bgp-ls-sr-policy-nrp}} specifies SR Policy extensions for NRP in BGP-LS. The NRP ID is encoded in 4 octets.
 
 ### PCEP Extensions
 
