@@ -344,6 +344,14 @@ As mentioned in {{flow-agg}}, packets that are associated with a Slice-Flow Aggr
 
 {{?I-D.gong-spring-srv6-nrp-flavor}} defines a new SRv6 Endpoint behavior {{?RFC8986}} to associate a SID with a set of NRPs.
 
+### BGP Extensions
+
+{{?I-D.dong-idr-bgp-nrp-policy}} specifies extensions to BGP to advertise NRPs to the network nodes involved in the NRP.
+
+### BGP Link State Extensions
+
+{{?I-D.dong-idr-bgp-ls-scalable-nrp}} specifies extensions to BGP Link-State (BGP-LS) to advertise NRPs to network controllers.
+
 # OAM
 
 ## LSP Ping/Traceroute Extensions
