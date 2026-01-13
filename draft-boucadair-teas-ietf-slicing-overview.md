@@ -296,7 +296,7 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 ### PCEP Extensions
 
-{{?I-D.etf-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.
+{{?I-D.ietf-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.
 
 ## Virtual Transport Networks (VTNs)
 
