@@ -147,7 +147,7 @@ on their SLOs.
 
 {{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
 
-The document specifies an ACaaS extension {{?RFC99834}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.
+The document specifies an ACaaS extension {{?RFC9834}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.
 
 ## DetNet
 
@@ -204,13 +204,13 @@ The document specifies an ACaaS extension {{?RFC99834}} to support a layer 3 GTP
 
 {{?RFC9181}} specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.
 
-{{?RFC99833}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
+{{?RFC9833}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
 
 ## Service Models
 
 ### Attachment Circuit as a Service (ACaaS) Data Model
 
-{{?RFC99834}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
+{{?RFC9834}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
 
 ### Network Slice Service Data Model
 
@@ -231,7 +231,7 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### AC-augmented SAPs
 
-{{?RFC99835}} augments the SAP model with more details for managing ACs at the network level.
+{{?RFC9835}} augments the SAP model with more details for managing ACs at the network level.
 
 ### Network Slice Topology
 
