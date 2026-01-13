@@ -97,7 +97,7 @@ RFC 9543 Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## VPN+
 
-{{?I-D.ietf-teas-enhanced-vpn}} describes a framework for providing enhanced VPN services based upon VPN and Traffic Engineering (TE) technologies. Enhanced VPN (VPN+) can be used for the realization of Network Slices. This document introduces the concept of Virtual Transport Network (VTN), which is a virtual underlay network consisting of a subset of network resources allocated from the physical underlay network, and is associated with a customized network topology.
+{{?RFC9732}} describes a framework for providing enhanced VPN services based upon VPN and Traffic Engineering (TE) technologies. Enhanced VPN (VPN+) can be used for the realization of Network Slices. This document introduces the concept of Virtual Transport Network (VTN), which is a virtual underlay network consisting of a subset of network resources allocated from the physical underlay network, and is associated with a customized network topology.
 
 ## Instantiation in Service Providers Networks
 
@@ -147,7 +147,7 @@ on their SLOs.
 
 {{?I-D.ietf-dmm-tn-aware-mobility}} discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in {{?I-D.ietf-teas-5g-network-slice-application}}.
 
-The document specifies an ACaaS extension {{?I-D.ietf-opsawg-teas-attachment-circuit}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.
+The document specifies an ACaaS extension {{?RFC99834}} to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.
 
 ## DetNet
 
@@ -204,13 +204,13 @@ The document specifies an ACaaS extension {{?I-D.ietf-opsawg-teas-attachment-cir
 
 {{?RFC9181}} specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.
 
-{{?I-D.ietf-opsawg-teas-common-ac}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
+{{?RFC99833}} specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).
 
 ## Service Models
 
 ### Attachment Circuit as a Service (ACaaS) Data Model
 
-{{?I-D.ietf-opsawg-teas-attachment-circuit}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
+{{?RFC99834}} specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.
 
 ### Network Slice Service Data Model
 
@@ -231,13 +231,13 @@ A SAP network topology can be used for one or multiple service types ('service-t
 
 ### AC-augmented SAPs
 
-{{?I-D.ietf-opsawg-ntw-attachment-circuit}} augments the SAP model with more details for managing ACs at the network level.
+{{?RFC99835}} augments the SAP model with more details for managing ACs at the network level.
 
 ### Network Slice Topology
 
-{{?I-D.liu-teas-transport-network-slice-yang}} specifies a YANG model for RFC 9543 Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.
+{{?I-D.ietf-teas-transport-network-slice-yang}} specifies a YANG model for RFC 9543 Network Slice Topology with on exposing a customized topology that contains a topology intent with required SLO/SLEs to express the customer’s intent for resource reservation.
 
-The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using {{?I-D.ietf-teas-actn-vn-yang}}. The authors should motivate why {{?I-D.ietf-teas-actn-vn-yang}} is not sufficient.
+The need for such a model is yet to be justified as the current scope is redundant with, e.g., what can be already achieved using {{?RFC9731}}. The authors should motivate why {{?RFC9731}} is not sufficient.
 
 ### Network Resource Partitions (NRPs)
 
