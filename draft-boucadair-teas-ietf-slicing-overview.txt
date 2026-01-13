@@ -356,7 +356,7 @@ Table of Contents
    segments that is listed in
    [I-D.ietf-teas-5g-network-slice-application].
 
-   The document specifies an ACaaS extension [RFC99834] to support a
+   The document specifies an ACaaS extension [RFC9834] to support a
    layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment
    circuit.
 
@@ -420,14 +420,14 @@ Table of Contents
    VPN services.  Note that VPNs are used for the realization of Network
    Slices.
 
-   [RFC99833] specifies a set of reusable types and groupings to manage
+   [RFC9833] specifies a set of reusable types and groupings to manage
    Attachment Circuits (ACs).
 
 5.2.  Service Models
 
 5.2.1.  Attachment Circuit as a Service (ACaaS) Data Model
 
-   [RFC99834] specifies YANG data models for managing 'Attachment
+   [RFC9834] specifies YANG data models for managing 'Attachment
    Circuits'-as-a-Service (ACaaS) and also bearers.  These ACs and
    bearers are used to identify where to deliver a slice service.
 
@@ -455,7 +455,7 @@ Table of Contents
 
 5.3.2.  AC-augmented SAPs
 
-   [RFC99835] augments the SAP model with more details for managing ACs
+   [RFC9835] augments the SAP model with more details for managing ACs
    at the network level.
 
 5.3.3.  Network Slice Topology
@@ -1135,6 +1135,22 @@ Table of Contents
               DOI 10.17487/RFC9832, September 2025,
               <https://www.rfc-editor.org/rfc/rfc9832>.
 
+   [RFC9833]  Boucadair, M., Ed., Roberts, R., Ed., Gonzalez de Dios,
+              O., Barguil, S., and B. Wu, "A Common YANG Data Model for
+              Attachment Circuits", RFC 9833, DOI 10.17487/RFC9833,
+              September 2025, <https://www.rfc-editor.org/rfc/rfc9833>.
+
+   [RFC9834]  Boucadair, M., Ed., Roberts, R., Ed., Gonzalez de Dios,
+              O., Barguil, S., and B. Wu, "YANG Data Models for Bearers
+              and Attachment Circuits as a Service (ACaaS)", RFC 9834,
+              DOI 10.17487/RFC9834, September 2025,
+              <https://www.rfc-editor.org/rfc/rfc9834>.
+
+   [RFC9835]  Boucadair, M., Ed., Roberts, R., Gonzalez de Dios, O.,
+              Barguil, S., and B. Wu, "A Network YANG Data Model for
+              Attachment Circuits", RFC 9835, DOI 10.17487/RFC9835,
+              September 2025, <https://www.rfc-editor.org/rfc/rfc9835>.
+
    [RFC9871]  Rao, D., Ed. and S. Agrawal, Ed., "BGP Color-Aware Routing
               (CAR)", RFC 9871, DOI 10.17487/RFC9871, November 2025,
               <https://www.rfc-editor.org/rfc/rfc9871>.
@@ -1144,12 +1160,6 @@ Table of Contents
               Network Slices for 5G Networks Using Current IP/MPLS
               Technologies", RFC 9889, DOI 10.17487/RFC9889, November
               2025, <https://www.rfc-editor.org/rfc/rfc9889>.
-
-   [RFC99833] "*** BROKEN REFERENCE ***".
-
-   [RFC99834] "*** BROKEN REFERENCE ***".
-
-   [RFC99835] "*** BROKEN REFERENCE ***".
 
 Acknowledgments
 

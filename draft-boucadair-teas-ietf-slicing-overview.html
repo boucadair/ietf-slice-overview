@@ -1574,7 +1574,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-mobility-aware-transport-ne" class="section-name selfRef">Mobility-Aware Transport Network Slicing</a>
         </h3>
 <p id="section-4.5-1"><span>[<a href="#I-D.ietf-dmm-tn-aware-mobility" class="cite xref">I-D.ietf-dmm-tn-aware-mobility</a>]</span> discusses a mapping of 5G slices to RFC 9543 Network Slices when the transport network is separated from the networks in which the 5G network functions are deployed (e.g., 5G functions distributed across data centers). This document zooms into the use of UDP source port number in GTP-U outer header and LAN to map between a 5G slice and corresponding RFC 9543 Network Slice segments that is listed in <span>[<a href="#I-D.ietf-teas-5g-network-slice-application" class="cite xref">I-D.ietf-teas-5g-network-slice-application</a>]</span>.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
-<p id="section-4.5-2">The document specifies an ACaaS extension <span>[<a href="#RFC99834" class="cite xref">RFC99834</a>]</span> to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.<a href="#section-4.5-2" class="pilcrow">¶</a></p>
+<p id="section-4.5-2">The document specifies an ACaaS extension <span>[<a href="#RFC9834" class="cite xref">RFC9834</a>]</span> to support a layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment circuit.<a href="#section-4.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="detnet">
@@ -1731,7 +1731,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-common-models" class="section-name selfRef">Common Models</a>
         </h3>
 <p id="section-5.1-1"><span>[<a href="#RFC9181" class="cite xref">RFC9181</a>]</span> specifies a set of reusable types and groupings to manage VPN services. Note that VPNs are used for the realization of Network Slices.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2"><span>[<a href="#RFC99833" class="cite xref">RFC99833</a>]</span> specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-2"><span>[<a href="#RFC9833" class="cite xref">RFC9833</a>]</span> specifies a set of reusable types and groupings to manage Attachment Circuits (ACs).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="service-models">
@@ -1744,7 +1744,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
           <h4 id="name-attachment-circuit-as-a-ser">
 <a href="#section-5.2.1" class="section-number selfRef">5.2.1. </a><a href="#name-attachment-circuit-as-a-ser" class="section-name selfRef">Attachment Circuit as a Service (ACaaS) Data Model</a>
           </h4>
-<p id="section-5.2.1-1"><span>[<a href="#RFC99834" class="cite xref">RFC99834</a>]</span> specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.<a href="#section-5.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.2.1-1"><span>[<a href="#RFC9834" class="cite xref">RFC9834</a>]</span> specifies YANG data models for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also bearers. These ACs and bearers are used to identify where to deliver a slice service.<a href="#section-5.2.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="network-slice-service-data-model">
@@ -1781,7 +1781,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
           <h4 id="name-ac-augmented-saps">
 <a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-ac-augmented-saps" class="section-name selfRef">AC-augmented SAPs</a>
           </h4>
-<p id="section-5.3.2-1"><span>[<a href="#RFC99835" class="cite xref">RFC99835</a>]</span> augments the SAP model with more details for managing ACs at the network level.<a href="#section-5.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.3.2-1"><span>[<a href="#RFC9835" class="cite xref">RFC9835</a>]</span> augments the SAP model with more details for managing ACs at the network level.<a href="#section-5.3.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="network-slice-topology">
@@ -2350,25 +2350,25 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
       <dd>
 <span class="refAuthor">Vairavakkalai, K., Ed.</span> and <span class="refAuthor">N. Venkataraman, Ed.</span>, <span class="refTitle">"BGP Classful Transport Planes"</span>, <span class="seriesInfo">RFC 9832</span>, <span class="seriesInfo">DOI 10.17487/RFC9832</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9832">https://www.rfc-editor.org/rfc/rfc9832</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC9833">[RFC9833]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Gonzalez de Dios, O.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"A Common YANG Data Model for Attachment Circuits"</span>, <span class="seriesInfo">RFC 9833</span>, <span class="seriesInfo">DOI 10.17487/RFC9833</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9833">https://www.rfc-editor.org/rfc/rfc9833</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9834">[RFC9834]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Gonzalez de Dios, O.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"YANG Data Models for Bearers and Attachment Circuits as a Service (ACaaS)"</span>, <span class="seriesInfo">RFC 9834</span>, <span class="seriesInfo">DOI 10.17487/RFC9834</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9834">https://www.rfc-editor.org/rfc/rfc9834</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9835">[RFC9835]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Roberts, R.</span>, <span class="refAuthor">Gonzalez de Dios, O.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"A Network YANG Data Model for Attachment Circuits"</span>, <span class="seriesInfo">RFC 9835</span>, <span class="seriesInfo">DOI 10.17487/RFC9835</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9835">https://www.rfc-editor.org/rfc/rfc9835</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC9871">[RFC9871]</dt>
       <dd>
 <span class="refAuthor">Rao, D., Ed.</span> and <span class="refAuthor">S. Agrawal, Ed.</span>, <span class="refTitle">"BGP Color-Aware Routing (CAR)"</span>, <span class="seriesInfo">RFC 9871</span>, <span class="seriesInfo">DOI 10.17487/RFC9871</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9871">https://www.rfc-editor.org/rfc/rfc9871</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9889">[RFC9889]</dt>
-      <dd>
-<span class="refAuthor">Szarkowicz, K., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Lucek, J.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, and <span class="refAuthor">LM. Contreras</span>, <span class="refTitle">"A Realization of Network Slices for 5G Networks Using Current IP/MPLS Technologies"</span>, <span class="seriesInfo">RFC 9889</span>, <span class="seriesInfo">DOI 10.17487/RFC9889</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9889">https://www.rfc-editor.org/rfc/rfc9889</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC99833">[RFC99833]</dt>
-      <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC99834">[RFC99834]</dt>
-      <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC99835">[RFC99835]</dt>
     <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
+<span class="refAuthor">Szarkowicz, K., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Lucek, J.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, and <span class="refAuthor">LM. Contreras</span>, <span class="refTitle">"A Realization of Network Slices for 5G Networks Using Current IP/MPLS Technologies"</span>, <span class="seriesInfo">RFC 9889</span>, <span class="seriesInfo">DOI 10.17487/RFC9889</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9889">https://www.rfc-editor.org/rfc/rfc9889</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
