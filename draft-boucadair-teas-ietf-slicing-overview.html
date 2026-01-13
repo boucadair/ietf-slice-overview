@@ -9,24 +9,23 @@
 <meta content="
        This document lists a set of slicing-related specifications that are being development within the IETF. This document is meant to provide an overview of slicing activities in the IETF to hopefully ease coordination and ensure that specifications that are developed in many WGs are consistent. 
     " name="description">
-<meta content="xml2rfc 3.26.0" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="slice specifications" name="keyword">
 <meta content="slice coordination" name="keyword">
 <meta content="draft-boucadair-teas-ietf-slicing-overview-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.26.0
-    Python 3.12.8
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
-    intervaltree 3.1.0
-    Jinja2 3.1.5
-    lxml 5.3.0
-    platformdirs 4.3.6
+    intervaltree 3.2.1
+    Jinja2 3.1.6
+    lxml 6.0.2
+    platformdirs 4.5.1
     pycountry 24.6.1
-    PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
-    wcwidth 0.2.13
+    PyYAML 6.0.3
+    requests 2.32.5
+    wcwidth 0.2.14
 -->
 <link href="draft-boucadair-teas-ietf-slicing-overview.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -436,7 +435,7 @@ dl {
     margin-bottom: 0;
   }
 }
-dl > dt {
+dl:not(.dlNewline) > dt {
   float: left;
   margin-right: 2ch;
   min-width: 8ch;
@@ -1045,11 +1044,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">IETF Network Slicing</td>
-<td class="right">February 2025</td>
+<td class="right">January 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair</td>
-<td class="center">Expires 13 August 2025</td>
+<td class="center">Expires 17 July 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,12 +1061,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-boucadair-teas-ietf-slicing-overview-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-02-09" class="published">9 February 2025</time>
+<time datetime="2026-01-13" class="published">13 January 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-08-13">13 August 2025</time></dd>
+<dd class="expires"><time datetime="2026-07-17">17 July 2026</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1112,7 +1111,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 13 August 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 17 July 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1121,7 +1120,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2025 IETF Trust and the persons identified as the
+            Copyright (c) 2026 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1437,7 +1436,7 @@ of Network Slice Services over networks that are deployed using technologies tha
         <h3 id="name-using-current-ip-mpls-techn">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-using-current-ip-mpls-techn" class="section-name selfRef">Using Current IP/MPLS Technologies</a>
         </h3>
-<p id="section-3.1-1"><span>[<a href="#I-D.ietf-teas-5g-ns-ip-mpls" class="cite xref">I-D.ietf-teas-5g-ns-ip-mpls</a>]</span> describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1"><span>[<a href="#RFC9889" class="cite xref">RFC9889</a>]</span> describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1-2.1">
             <p id="section-3.1-2.1.1">L2VPN/L3VPN service instances for logical separation,<a href="#section-3.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1838,7 +1837,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
         <h3 id="name-bgp-classful-transport-plan">
 <a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-bgp-classful-transport-plan" class="section-name selfRef">BGP Classful Transport Planes</a>
         </h3>
-<p id="section-6.1-1"><span>[<a href="#I-D.ietf-idr-bgp-ct" class="cite xref">I-D.ietf-idr-bgp-ct</a>]</span> specifies mechanisms for classifying underlay routes into a set of classes, called Transport Classes, and mapping service-specific routes to a specific Transport Class. For example, <span>[<a href="#I-D.ietf-idr-bgp-ct" class="cite xref">I-D.ietf-idr-bgp-ct</a>]</span> can be used to create a customized topology for Network Slices. These topologies (Transport Classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target Extended Community is defined for this purpose. A Transport Class is identified by a 4-octet identifier: Transport Class ID.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
+<p id="section-6.1-1"><span>[<a href="#RFC9832" class="cite xref">RFC9832</a>]</span> specifies mechanisms for classifying underlay routes into a set of classes, called Transport Classes, and mapping service-specific routes to a specific Transport Class. For example, <span>[<a href="#RFC9832" class="cite xref">RFC9832</a>]</span> can be used to create a customized topology for Network Slices. These topologies (Transport Classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target Extended Community is defined for this purpose. A Transport Class is identified by a 4-octet identifier: Transport Class ID.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="bgp-color-aware-routing-car">
@@ -1846,7 +1845,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
         <h3 id="name-bgp-color-aware-routing-car">
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-bgp-color-aware-routing-car" class="section-name selfRef">BGP Color-Aware Routing (CAR)</a>
         </h3>
-<p id="section-6.2-1"><span>[<a href="#I-D.ietf-idr-bgp-car" class="cite xref">I-D.ietf-idr-bgp-car</a>]</span> specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.<a href="#section-6.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.2-1"><span>[<a href="#RFC9871" class="cite xref">RFC9871</a>]</span> specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.<a href="#section-6.2-1" class="pilcrow">¶</a></p>
 <p id="section-6.2-2">The proposal leverages the BGP Color Extended Community defined in <span>[<a href="#RFC9012" class="cite xref">RFC9012</a>]</span> and builds upon the Color concept defined in <span>[<a href="#RFC9256" class="cite xref">RFC9256</a>]</span>. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.<a href="#section-6.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1916,7 +1915,7 @@ on their SLOs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
           <h4 id="name-pcep-extensions">
 <a href="#section-6.3.6" class="section-number selfRef">6.3.6. </a><a href="#name-pcep-extensions" class="section-name selfRef">PCEP Extensions</a>
           </h4>
-<p id="section-6.3.6-1"><span>[<a href="#I-D.dong-pce-pcep-nrp" class="cite xref">I-D.dong-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.<a href="#section-6.3.6-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.6-1"><span>[<a href="#I-D.etf-pce-pcep-nrp" class="cite xref">I-D.etf-pce-pcep-nrp</a>]</span> specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.<a href="#section-6.3.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2129,7 +2128,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dl class="references">
 <dt id="I-D.cbs-teas-5qi-to-dscp-mapping">[I-D.cbs-teas-5qi-to-dscp-mapping]</dt>
       <dd>
-<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Bykov, I.</span>, and <span class="refAuthor">K. G. Szarkowicz</span>, <span class="refTitle">"5QI to DiffServ DSCP Mapping Example for Enforcement of 5G End-to-End Network Slice QoS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cbs-teas-5qi-to-dscp-mapping-03</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cbs-teas-5qi-to-dscp-mapping-03">https://datatracker.ietf.org/doc/html/draft-cbs-teas-5qi-to-dscp-mapping-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Bykov, I.</span>, and <span class="refAuthor">K. G. Szarkowicz</span>, <span class="refTitle">"5QI to DiffServ DSCP Mapping Example for Enforcement of 5G End-to-End Network Slice QoS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cbs-teas-5qi-to-dscp-mapping-05</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cbs-teas-5qi-to-dscp-mapping-05">https://datatracker.ietf.org/doc/html/draft-cbs-teas-5qi-to-dscp-mapping-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.chen-idr-bgp-ls-transport-slice">[I-D.chen-idr-bgp-ls-transport-slice]</dt>
       <dd>
@@ -2137,7 +2136,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.cheng-spring-srv6-encoding-network-sliceid">[I-D.cheng-spring-srv6-encoding-network-sliceid]</dt>
       <dd>
-<span class="refAuthor">Cheng, W.</span>, <span class="refAuthor">Ma, P.</span>, <span class="refAuthor">Ren, F.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Zadok, S.</span>, <span class="refAuthor">Wu, M.</span>, and <span class="refAuthor">X. wang</span>, <span class="refTitle">"Encoding Network Slice Identification for SRv6"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cheng-spring-srv6-encoding-network-sliceid-10</span>, <time datetime="2025-01-02" class="refDate">2 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cheng-spring-srv6-encoding-network-sliceid-10">https://datatracker.ietf.org/doc/html/draft-cheng-spring-srv6-encoding-network-sliceid-10</a>&gt;</span>. </dd>
+<span class="refAuthor">Cheng, W.</span>, <span class="refAuthor">Ma, P.</span>, <span class="refAuthor">Ren, F.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Zadok, S.</span>, <span class="refAuthor">Wu, M.</span>, and <span class="refAuthor">X. wang</span>, <span class="refTitle">"Encoding Network Slice Identification for SRv6"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cheng-spring-srv6-encoding-network-sliceid-12</span>, <time datetime="2026-01-13" class="refDate">13 January 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cheng-spring-srv6-encoding-network-sliceid-12">https://datatracker.ietf.org/doc/html/draft-cheng-spring-srv6-encoding-network-sliceid-12</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.clemm-opsawg-pam-ipfix">[I-D.clemm-opsawg-pam-ipfix]</dt>
       <dd>
@@ -2145,7 +2144,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.contreras-pce-pam">[I-D.contreras-pce-pam]</dt>
       <dd>
-<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Agraz, F.</span>, <span class="refAuthor">Spadaro, S.</span>, and <span class="refAuthor">Q. Xiong</span>, <span class="refTitle">"Path Computation Based on Precision Availability Metrics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-contreras-pce-pam-03</span>, <time datetime="2024-07-08" class="refDate">8 July 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-contreras-pce-pam-03">https://datatracker.ietf.org/doc/html/draft-contreras-pce-pam-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Agraz, F.</span>, <span class="refAuthor">Spadaro, S.</span>, and <span class="refAuthor">Q. Xiong</span>, <span class="refTitle">"Path Computation Based on Precision Availability Metrics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-contreras-pce-pam-06</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-contreras-pce-pam-06">https://datatracker.ietf.org/doc/html/draft-contreras-pce-pam-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.decraene-mpls-slid-encoded-entropy-label-id">[I-D.decraene-mpls-slid-encoded-entropy-label-id]</dt>
       <dd>
@@ -2153,7 +2152,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.dhody-teas-ietf-network-slice-mapping">[I-D.dhody-teas-ietf-network-slice-mapping]</dt>
       <dd>
-<span class="refAuthor">Dhody, D.</span> and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"IETF Network Slice Service Mapping YANG Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dhody-teas-ietf-network-slice-mapping-06</span>, <time datetime="2025-01-29" class="refDate">29 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-06">https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Dhody, D.</span> and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"IETF Network Slice Service Mapping YANG Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dhody-teas-ietf-network-slice-mapping-07</span>, <time datetime="2025-10-12" class="refDate">12 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-07">https://datatracker.ietf.org/doc/html/draft-dhody-teas-ietf-network-slice-mapping-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.dong-idr-bgp-ls-scalable-nrp">[I-D.dong-idr-bgp-ls-scalable-nrp]</dt>
       <dd>
@@ -2163,13 +2162,13 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
       <dd>
 <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">KaZhang</span>, and <span class="refAuthor">L. Gong</span>, <span class="refTitle">"Advertising Network Resource Partition (NRP) Policy in BGP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dong-idr-bgp-nrp-policy-01</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-nrp-policy-01">https://datatracker.ietf.org/doc/html/draft-dong-idr-bgp-nrp-policy-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.dong-pce-pcep-nrp">[I-D.dong-pce-pcep-nrp]</dt>
-      <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Fang, S.</span>, <span class="refAuthor">Xiong, Q.</span>, <span class="refAuthor">Peng, S.</span>, <span class="refAuthor">Han, L.</span>, <span class="refAuthor">Wang, M.</span>, <span class="refAuthor">Beeram, V. P.</span>, and <span class="refAuthor">T. Saad</span>, <span class="refTitle">"Path Computation Element Communication Protocol (PCEP) Extensions for Network Resource Partition (NRP)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-dong-pce-pcep-nrp-03</span>, <time datetime="2025-01-05" class="refDate">5 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-dong-pce-pcep-nrp-03">https://datatracker.ietf.org/doc/html/draft-dong-pce-pcep-nrp-03</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="I-D.drake-teas-bgp-ls-filter-nrp">[I-D.drake-teas-bgp-ls-filter-nrp]</dt>
       <dd>
 <span class="refAuthor">Drake, J.</span>, <span class="refAuthor">Farrel, A.</span>, <span class="refAuthor">Jalil, L.</span>, and <span class="refAuthor">A. R. Lingala</span>, <span class="refTitle">"Using BGP-LS Filters to Instanted Network Resource Partitions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-drake-teas-bgp-ls-filter-nrp-00</span>, <time datetime="2022-12-16" class="refDate">16 December 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-drake-teas-bgp-ls-filter-nrp-00">https://datatracker.ietf.org/doc/html/draft-drake-teas-bgp-ls-filter-nrp-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.etf-pce-pcep-nrp">[I-D.etf-pce-pcep-nrp]</dt>
+      <dd>
+<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.filsfils-spring-srv6-stateless-slice-id">[I-D.filsfils-spring-srv6-stateless-slice-id]</dt>
       <dd>
@@ -2177,51 +2176,43 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.gong-spring-hierarchical-slice-solution">[I-D.gong-spring-hierarchical-slice-solution]</dt>
       <dd>
-<span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Cheng, W.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Chen, M.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Chen, R.</span>, and <span class="refAuthor">Y. Liang</span>, <span class="refTitle">"Segment Routing based Solution for Hierarchical IETF Network Slices"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-gong-spring-hierarchical-slice-solution-01</span>, <time datetime="2024-12-12" class="refDate">12 December 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-gong-spring-hierarchical-slice-solution-01">https://datatracker.ietf.org/doc/html/draft-gong-spring-hierarchical-slice-solution-01</a>&gt;</span>. </dd>
+<span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Cheng, W.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Chen, M.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Chen, R.</span>, and <span class="refAuthor">Y. Liang</span>, <span class="refTitle">"Segment Routing based Solution for Hierarchical IETF Network Slices"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-gong-spring-hierarchical-slice-solution-03</span>, <time datetime="2025-12-21" class="refDate">21 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-gong-spring-hierarchical-slice-solution-03">https://datatracker.ietf.org/doc/html/draft-gong-spring-hierarchical-slice-solution-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.gong-spring-srv6-nrp-flavor">[I-D.gong-spring-srv6-nrp-flavor]</dt>
       <dd>
-<span class="refAuthor">Gong, L.</span> and <span class="refAuthor">C. Lin</span>, <span class="refTitle">"SRv6 Resource Programming with NRP flavor"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-gong-spring-srv6-nrp-flavor-01</span>, <time datetime="2024-10-11" class="refDate">11 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-gong-spring-srv6-nrp-flavor-01">https://datatracker.ietf.org/doc/html/draft-gong-spring-srv6-nrp-flavor-01</a>&gt;</span>. </dd>
+<span class="refAuthor">Gong, L.</span> and <span class="refAuthor">C. Lin</span>, <span class="refTitle">"SRv6 Resource Programming with NRP flavor"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-gong-spring-srv6-nrp-flavor-03</span>, <time datetime="2025-12-21" class="refDate">21 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-gong-spring-srv6-nrp-flavor-03">https://datatracker.ietf.org/doc/html/draft-gong-spring-srv6-nrp-flavor-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-6man-enhanced-vpn-vtn-id">[I-D.ietf-6man-enhanced-vpn-vtn-id]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Ma, C.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"Carrying Network Resource (NR) related Information in IPv6 Extension Header"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-6man-enhanced-vpn-vtn-id-09</span>, <time datetime="2024-11-03" class="refDate">3 November 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-6man-enhanced-vpn-vtn-id-09">https://datatracker.ietf.org/doc/html/draft-ietf-6man-enhanced-vpn-vtn-id-09</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Ma, C.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"Carrying Network Resource (NR) related Information in IPv6 Extension Header"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-6man-enhanced-vpn-vtn-id-13</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-6man-enhanced-vpn-vtn-id-13">https://datatracker.ietf.org/doc/html/draft-ietf-6man-enhanced-vpn-vtn-id-13</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-yang-otn-slicing">[I-D.ietf-ccamp-yang-otn-slicing]</dt>
       <dd>
-<span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Xu, Y.</span>, <span class="refAuthor">Zhao, Y.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"Framework and Data Model for OTN Network Slicing"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-yang-otn-slicing-08</span>, <time datetime="2025-01-10" class="refDate">10 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-yang-otn-slicing-08">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-yang-otn-slicing-08</a>&gt;</span>. </dd>
+<span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Xu, Y.</span>, <span class="refAuthor">Zhao, Y.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"Framework and Data Model for OTN Network Slicing"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-yang-otn-slicing-10</span>, <time datetime="2026-01-05" class="refDate">5 January 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-yang-otn-slicing-10">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-yang-otn-slicing-10</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-dmm-tn-aware-mobility">[I-D.ietf-dmm-tn-aware-mobility]</dt>
       <dd>
-<span class="refAuthor">Chunduri, U.</span>, <span class="refAuthor">Kaippallimalil, J.</span>, <span class="refAuthor">Bhaskaran, S.</span>, <span class="refAuthor">Tantsura, J.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"Mobility-aware Transport Network Slicing for 5G"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-dmm-tn-aware-mobility-16</span>, <time datetime="2025-01-08" class="refDate">8 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-16">https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-16</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-idr-bgp-car">[I-D.ietf-idr-bgp-car]</dt>
-      <dd>
-<span class="refAuthor">Rao, D.</span> and <span class="refAuthor">S. Agrawal</span>, <span class="refTitle">"BGP Color-Aware Routing (CAR)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-car-12</span>, <time datetime="2025-02-07" class="refDate">7 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-car-12">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-car-12</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-idr-bgp-ct">[I-D.ietf-idr-bgp-ct]</dt>
-      <dd>
-<span class="refAuthor">Vairavakkalai, K.</span> and <span class="refAuthor">N. Venkataraman</span>, <span class="refTitle">"BGP Classful Transport Planes"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-ct-36</span>, <time datetime="2025-02-07" class="refDate">7 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-36">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ct-36</a>&gt;</span>. </dd>
+<span class="refAuthor">Chunduri, U.</span>, <span class="refAuthor">Kaippallimalil, J.</span>, <span class="refAuthor">Bhaskaran, S.</span>, <span class="refAuthor">Tantsura, J.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"Mobility-aware Transport Network Slicing for 5G"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-dmm-tn-aware-mobility-24</span>, <time datetime="2025-12-04" class="refDate">4 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-24">https://datatracker.ietf.org/doc/html/draft-ietf-dmm-tn-aware-mobility-24</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-bgp-ls-sr-policy-nrp">[I-D.ietf-idr-bgp-ls-sr-policy-nrp]</dt>
       <dd>
-<span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Zhao, D.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Zhu, Y.</span>, and <span class="refAuthor">R. Pang</span>, <span class="refTitle">"SR Policies Extensions for Network Resource Partition in BGP-LS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-ls-sr-policy-nrp-01</span>, <time datetime="2025-01-26" class="refDate">26 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ls-sr-policy-nrp-01">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ls-sr-policy-nrp-01</a>&gt;</span>. </dd>
+<span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Zhao, D.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Zhu, Y.</span>, and <span class="refAuthor">R. Pang</span>, <span class="refTitle">"SR Policies Extensions for Network Resource Partition in BGP-LS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgp-ls-sr-policy-nrp-02</span>, <time datetime="2025-09-03" class="refDate">3 September 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ls-sr-policy-nrp-02">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgp-ls-sr-policy-nrp-02</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-bgpls-sr-vtn-mt">[I-D.ietf-idr-bgpls-sr-vtn-mt]</dt>
       <dd>
-<span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Applicability of BGP-LS with Multi-Topology (MT) for Segment Routing based Network Resource Partitions (NRP)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgpls-sr-vtn-mt-07</span>, <time datetime="2024-11-03" class="refDate">3 November 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgpls-sr-vtn-mt-07">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgpls-sr-vtn-mt-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Li, C.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Applicability of Border Gateway Protocol - Link State (BGP-LS) with Multi-Topology (MT) for Segment Routing based Network Resource Partitions (NRPs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-bgpls-sr-vtn-mt-14</span>, <time datetime="2025-10-16" class="refDate">16 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgpls-sr-vtn-mt-14">https://datatracker.ietf.org/doc/html/draft-ietf-idr-bgpls-sr-vtn-mt-14</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-flowspec-network-slice-ts">[I-D.ietf-idr-flowspec-network-slice-ts]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Wang, S.</span>, and <span class="refAuthor">J. Wenying</span>, <span class="refTitle">"BGP Flowspec for IETF Network Slice Traffic Steering"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-flowspec-network-slice-ts-03</span>, <time datetime="2024-10-20" class="refDate">20 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-flowspec-network-slice-ts-03">https://datatracker.ietf.org/doc/html/draft-ietf-idr-flowspec-network-slice-ts-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Wang, S.</span>, and <span class="refAuthor">J. Wenying</span>, <span class="refTitle">"BGP Flowspec for IETF Network Slice Traffic Steering"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-flowspec-network-slice-ts-04</span>, <time datetime="2025-05-08" class="refDate">8 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-flowspec-network-slice-ts-04">https://datatracker.ietf.org/doc/html/draft-ietf-idr-flowspec-network-slice-ts-04</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-idr-sr-policy-nrp">[I-D.ietf-idr-sr-policy-nrp]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Hu, Z.</span>, and <span class="refAuthor">R. Pang</span>, <span class="refTitle">"BGP SR Policy Extensions for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-sr-policy-nrp-02</span>, <time datetime="2025-01-06" class="refDate">6 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-sr-policy-nrp-02">https://datatracker.ietf.org/doc/html/draft-ietf-idr-sr-policy-nrp-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Hu, Z.</span>, and <span class="refAuthor">R. Pang</span>, <span class="refTitle">"BGP SR Policy Extensions for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-idr-sr-policy-nrp-04</span>, <time datetime="2025-10-13" class="refDate">13 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-idr-sr-policy-nrp-04">https://datatracker.ietf.org/doc/html/draft-ietf-idr-sr-policy-nrp-04</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-lsr-isis-sr-vtn-mt">[I-D.ietf-lsr-isis-sr-vtn-mt]</dt>
       <dd>
-<span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Ma, C.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Applicability of IS-IS Multi-Topology (MT) for Segment Routing based Network Resource Partition (NRP)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lsr-isis-sr-vtn-mt-08</span>, <time datetime="2024-08-18" class="refDate">18 August 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lsr-isis-sr-vtn-mt-08">https://datatracker.ietf.org/doc/html/draft-ietf-lsr-isis-sr-vtn-mt-08</a>&gt;</span>. </dd>
+<span class="refAuthor">Xie, C.</span>, <span class="refAuthor">Ma, C.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Applicability of IS-IS Multi-Topology (MT) for Segment Routing based Network Resource Partition (NRP)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lsr-isis-sr-vtn-mt-11</span>, <time datetime="2025-10-13" class="refDate">13 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lsr-isis-sr-vtn-mt-11">https://datatracker.ietf.org/doc/html/draft-ietf-lsr-isis-sr-vtn-mt-11</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-opsawg-ntw-attachment-circuit">[I-D.ietf-opsawg-ntw-attachment-circuit]</dt>
       <dd>
@@ -2237,19 +2228,15 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.ietf-spring-resource-aware-segments">[I-D.ietf-spring-resource-aware-segments]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Introducing Resource Awareness to SR Segments"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-resource-aware-segments-10</span>, <time datetime="2024-10-12" class="refDate">12 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-10">https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-10</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Introducing Resource Awareness to SR Segments"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-resource-aware-segments-16</span>, <time datetime="2025-11-20" class="refDate">20 November 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-16">https://datatracker.ietf.org/doc/html/draft-ietf-spring-resource-aware-segments-16</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-spring-sr-for-enhanced-vpn">[I-D.ietf-spring-sr-for-enhanced-vpn]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Segment Routing based Network Resource Partition (NRP) for Enhanced VPN"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-sr-for-enhanced-vpn-08</span>, <time datetime="2024-10-12" class="refDate">12 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-08">https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-08</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Miyasaka, T.</span>, <span class="refAuthor">Zhu, Y.</span>, <span class="refAuthor">Qin, F.</span>, and <span class="refAuthor">Z. Li</span>, <span class="refTitle">"Segment Routing based Network Resource Partition (NRP) for Enhanced VPN"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spring-sr-for-enhanced-vpn-10</span>, <time datetime="2025-12-15" class="refDate">15 December 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-10">https://datatracker.ietf.org/doc/html/draft-ietf-spring-sr-for-enhanced-vpn-10</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-5g-network-slice-application">[I-D.ietf-teas-5g-network-slice-application]</dt>
       <dd>
-<span class="refAuthor">Geng, X.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">I. Bykov</span>, <span class="refTitle">"IETF Network Slice Application in 3GPP 5G End-to-End Network Slice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-5g-network-slice-application-03</span>, <time datetime="2024-06-10" class="refDate">10 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-network-slice-application-03">https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-network-slice-application-03</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-teas-5g-ns-ip-mpls">[I-D.ietf-teas-5g-ns-ip-mpls]</dt>
-      <dd>
-<span class="refAuthor">Szarkowicz, K. G.</span>, <span class="refAuthor">Roberts, R.</span>, <span class="refAuthor">Lucek, J.</span>, <span class="refAuthor">Boucadair, M.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"A Realization of Network Slices for 5G Networks Using Current IP/MPLS Technologies"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-5g-ns-ip-mpls-16</span>, <time datetime="2025-02-03" class="refDate">3 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-ns-ip-mpls-16">https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-ns-ip-mpls-16</a>&gt;</span>. </dd>
+<span class="refAuthor">Geng, X.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Dong, J.</span>, and <span class="refAuthor">I. Bykov</span>, <span class="refTitle">"IETF Network Slice Application in 3GPP 5G End-to-End Network Slice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-5g-network-slice-application-05</span>, <time datetime="2025-07-07" class="refDate">7 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-network-slice-application-05">https://datatracker.ietf.org/doc/html/draft-ietf-teas-5g-network-slice-application-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-actn-vn-yang">[I-D.ietf-teas-actn-vn-yang]</dt>
       <dd>
@@ -2265,31 +2252,31 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ietf-network-slice-nbi-yang">[I-D.ietf-teas-ietf-network-slice-nbi-yang]</dt>
       <dd>
-<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">J. Mullooly</span>, <span class="refTitle">"A YANG Data Model for the RFC 9543 Network Slice Service"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slice-nbi-yang-22</span>, <time datetime="2025-02-08" class="refDate">8 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-22">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-22</a>&gt;</span>. </dd>
+<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">J. Mullooly</span>, <span class="refTitle">"A YANG Data Model for the RFC 9543 Network Slice Service"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ietf-network-slice-nbi-yang-25</span>, <time datetime="2025-05-09" class="refDate">9 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-25">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-25</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-nrp-scalability">[I-D.ietf-teas-nrp-scalability]</dt>
       <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Yang, G.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"Scalability Considerations for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-scalability-06</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-06">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Gong, L.</span>, <span class="refAuthor">Yang, G.</span>, and <span class="refAuthor">G. S. Mishra</span>, <span class="refTitle">"Scalability Considerations for Network Resource Partition"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-scalability-08</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-08">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-scalability-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-nrp-yang">[I-D.ietf-teas-nrp-yang]</dt>
       <dd>
-<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">S. Peng</span>, <span class="refTitle">"YANG Data Models for Network Resource Partitions (NRPs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-yang-02</span>, <time datetime="2024-07-05" class="refDate">5 July 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-yang-02">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-yang-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Wu, B.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Saad, T.</span>, and <span class="refAuthor">S. Peng</span>, <span class="refTitle">"YANG Data Models for Network Resource Partitions (NRPs)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-nrp-yang-04</span>, <time datetime="2025-07-21" class="refDate">21 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-yang-04">https://datatracker.ietf.org/doc/html/draft-ietf-teas-nrp-yang-04</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ns-controller-models">[I-D.ietf-teas-ns-controller-models]</dt>
       <dd>
-<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Tantsura, J.</span>, <span class="refAuthor">Wu, B.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"IETF Network Slice Controller and its Associated Data Models"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-controller-models-03</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-controller-models-03">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-controller-models-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Tantsura, J.</span>, <span class="refAuthor">Wu, B.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"IETF Network Slice Controller and its Associated Data Models"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-controller-models-06</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-controller-models-06">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-controller-models-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ns-ip-mpls">[I-D.ietf-teas-ns-ip-mpls]</dt>
       <dd>
-<span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Wen, B.</span>, <span class="refAuthor">Ceccarelli, D.</span>, <span class="refAuthor">Halpern, J. M.</span>, <span class="refAuthor">Peng, S.</span>, <span class="refAuthor">Chen, R.</span>, <span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Rokui, R.</span>, and <span class="refAuthor">L. Jalil</span>, <span class="refTitle">"Realizing Network Slices in IP/MPLS Networks"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-ip-mpls-04</span>, <time datetime="2024-05-28" class="refDate">28 May 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-ip-mpls-04">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-ip-mpls-04</a>&gt;</span>. </dd>
+<span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Halpern, J. M.</span>, and <span class="refAuthor">S. Peng</span>, <span class="refTitle">"Realizing Network Slices in IP/MPLS Networks"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-ip-mpls-06</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-ip-mpls-06">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-ip-mpls-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-ns-models-applicability">[I-D.ietf-teas-ns-models-applicability]</dt>
       <dd>
-<span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Lopez, V.</span>, <span class="refAuthor">de Dios, O. G.</span>, and <span class="refAuthor">M. Boucadair</span>, <span class="refTitle">"Applicability of IETF-Defined Service and Network Data Models for Network Slice Service Management"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-models-applicability-00</span>, <time datetime="2025-02-04" class="refDate">4 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-models-applicability-00">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-models-applicability-00</a>&gt;</span>. </dd>
+<span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Lopez, V.</span>, <span class="refAuthor">de Dios, O. G.</span>, and <span class="refAuthor">M. Boucadair</span>, <span class="refTitle">"Applicability of IETF-Defined Service and Network Data Models for Network Slice Service Management"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-ns-models-applicability-01</span>, <time datetime="2025-06-24" class="refDate">24 June 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-models-applicability-01">https://datatracker.ietf.org/doc/html/draft-ietf-teas-ns-models-applicability-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-te-service-mapping-yang">[I-D.ietf-teas-te-service-mapping-yang]</dt>
       <dd>
-<span class="refAuthor">Lee, Y.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Fioccola, G.</span>, <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Ceccarelli, D.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"Traffic Engineering (TE) and Service Mapping YANG Data Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-te-service-mapping-yang-17</span>, <time datetime="2025-01-29" class="refDate">29 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-te-service-mapping-yang-17">https://datatracker.ietf.org/doc/html/draft-ietf-teas-te-service-mapping-yang-17</a>&gt;</span>. </dd>
+<span class="refAuthor">Lee, Y.</span>, <span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">Fioccola, G.</span>, <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Ceccarelli, D.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"Traffic Engineering (TE) and Service Mapping YANG Data Model"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-te-service-mapping-yang-18</span>, <time datetime="2025-10-12" class="refDate">12 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-te-service-mapping-yang-18">https://datatracker.ietf.org/doc/html/draft-ietf-teas-te-service-mapping-yang-18</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.jiang-tsvwg-slice-media-service">[I-D.jiang-tsvwg-slice-media-service]</dt>
       <dd>
@@ -2301,7 +2288,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.li-teas-composite-network-slices">[I-D.li-teas-composite-network-slices]</dt>
       <dd>
-<span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Pang, R.</span>, <span class="refAuthor">Zhu, Y.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"Realization of Composite IETF Network Slices"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-li-teas-composite-network-slices-03</span>, <time datetime="2024-07-08" class="refDate">8 July 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-li-teas-composite-network-slices-03">https://datatracker.ietf.org/doc/html/draft-li-teas-composite-network-slices-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Li, Z.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Pang, R.</span>, <span class="refAuthor">Zhu, Y.</span>, and <span class="refAuthor">L. M. Contreras</span>, <span class="refTitle">"Realization of Composite IETF Network Slices"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-li-teas-composite-network-slices-05</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-li-teas-composite-network-slices-05">https://datatracker.ietf.org/doc/html/draft-li-teas-composite-network-slices-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.liu-idr-bgp-network-slicing">[I-D.liu-idr-bgp-network-slicing]</dt>
       <dd>
@@ -2317,7 +2304,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.liu-spring-nrp-id-in-srv6-segment">[I-D.liu-spring-nrp-id-in-srv6-segment]</dt>
       <dd>
-<span class="refAuthor">Liu, Y.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Li, H.</span>, and <span class="refAuthor">L. Gong</span>, <span class="refTitle">"NRP ID in SRv6 segment"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-liu-spring-nrp-id-in-srv6-segment-05</span>, <time datetime="2024-11-20" class="refDate">20 November 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-liu-spring-nrp-id-in-srv6-segment-05">https://datatracker.ietf.org/doc/html/draft-liu-spring-nrp-id-in-srv6-segment-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Liu, Y.</span>, <span class="refAuthor">Lin, C.</span>, <span class="refAuthor">Li, H.</span>, and <span class="refAuthor">L. Gong</span>, <span class="refTitle">"NRP ID in SRv6 segment"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-liu-spring-nrp-id-in-srv6-segment-06</span>, <time datetime="2025-06-06" class="refDate">6 June 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-liu-spring-nrp-id-in-srv6-segment-06">https://datatracker.ietf.org/doc/html/draft-liu-spring-nrp-id-in-srv6-segment-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.liu-teas-transport-network-slice-yang">[I-D.liu-teas-transport-network-slice-yang]</dt>
       <dd>
@@ -2325,7 +2312,7 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <dd class="break"></dd>
 <dt id="I-D.ma-teas-ietf-network-slice-deployment">[I-D.ma-teas-ietf-network-slice-deployment]</dt>
       <dd>
-<span class="refAuthor">Ma, Y.</span>, <span class="refAuthor">Luo, R.</span>, <span class="refAuthor">Chan, A.</span>, <span class="refAuthor">Suen, B.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Liu, Y.</span>, and <span class="refAuthor">H. Allahoum</span>, <span class="refTitle">"IETF Network Slice Deployment Status and Considerations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ma-teas-ietf-network-slice-deployment-03</span>, <time datetime="2024-10-18" class="refDate">18 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-03">https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Ma, Y.</span>, <span class="refAuthor">Luo, R.</span>, <span class="refAuthor">Chan, A.</span>, <span class="refAuthor">Suen, B.</span>, <span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Liu, Y.</span>, and <span class="refAuthor">H. Allahoum</span>, <span class="refTitle">"IETF Network Slice Deployment Status and Considerations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ma-teas-ietf-network-slice-deployment-04</span>, <time datetime="2025-07-04" class="refDate">4 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-04">https://datatracker.ietf.org/doc/html/draft-ma-teas-ietf-network-slice-deployment-04</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.sw-detnet-network-slice-mapping-yang">[I-D.sw-detnet-network-slice-mapping-yang]</dt>
       <dd>
@@ -2368,8 +2355,20 @@ PCEP object uses the attributes defined in <span>[<a href="#RFC9544" class="cite
 <span class="refAuthor">Farrel, A., Ed.</span>, <span class="refAuthor">Drake, J., Ed.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Homma, S.</span>, <span class="refAuthor">Makhijani, K.</span>, <span class="refAuthor">Contreras, L.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A Framework for Network Slices in Networks Built from IETF Technologies"</span>, <span class="seriesInfo">RFC 9543</span>, <span class="seriesInfo">DOI 10.17487/RFC9543</span>, <time datetime="2024-03" class="refDate">March 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9543">https://www.rfc-editor.org/rfc/rfc9543</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9544">[RFC9544]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Mirsky, G.</span>, <span class="refAuthor">Halpern, J.</span>, <span class="refAuthor">Min, X.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Strassner, J.</span>, and <span class="refAuthor">J. François</span>, <span class="refTitle">"Precision Availability Metrics (PAMs) for Services Governed by Service Level Objectives (SLOs)"</span>, <span class="seriesInfo">RFC 9544</span>, <span class="seriesInfo">DOI 10.17487/RFC9544</span>, <time datetime="2024-03" class="refDate">March 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9544">https://www.rfc-editor.org/rfc/rfc9544</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9832">[RFC9832]</dt>
+      <dd>
+<span class="refAuthor">Vairavakkalai, K., Ed.</span> and <span class="refAuthor">N. Venkataraman, Ed.</span>, <span class="refTitle">"BGP Classful Transport Planes"</span>, <span class="seriesInfo">RFC 9832</span>, <span class="seriesInfo">DOI 10.17487/RFC9832</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9832">https://www.rfc-editor.org/rfc/rfc9832</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9871">[RFC9871]</dt>
+      <dd>
+<span class="refAuthor">Rao, D., Ed.</span> and <span class="refAuthor">S. Agrawal, Ed.</span>, <span class="refTitle">"BGP Color-Aware Routing (CAR)"</span>, <span class="seriesInfo">RFC 9871</span>, <span class="seriesInfo">DOI 10.17487/RFC9871</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9871">https://www.rfc-editor.org/rfc/rfc9871</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9889">[RFC9889]</dt>
+    <dd>
+<span class="refAuthor">Szarkowicz, K., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Lucek, J.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, and <span class="refAuthor">LM. Contreras</span>, <span class="refTitle">"A Realization of Network Slices for 5G Networks Using Current IP/MPLS Technologies"</span>, <span class="seriesInfo">RFC 9889</span>, <span class="seriesInfo">DOI 10.17487/RFC9889</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9889">https://www.rfc-editor.org/rfc/rfc9889</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
