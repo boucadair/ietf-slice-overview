@@ -267,14 +267,13 @@ Table of Contents
 
 3.4.  VPN+
 
-   [I-D.ietf-teas-enhanced-vpn] describes a framework for providing
-   enhanced VPN services based upon VPN and Traffic Engineering (TE)
-   technologies.  Enhanced VPN (VPN+) can be used for the realization of
-   Network Slices.  This document introduces the concept of Virtual
-   Transport Network (VTN), which is a virtual underlay network
-   consisting of a subset of network resources allocated from the
-   physical underlay network, and is associated with a customized
-   network topology.
+   [RFC9732] describes a framework for providing enhanced VPN services
+   based upon VPN and Traffic Engineering (TE) technologies.  Enhanced
+   VPN (VPN+) can be used for the realization of Network Slices.  This
+   document introduces the concept of Virtual Transport Network (VTN),
+   which is a virtual underlay network consisting of a subset of network
+   resources allocated from the physical underlay network, and is
+   associated with a customized network topology.
 
 3.5.  Instantiation in Service Providers Networks
 
@@ -357,9 +356,9 @@ Table of Contents
    segments that is listed in
    [I-D.ietf-teas-5g-network-slice-application].
 
-   The document specifies an ACaaS extension
-   [I-D.ietf-opsawg-teas-attachment-circuit] to support a layer 3 GTP-U
-   (or UDP encapsulated GTP) bearer as an attachment circuit.
+   The document specifies an ACaaS extension [RFC99834] to support a
+   layer 3 GTP-U (or UDP encapsulated GTP) bearer as an attachment
+   circuit.
 
 4.6.  DetNet
 
@@ -421,17 +420,16 @@ Table of Contents
    VPN services.  Note that VPNs are used for the realization of Network
    Slices.
 
-   [I-D.ietf-opsawg-teas-common-ac] specifies a set of reusable types
-   and groupings to manage Attachment Circuits (ACs).
+   [RFC99833] specifies a set of reusable types and groupings to manage
+   Attachment Circuits (ACs).
 
 5.2.  Service Models
 
 5.2.1.  Attachment Circuit as a Service (ACaaS) Data Model
 
-   [I-D.ietf-opsawg-teas-attachment-circuit] specifies YANG data models
-   for managing 'Attachment Circuits'-as-a-Service (ACaaS) and also
-   bearers.  These ACs and bearers are used to identify where to deliver
-   a slice service.
+   [RFC99834] specifies YANG data models for managing 'Attachment
+   Circuits'-as-a-Service (ACaaS) and also bearers.  These ACs and
+   bearers are used to identify where to deliver a slice service.
 
 5.2.2.  Network Slice Service Data Model
 
@@ -457,20 +455,20 @@ Table of Contents
 
 5.3.2.  AC-augmented SAPs
 
-   [I-D.ietf-opsawg-ntw-attachment-circuit] augments the SAP model with
-   more details for managing ACs at the network level.
+   [RFC99835] augments the SAP model with more details for managing ACs
+   at the network level.
 
 5.3.3.  Network Slice Topology
 
-   [I-D.liu-teas-transport-network-slice-yang] specifies a YANG model
+   [I-D.ietf-teas-transport-network-slice-yang] specifies a YANG model
    for RFC 9543 Network Slice Topology with on exposing a customized
    topology that contains a topology intent with required SLO/SLEs to
    express the customer’s intent for resource reservation.
 
    The need for such a model is yet to be justified as the current scope
    is redundant with, e.g., what can be already achieved using
-   [I-D.ietf-teas-actn-vn-yang].  The authors should motivate why
-   [I-D.ietf-teas-actn-vn-yang] is not sufficient.
+   [RFC9731].  The authors should motivate why [RFC9731] is not
+   sufficient.
 
 5.3.4.  Network Resource Partitions (NRPs)
 
@@ -893,31 +891,6 @@ Table of Contents
               October 2025, <https://datatracker.ietf.org/doc/html/
               draft-ietf-lsr-isis-sr-vtn-mt-11>.
 
-   [I-D.ietf-opsawg-ntw-attachment-circuit]
-              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
-              and B. Wu, "A Network YANG Data Model for Attachment
-              Circuits", Work in Progress, Internet-Draft, draft-ietf-
-              opsawg-ntw-attachment-circuit-16, 23 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              ntw-attachment-circuit-16>.
-
-   [I-D.ietf-opsawg-teas-attachment-circuit]
-              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
-              and B. Wu, "YANG Data Models for Bearers and 'Attachment
-              Circuits'-as-a-Service (ACaaS)", Work in Progress,
-              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
-              20, 23 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              teas-attachment-circuit-20>.
-
-   [I-D.ietf-opsawg-teas-common-ac]
-              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
-              and B. Wu, "A Common YANG Data Model for Attachment
-              Circuits", Work in Progress, Internet-Draft, draft-ietf-
-              opsawg-teas-common-ac-15, 23 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              teas-common-ac-15>.
-
    [I-D.ietf-pce-pcep-nrp]
               Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
               M., Beeram, V. P., and T. Saad, "Path Computation Element
@@ -951,14 +924,6 @@ Table of Contents
               2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
               teas-5g-network-slice-application-05>.
 
-   [I-D.ietf-teas-actn-vn-yang]
-              Lee, Y., Dhody, D., Ceccarelli, D., Bryskin, I., and B. Y.
-              Yoon, "A YANG Data Model for Virtual Network (VN)
-              Operations", Work in Progress, Internet-Draft, draft-ietf-
-              teas-actn-vn-yang-29, 22 June 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-vn-yang-29>.
-
    [I-D.ietf-teas-applicability-actn-slicing]
               King, D., Drake, J., Zheng, H., and A. Farrel,
               "Applicability of Abstraction and Control of Traffic
@@ -967,14 +932,6 @@ Table of Contents
               applicability-actn-slicing-10, 28 August 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
               applicability-actn-slicing-10>.
-
-   [I-D.ietf-teas-enhanced-vpn]
-              Dong, J., Bryant, S., Li, Z., Miyasaka, T., and Y. Lee, "A
-              Framework for Network Resource Partition (NRP) based
-              Enhanced Virtual Private Networks", Work in Progress,
-              Internet-Draft, draft-ietf-teas-enhanced-vpn-20, 14 June
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              teas-enhanced-vpn-20>.
 
    [I-D.ietf-teas-ietf-network-slice-nbi-yang]
               Wu, B., Dhody, D., Rokui, R., Saad, T., and J. Mullooly,
@@ -1033,6 +990,14 @@ Table of Contents
               October 2025, <https://datatracker.ietf.org/doc/html/
               draft-ietf-teas-te-service-mapping-yang-18>.
 
+   [I-D.ietf-teas-transport-network-slice-yang]
+              Liu, X., Contreras, L. M., Belotti, S., Guo, A., and I.
+              Busi, "IETF Network Slice Topology YANG Data Model", Work
+              in Progress, Internet-Draft, draft-ietf-teas-transport-
+              network-slice-yang-00, 17 March 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              transport-network-slice-yang-00>.
+
    [I-D.jiang-tsvwg-slice-media-service]
               Jiang, T. and D. Wang, "Encoding 3GPP Slices for
               Interactive Media Services", Work in Progress, Internet-
@@ -1084,14 +1049,6 @@ Table of Contents
               spring-nrp-id-in-srv6-segment-06, 6 June 2025,
               <https://datatracker.ietf.org/doc/html/draft-liu-spring-
               nrp-id-in-srv6-segment-06>.
-
-   [I-D.liu-teas-transport-network-slice-yang]
-              Liu, X., Contreras, L. M., Belotti, S., Guo, A., and I.
-              Busi, "IETF Network Slice Topology YANG Data Model", Work
-              in Progress, Internet-Draft, draft-liu-teas-transport-
-              network-slice-yang-11, 15 October 2024,
-              <https://datatracker.ietf.org/doc/html/draft-liu-teas-
-              transport-network-slice-yang-11>.
 
    [I-D.ma-teas-ietf-network-slice-deployment]
               Ma, Y., Luo, R., Chan, A., Suen, B., Dong, J., Liu, Y.,
@@ -1163,6 +1120,16 @@ Table of Contents
               (SLOs)", RFC 9544, DOI 10.17487/RFC9544, March 2024,
               <https://www.rfc-editor.org/rfc/rfc9544>.
 
+   [RFC9731]  Lee, Y., Ed., Dhody, D., Ed., Ceccarelli, D., Bryskin, I.,
+              and B. Yoon, "A YANG Data Model for Virtual Network (VN)
+              Operations", RFC 9731, DOI 10.17487/RFC9731, March 2025,
+              <https://www.rfc-editor.org/rfc/rfc9731>.
+
+   [RFC9732]  Dong, J., Bryant, S., Li, Z., Miyasaka, T., and Y. Lee, "A
+              Framework for NRP-Based Enhanced Virtual Private
+              Networks", RFC 9732, DOI 10.17487/RFC9732, March 2025,
+              <https://www.rfc-editor.org/rfc/rfc9732>.
+
    [RFC9832]  Vairavakkalai, K., Ed. and N. Venkataraman, Ed., "BGP
               Classful Transport Planes", RFC 9832,
               DOI 10.17487/RFC9832, September 2025,
@@ -1177,6 +1144,12 @@ Table of Contents
               Network Slices for 5G Networks Using Current IP/MPLS
               Technologies", RFC 9889, DOI 10.17487/RFC9889, November
               2025, <https://www.rfc-editor.org/rfc/rfc9889>.
+
+   [RFC99833] "*** BROKEN REFERENCE ***".
+
+   [RFC99834] "*** BROKEN REFERENCE ***".
+
+   [RFC99835] "*** BROKEN REFERENCE ***".
 
 Acknowledgments
 
