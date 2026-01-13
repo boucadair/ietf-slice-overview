@@ -78,7 +78,7 @@ RFC 9543 Network Slices can be realized using existing tools ({{no-extension}}).
 
 ## Using Current IP/MPLS Technologies {#no-extension}
 
-{{?I-D.ietf-teas-5g-ns-ip-mpls}} describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
+{{?RFC9889}} describes a model for the realization of RFC 9543 Network Slices for 5G networks. This realization model reuses many building blocks that are commonly used in service provider networks, specifically:
 
 * L2VPN/L3VPN service instances for logical separation,
 * Fine-grained resource control at the PE,
@@ -256,11 +256,11 @@ The need for such a model is yet to be justified as the current scope is redunda
 
 ## BGP Classful Transport Planes
 
-{{?I-D.ietf-idr-bgp-ct}} specifies mechanisms for classifying underlay routes into a set of classes, called Transport Classes, and mapping service-specific routes to a specific Transport Class. For example, {{?I-D.ietf-idr-bgp-ct}} can be used to create a customized topology for Network Slices. These topologies (Transport Classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target Extended Community is defined for this purpose. A Transport Class is identified by a 4-octet identifier: Transport Class ID.
+{{?RFC9832}} specifies mechanisms for classifying underlay routes into a set of classes, called Transport Classes, and mapping service-specific routes to a specific Transport Class. For example, {{?RFC9832}} can be used to create a customized topology for Network Slices. These topologies (Transport Classes) will be typically created to satisfy certain TE characteristics. A new Transport Class Route Target Extended Community is defined for this purpose. A Transport Class is identified by a 4-octet identifier: Transport Class ID.
 
 ## BGP Color-Aware Routing (CAR)
 
-{{?I-D.ietf-idr-bgp-car}} specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.
+{{?RFC9871}} specifies a new BGP SAFI called BGP Color-Aware Routing (BGP CAR). Colors are defined to characterize an objective (e.g., low latency). To satisfy Network Slice requirements, CAR may be used to establish paths that address specific objectives. These paths will be associated with a Color.
 
 The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} and builds upon the Color concept defined in {{?RFC9256}}. In addition, a new Extended Community, called Local-Color-Mapping (LCM) Extended Community, is defined to address cases where the granularity of the exposed colors differs when crossing domains.
 
@@ -296,7 +296,7 @@ The proposal leverages the BGP Color Extended Community defined in {{?RFC9012}} 
 
 ### PCEP Extensions
 
-{{?I-D.dong-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.
+{{?I-D.etf-pce-pcep-nrp}} specifie Path Computation Element Communication Protocol (PCEP) extensions for NRP. The NRP ID is encoded in 4 octets.
 
 ## Virtual Transport Networks (VTNs)
 
