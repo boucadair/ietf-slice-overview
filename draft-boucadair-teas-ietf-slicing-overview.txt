@@ -563,7 +563,7 @@ Table of Contents
 
 6.3.6.  PCEP Extensions
 
-   [I-D.etf-pce-pcep-nrp] specifie Path Computation Element
+   [I-D.ietf-pce-pcep-nrp] specifie Path Computation Element
    Communication Protocol (PCEP) extensions for NRP.  The NRP ID is
    encoded in 4 octets.
 
@@ -805,9 +805,6 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-drake-teas-
               bgp-ls-filter-nrp-00>.
 
-   [I-D.etf-pce-pcep-nrp]
-              "*** BROKEN REFERENCE ***".
-
    [I-D.filsfils-spring-srv6-stateless-slice-id]
               Filsfils, C., Clad, F., Camarillo, P., Raza, S. K., Voyer,
               D., and R. Rokui, "Stateless and Scalable Network Slice
@@ -920,6 +917,15 @@ Table of Contents
               opsawg-teas-common-ac-15, 23 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
               teas-common-ac-15>.
+
+   [I-D.ietf-pce-pcep-nrp]
+              Dong, J., Fang, S., Xiong, Q., Peng, S., Han, L., Wang,
+              M., Beeram, V. P., and T. Saad, "Path Computation Element
+              Communication Protocol (PCEP) Extensions for Network
+              Resource Partition (NRP)", Work in Progress, Internet-
+              Draft, draft-ietf-pce-pcep-nrp-00, 6 November 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-pce-
+              pcep-nrp-00>.
 
    [I-D.ietf-spring-resource-aware-segments]
               Dong, J., Miyasaka, T., Zhu, Y., Qin, F., and Z. Li,
